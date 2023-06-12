@@ -1,5 +1,6 @@
 export interface IPro4Song {
   properties: IPro4Properties;
+  slides: IPro4Slide[];
 }
 
 export interface IPro4Properties {
@@ -26,3 +27,13 @@ export interface IPro4Properties {
   width: number;
 }
 
+export interface IPro4Slide {
+  label: string;
+  textElements: IPro4SlideTextElement[];
+}
+
+export interface IPro4SlideTextElement {
+  position: { x: number; y: number; z: number; width: number; height: number };
+  rawRtfContent: string;
+  textContent: string;
+}

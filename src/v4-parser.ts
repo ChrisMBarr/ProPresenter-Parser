@@ -1,6 +1,8 @@
 import { XMLParser } from 'fast-xml-parser';
-import { IPro4Properties, IPro4Song } from './v4-parser.model';
-import { IXmlPro4Doc, IXmlPro4DocRoot } from './v4-parser.xml.model';
+import { Base64 } from 'js-base64';
+import * as Utils from './utils';
+import { IPro4Properties, IPro4Slide, IPro4SlideTextElement, IPro4Song } from './v4-parser.model';
+import { IXmlPro4DisplaySlide, IXmlPro4Doc, IXmlPro4DocRoot } from './v4-parser.xml.model';
 
 export class v4Parser {
   parse(fileContent: string): IPro4Song {
@@ -8,9 +10,8 @@ export class v4Parser {
     //Here we maintain a list of node paths to always keep as arrays
     //This keeps our code structure and typedefs more sane and normalized
     const alwaysArray = [
-      'RVPresentationDocument.groups.RVSlideGrouping',
       'RVPresentationDocument.slides.RVDisplaySlide',
-      'RVPresentationDocument.groups.RVSlideGrouping.slides.RVDisplaySlide',
+      'RVPresentationDocument.slides.RVDisplaySlide.displayElements.RVTextElement',
     ];
 
     const xmlParser = new XMLParser({
@@ -23,9 +24,11 @@ export class v4Parser {
     const parsedDoc: IXmlPro4DocRoot = xmlParser.parse(fileContent);
 
     const properties = this.getProperties(parsedDoc.RVPresentationDocument);
+    const slides = this.getSlides(parsedDoc.RVPresentationDocument.slides.RVDisplaySlide);
 
     return {
       properties,
+      slides,
     };
   }
 
@@ -53,5 +56,32 @@ export class v4Parser {
       versionNumber: doc['@versionNumber'],
       width: doc['@width'],
     };
+  }
+
+  private getSlides(displaySlides: IXmlPro4DisplaySlide[]): IPro4Slide[] {
+    const slidesList: IPro4Slide[] = [];
+
+    for (const slide of displaySlides) {
+      slidesList.push({
+        label: slide['@label'],
+        textElements: slide.displayElements.RVTextElement.map((txt): IPro4SlideTextElement => {
+          const decodedContent = Base64.decode(txt['@RTFData']);
+
+          return {
+            position: {
+              x: txt['_-RVRect3D-_position']['@x'],
+              y: txt['_-RVRect3D-_position']['@y'],
+              z: txt['_-RVRect3D-_position']['@z'],
+              height: txt['_-RVRect3D-_position']['@height'],
+              width: txt['_-RVRect3D-_position']['@width'],
+            },
+            rawRtfContent: decodedContent,
+            textContent: Utils.stripRtf(decodedContent),
+          };
+        }),
+      });
+    }
+
+    return slidesList;
   }
 }

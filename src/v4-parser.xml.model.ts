@@ -64,7 +64,7 @@ export interface IXmlPro4DisplaySlide {
   '@serialization-array-index': number;
   cues: {};
   displayElements: {
-    RVTextElement: IXmlPro4SlideTextElement;
+    RVTextElement: IXmlPro4SlideTextElement[];
   };
 }
 
