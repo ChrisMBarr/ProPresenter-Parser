@@ -43,6 +43,8 @@ describe('v4Parser', (): void => {
 
     expect(parsedSong.slides).toEqual([
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -56,6 +58,8 @@ describe('v4Parser', (): void => {
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 1',
         textElements: [
           {
@@ -83,6 +87,8 @@ Our good`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Verse 1',
         textElements: [
           {
@@ -106,6 +112,8 @@ But I'm asking to taste`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Verse 2',
         textElements: [
           {
@@ -127,6 +135,8 @@ But Lord I need to hear from You`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Verse 3',
         textElements: [
           {
@@ -150,6 +160,8 @@ To feel Your embrace`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Verse 4',
         textElements: [
           {
@@ -171,6 +183,8 @@ But Lord I need to hear from You`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -186,6 +200,8 @@ But Lord I need to hear from You`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -232,6 +248,8 @@ But Lord I need to hear from You`,
 
     expect(parsedSong.slides).toEqual([
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Verse 1',
         textElements: [
           {
@@ -253,6 +271,8 @@ Oh Lord we cast down our idols`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 1',
         textElements: [
           {
@@ -274,6 +294,8 @@ Let us not lift our souls to another`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 1',
         textElements: [
           {
@@ -297,6 +319,8 @@ That seeks Your face oh God of Jacob`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -310,6 +334,8 @@ That seeks Your face oh God of Jacob`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Verse 1',
         textElements: [
           {
@@ -331,6 +357,8 @@ Oh Lord we cast down our idols`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 1',
         textElements: [
           {
@@ -352,6 +380,8 @@ Let us not lift our souls to another`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 1',
         textElements: [
           {
@@ -375,6 +405,8 @@ That seeks Your face oh God of Jacob`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -420,6 +452,8 @@ That seeks Your face oh God of Jacob`,
 
     expect(parsedSong.slides).toEqual([
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -433,6 +467,8 @@ That seeks Your face oh God of Jacob`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Verse 1',
         textElements: [
           {
@@ -460,6 +496,8 @@ Jesus saves`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -477,6 +515,8 @@ What a joyful noise we'll make`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 1',
         textElements: [
           {
@@ -499,6 +539,8 @@ Raise a shout to let \nAll the world know\nThat Jesus saves`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Verse 2',
         textElements: [
           {
@@ -526,6 +568,8 @@ Jesus saves`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -543,6 +587,8 @@ What a joyful noise we'll make`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 1',
         textElements: [
           {
@@ -566,6 +612,8 @@ That Jesus saves`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 1',
         textElements: [
           {
@@ -589,6 +637,8 @@ That Jesus saves`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '(BRIDGE)',
         textElements: [
           {
@@ -610,6 +660,8 @@ Your Spirit lives in us`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 2',
         textElements: [
           {
@@ -633,6 +685,8 @@ To let all the world know \nThat Jesus saves`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 2',
         textElements: [
           {
@@ -656,6 +710,8 @@ To let all the world know \nThat Jesus saves`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: 'Chorus 2',
         textElements: [
           {
@@ -679,6 +735,8 @@ To let all the world know \nThat Jesus saves`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -703,6 +761,8 @@ We shout for we \nWill know Your name`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -718,6 +778,8 @@ We shout for we \nWill know Your name`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -763,6 +825,8 @@ We shout for we \nWill know Your name`,
 
     expect(parsedSong.slides).toEqual([
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -780,6 +844,8 @@ to bless Your name`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -797,6 +863,8 @@ that You are King`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -814,6 +882,8 @@ all for Your glory`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -831,6 +901,8 @@ be wiped away`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -848,6 +920,8 @@ will see Your face`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -865,6 +939,8 @@ all for Your name`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -882,6 +958,8 @@ Majesty`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -899,6 +977,8 @@ saving Me`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -914,6 +994,8 @@ saving Me`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -931,6 +1013,8 @@ You are God`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -948,6 +1032,8 @@ to bless Your name`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -965,6 +1051,8 @@ that You are King`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -982,6 +1070,8 @@ all for Your name`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -999,6 +1089,8 @@ Majesty`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1016,6 +1108,8 @@ saving Me`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1031,6 +1125,8 @@ saving Me`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1048,6 +1144,8 @@ You are God`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1063,6 +1161,8 @@ You are God`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1079,6 +1179,8 @@ hold You}`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1096,6 +1198,8 @@ You are alive`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1111,6 +1215,8 @@ You are alive`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1127,6 +1233,8 @@ hold You}`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1144,6 +1252,8 @@ You are alive`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1161,6 +1271,8 @@ Majesty`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1178,6 +1290,8 @@ saving Me`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1195,6 +1309,8 @@ all will see that`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1212,6 +1328,8 @@ Majesty`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1229,6 +1347,8 @@ saving Me`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {
@@ -1244,6 +1364,8 @@ saving Me`,
         ],
       },
       {
+        backgroundColor: '0 0 0 0',
+        highlightColor: '0 0 0 0',
         label: '',
         textElements: [
           {

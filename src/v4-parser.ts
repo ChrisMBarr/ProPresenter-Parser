@@ -64,9 +64,10 @@ export class v4Parser {
     for (const slide of displaySlides) {
       slidesList.push({
         label: slide['@label'],
+        backgroundColor: slide['@backgroundColor'],
+        highlightColor: slide['@highlightColor'],
         textElements: slide.displayElements.RVTextElement.map((txt): IPro4SlideTextElement => {
           const decodedContent = Base64.decode(txt['@RTFData']);
-
           return {
             position: {
               x: txt['_-RVRect3D-_position']['@x'],

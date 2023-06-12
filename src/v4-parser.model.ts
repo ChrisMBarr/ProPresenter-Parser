@@ -29,6 +29,8 @@ export interface IPro4Properties {
 
 export interface IPro4Slide {
   label: string;
+  backgroundColor: string;
+  highlightColor: string;
   textElements: IPro4SlideTextElement[];
 }
 
