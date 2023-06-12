@@ -13,8 +13,7 @@
   "bugs": {
     "url": "https://github.com/FiniteLooper/ProPresenter-Parser/issues"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "files": [
     "!**/*.json",
     "!**/*.spec.*",
@@ -74,6 +73,8 @@
     "watch:test:html": "jest --watch --reporters=jest-html-reporter --verbose=false"
   },
   "dependencies": {
+    "fast-xml-parser": "^4.2.4",
+    "js-base64": "^3.7.5"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
