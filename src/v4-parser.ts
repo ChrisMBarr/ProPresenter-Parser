@@ -1,9 +1,9 @@
 import { XMLParser } from 'fast-xml-parser';
-import { IProPresenter4Doc } from './v4-parser.model';
-import { IXmlPro4Doc } from './v4-parser.xml.model';
+import { IPro4Properties, IPro4Song } from './v4-parser.model';
+import { IXmlPro4Doc, IXmlPro4DocRoot } from './v4-parser.xml.model';
 
 export class v4Parser {
-  parse(fileContent: string): IProPresenter4Doc {
+  parse(fileContent: string): IPro4Song {
     //When certain XML nodes only have one item the parser will convert them into objects
     //Here we maintain a list of node paths to always keep as arrays
     //This keeps our code structure and typedefs more sane and normalized
@@ -20,53 +20,38 @@ export class v4Parser {
       parseAttributeValue: true,
       isArray: (_name, jPath: string) => alwaysArray.includes(jPath),
     });
-    const parsedDoc: IXmlPro4Doc = xmlParser.parse(fileContent);
+    const parsedDoc: IXmlPro4DocRoot = xmlParser.parse(fileContent);
 
-    console.log(parsedDoc.RVPresentationDocument.slides.RVDisplaySlide[0]);
+    const properties = this.getProperties(parsedDoc.RVPresentationDocument);
 
-    return parsedDoc;
+    return {
+      properties,
+    };
   }
 
-  // private getInfo(doc: IProPresenter4Document): ISongInfo[] {
-  //   const skipKeys = [
-  //     'CCLIDisplay',
-  //     'backgroundColor',
-  //     'docType',
-  //     'drawingBackgroundColor',
-  //     'height',
-  //     'lastDateUsed',
-  //     'usedCount',
-  //     'versionNumber',
-  //     'width',
-  //   ];
-  //   const info: ISongInfo[] = [];
-
-  //   //Loop through all top-level object properties, skipping over a few hard-coded ones
-  //   //If the value is a string or a number, add it to the info
-  //   Object.keys(doc.RVPresentationDocument).forEach((k) => {
-  //     if (!skipKeys.includes(k)) {
-  //       const val = doc.RVPresentationDocument[k];
-  //       if ((typeof val === 'string' && val !== '') || typeof val === 'number') {
-  //         info.push({
-  //           name: k,
-  //           value: val,
-  //         });
-  //       }
-  //     }
-  //   });
-  //   return info;
-  // }
-
-  // private getSlides(doc: IProPresenter4Document): ISongSlide[] {
-  //   const slidesList: ISongSlide[] = [];
-  //   doc.RVPresentationDocument.slides.RVDisplaySlide.forEach((slide) => {
-  //     const title = slide.label;
-  //     const lyrics = Utils.stripRtf(Base64.decode(slide.displayElements.RVTextElement.RTFData));
-  //     if (title || lyrics) {
-  //       slidesList.push({ title, lyrics });
-  //     }
-  //   });
-
-  //   return slidesList;
-  // }
+  private getProperties(doc: IXmlPro4Doc): IPro4Properties {
+    return {
+      CCLIArtistCredits: doc['@CCLIArtistCredits'],
+      CCLICopyrightInfo: doc['@CCLICopyrightInfo'],
+      CCLIDisplay: doc['@CCLIDisplay'],
+      CCLILicenseNumber: doc['@CCLILicenseNumber'],
+      CCLIPublisher: doc['@CCLIPublisher'],
+      CCLISongTitle: doc['@CCLISongTitle'],
+      album: doc['@album'],
+      artist: doc['@artist'],
+      author: doc['@author'],
+      backgroundColor: doc['@backgroundColor'],
+      category: doc['@category'],
+      creatorCode: doc['@creatorCode'],
+      docType: doc['@docType'],
+      drawingBackgroundColor: doc['@drawingBackgroundColor'],
+      height: doc['@height'],
+      lastDateUsed: new Date(doc['@lastDateUsed']),
+      notes: doc['@notes'],
+      resourcesDirectory: doc['@resourcesDirectory'],
+      usedCount: doc['@usedCount'],
+      versionNumber: doc['@versionNumber'],
+      width: doc['@width'],
+    };
+  }
 }

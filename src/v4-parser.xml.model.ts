@@ -1,32 +1,34 @@
 //A representation of a ProPresenter document as a JSON object parsed by fast-xml-parser
+export interface IXmlPro4DocRoot {
+  RVPresentationDocument: IXmlPro4Doc;
+}
+
 export interface IXmlPro4Doc {
-  RVPresentationDocument: {
-    '@CCLIArtistCredits'?: string;
-    '@CCLICopyrightInfo'?: number;
-    '@CCLIDisplay'?: number;
-    '@CCLILicenseNumber'?: string;
-    '@CCLIPublisher'?: string;
-    '@CCLISongTitle'?: string;
-    '@album': string;
-    '@artist': string;
-    '@author': string;
-    '@backgroundColor': string;
-    '@category': string;
-    '@creatorCode': number;
-    '@docType': number;
-    '@drawingBackgroundColor': number;
-    '@height': number;
-    '@lastDateUsed': string;
-    '@notes': string;
-    '@resourcesDirectory': string;
-    '@timeline': IXmlV4Timeline;
-    '@usedCount': number;
-    '@versionNumber': number;
-    '@width': number;
-    bibleReference: IXmlPro4BibleReferences;
-    slides: {
-      RVDisplaySlide: IXmlPro4DisplaySlide[];
-    };
+  '@CCLIArtistCredits': string;
+  '@CCLICopyrightInfo': number;
+  '@CCLIDisplay': number;
+  '@CCLILicenseNumber': string | number;
+  '@CCLIPublisher': string;
+  '@CCLISongTitle': string;
+  '@album': string;
+  '@artist': string;
+  '@author': string;
+  '@backgroundColor': string;
+  '@category': string;
+  '@creatorCode': number;
+  '@docType'?: number;
+  '@drawingBackgroundColor'?: number;
+  '@height': number;
+  '@lastDateUsed': string;
+  '@notes': string;
+  '@resourcesDirectory': string;
+  '@timeline': IXmlV4Timeline;
+  '@usedCount': number;
+  '@versionNumber': number;
+  '@width': number;
+  bibleReference: IXmlPro4BibleReferences;
+  slides: {
+    RVDisplaySlide: IXmlPro4DisplaySlide[];
   };
 }
 
