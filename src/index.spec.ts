@@ -1,6 +1,6 @@
 import { run } from '.';
 
-describe('{{PACKAGE_NAME}}', (): void => {
+describe('ProPresenterParser', (): void => {
   it('should exist', () => {
     expect(run).toBeDefined();
   });

@@ -1,10 +1,10 @@
-[![GitHub - release](https://img.shields.io/github/v/release/{{USER_NAME}}/{{PACKAGE_NAME}}?style=flat)](https://github.com/{{USER_NAME}}/{{PACKAGE_NAME}}/releases/latest)
+<!-- [![GitHub - release](https://img.shields.io/github/v/release/FiniteLooper/ProPresenter-Parser?style=flat)](https://github.com/FiniteLooper/ProPresenter-Parser/releases/latest) -->
 
-# {{PACKAGE_NAME}}
-{{DESCRIPTION}}
+# ProPresenter-Parser
+Parses ProPresenter files to extract the data
 
 ## Installation
 
 ```txt
-npm install {{PACKAGE_NAME}} --save
+npm install propresenter-parser --save
 ```
