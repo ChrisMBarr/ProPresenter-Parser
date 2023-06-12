@@ -68,6 +68,7 @@ export class v4Parser {
         highlightColor: slide['@highlightColor'],
         textElements: slide.displayElements.RVTextElement.map((txt): IPro4SlideTextElement => {
           const decodedContent = Base64.decode(txt['@RTFData']);
+          const textProps = Utils.getTextPropsFromRtf(decodedContent);
           return {
             position: {
               x: txt['_-RVRect3D-_position']['@x'],
@@ -78,6 +79,9 @@ export class v4Parser {
             },
             rawRtfContent: decodedContent,
             textContent: Utils.stripRtf(decodedContent),
+            color: textProps.color,
+            font: textProps.font,
+            size: textProps.size,
           };
         }),
       });

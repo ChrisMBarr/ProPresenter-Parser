@@ -48,6 +48,9 @@ describe('v4Parser', (): void => {
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: '',
+            size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl}
@@ -63,6 +66,9 @@ describe('v4Parser', (): void => {
         label: 'Chorus 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -92,6 +98,9 @@ Our good`,
         label: 'Verse 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -117,6 +126,9 @@ But I'm asking to taste`,
         label: 'Verse 2',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -140,6 +152,9 @@ But Lord I need to hear from You`,
         label: 'Verse 3',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -165,6 +180,9 @@ To feel Your embrace`,
         label: 'Verse 4',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -188,6 +206,9 @@ But Lord I need to hear from You`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -205,6 +226,9 @@ But Lord I need to hear from You`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: '',
+            size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl}
@@ -253,6 +277,9 @@ But Lord I need to hear from You`,
         label: 'Verse 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Impact',
+            size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
@@ -276,6 +303,9 @@ Oh Lord we cast down our idols`,
         label: 'Chorus 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Impact',
+            size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
@@ -299,6 +329,9 @@ Let us not lift our souls to another`,
         label: 'Chorus 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Impact',
+            size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
@@ -324,6 +357,9 @@ That seeks Your face oh God of Jacob`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: '',
+            size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl}
@@ -339,6 +375,9 @@ That seeks Your face oh God of Jacob`,
         label: 'Verse 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Impact',
+            size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
@@ -362,6 +401,9 @@ Oh Lord we cast down our idols`,
         label: 'Chorus 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Impact',
+            size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
@@ -385,6 +427,9 @@ Let us not lift our souls to another`,
         label: 'Chorus 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Impact',
+            size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
@@ -410,6 +455,9 @@ That seeks Your face oh God of Jacob`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: '',
+            size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl}
@@ -457,6 +505,9 @@ That seeks Your face oh God of Jacob`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: '',
+            size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl}
@@ -472,6 +523,9 @@ That seeks Your face oh God of Jacob`,
         label: 'Verse 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -501,6 +555,9 @@ Jesus saves`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -520,6 +577,9 @@ What a joyful noise we'll make`,
         label: 'Chorus 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -544,6 +604,9 @@ Raise a shout to let \nAll the world know\nThat Jesus saves`,
         label: 'Verse 2',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -573,6 +636,9 @@ Jesus saves`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -592,6 +658,9 @@ What a joyful noise we'll make`,
         label: 'Chorus 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -617,6 +686,9 @@ That Jesus saves`,
         label: 'Chorus 1',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -642,6 +714,9 @@ That Jesus saves`,
         label: '(BRIDGE)',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -665,6 +740,9 @@ Your Spirit lives in us`,
         label: 'Chorus 2',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -690,6 +768,9 @@ To let all the world know \nThat Jesus saves`,
         label: 'Chorus 2',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -715,6 +796,9 @@ To let all the world know \nThat Jesus saves`,
         label: 'Chorus 2',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -740,6 +824,9 @@ To let all the world know \nThat Jesus saves`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -766,6 +853,9 @@ We shout for we \nWill know Your name`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Tahoma',
+            size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
@@ -783,6 +873,9 @@ We shout for we \nWill know Your name`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: '',
+            size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl}
@@ -830,6 +923,9 @@ We shout for we \nWill know Your name`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -849,6 +945,9 @@ to bless Your name`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -868,6 +967,9 @@ that You are King`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -887,6 +989,9 @@ all for Your glory`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -906,6 +1011,9 @@ be wiped away`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -925,6 +1033,9 @@ will see Your face`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -944,6 +1055,9 @@ all for Your name`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -963,6 +1077,9 @@ Majesty`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -982,6 +1099,9 @@ saving Me`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -999,6 +1119,9 @@ saving Me`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1018,6 +1141,9 @@ You are God`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1037,6 +1163,9 @@ to bless Your name`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1056,6 +1185,9 @@ that You are King`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1075,6 +1207,9 @@ all for Your name`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1094,6 +1229,9 @@ Majesty`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1113,6 +1251,9 @@ saving Me`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1130,6 +1271,9 @@ saving Me`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1149,6 +1293,9 @@ You are God`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1166,6 +1313,9 @@ You are God`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1184,6 +1334,9 @@ hold You}`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1203,6 +1356,9 @@ You are alive`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1220,6 +1376,9 @@ You are alive`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1238,6 +1397,9 @@ hold You}`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1257,6 +1419,9 @@ You are alive`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1276,6 +1441,9 @@ Majesty`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1295,6 +1463,9 @@ saving Me`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1314,6 +1485,9 @@ all will see that`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1333,6 +1507,9 @@ Majesty`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1352,6 +1529,9 @@ saving Me`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
@@ -1369,6 +1549,9 @@ saving Me`,
         label: '',
         textElements: [
           {
+            color: { b: 255, g: 255, r: 255 },
+            font: 'Helvetica',
+            size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}

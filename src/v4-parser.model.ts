@@ -1,3 +1,5 @@
+import { IRtfColor } from './utils';
+
 export interface IPro4Song {
   properties: IPro4Properties;
   slides: IPro4Slide[];
@@ -38,4 +40,7 @@ export interface IPro4SlideTextElement {
   position: { x: number; y: number; z: number; width: number; height: number };
   rawRtfContent: string;
   textContent: string;
+  font: string;
+  size: number;
+  color: IRtfColor;
 }
