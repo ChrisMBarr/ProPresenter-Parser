@@ -22,26 +22,29 @@ export interface IXmlPro4Doc {
   '@lastDateUsed': string;
   '@notes': string;
   '@resourcesDirectory': string;
-  '@timeline': IXmlV4Timeline;
   '@usedCount': number;
   '@versionNumber': number;
   '@width': number;
-  bibleReference: IXmlPro4BibleReferences;
   slides: {
     RVDisplaySlide: IXmlPro4DisplaySlide[];
   };
+
+  //timeline and bibleReferences are not implemented yet
+  timeline: IXmlV4Timeline;
+  bibleReference: IXmlPro4BibleReferences;
 }
 
 //------------------------------------------------------
 //Timeline
 export interface IXmlV4Timeline {
-  '@duration': 0;
-  '@loop': 0;
-  '@selectedMediaTrackIndex': 0;
-  '@timeOffSet': 0;
-  '@unitOfMeasure': 60;
-  mediaTracks: {};
-  timeCues: {};
+  '@duration': number;
+  '@loop': number;
+  '@selectedMediaTrackIndex': number;
+  '@timeOffSet': number;
+  '@unitOfMeasure': number;
+  //timeCues & mediaTracks are not implemented here yet
+  mediaTracks: [];
+  timeCues: [];
 }
 
 //------------------------------------------------------

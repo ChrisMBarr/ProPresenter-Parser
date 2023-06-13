@@ -8,7 +8,7 @@ export interface IPro4Song {
 export interface IPro4Properties {
   CCLIArtistCredits: string;
   CCLICopyrightInfo: string | number;
-  CCLIDisplay: number;
+  CCLIDisplay: boolean;
   CCLILicenseNumber: string | number;
   CCLIPublisher: string;
   CCLISongTitle: string;
@@ -31,6 +31,7 @@ export interface IPro4Properties {
 
 export interface IPro4Slide {
   label: string;
+  id: string;
   backgroundColor: string;
   highlightColor: string;
   textElements: IPro4SlideTextElement[];

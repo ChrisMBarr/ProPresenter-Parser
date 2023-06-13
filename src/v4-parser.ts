@@ -10,6 +10,8 @@ export class v4Parser {
     //Here we maintain a list of node paths to always keep as arrays
     //This keeps our code structure and typedefs more sane and normalized
     const alwaysArray = [
+      'RVPresentationDocument.timeline.timeCues',
+      'RVPresentationDocument.timeline.mediaTracks',
       'RVPresentationDocument.slides.RVDisplaySlide',
       'RVPresentationDocument.slides.RVDisplaySlide.displayElements.RVTextElement',
     ];
@@ -42,7 +44,7 @@ export class v4Parser {
     return {
       CCLIArtistCredits: doc['@CCLIArtistCredits'],
       CCLICopyrightInfo: doc['@CCLICopyrightInfo'],
-      CCLIDisplay: doc['@CCLIDisplay'],
+      CCLIDisplay: Boolean(doc['@CCLIDisplay']),
       CCLILicenseNumber: doc['@CCLILicenseNumber'],
       CCLIPublisher: doc['@CCLIPublisher'],
       CCLISongTitle: doc['@CCLISongTitle'],
@@ -70,6 +72,7 @@ export class v4Parser {
     for (const slide of displaySlides) {
       slidesList.push({
         label: slide['@label'],
+        id: slide['@UUID'],
         backgroundColor: slide['@backgroundColor'],
         highlightColor: slide['@highlightColor'],
         textElements: slide.displayElements.RVTextElement.map((txt): IPro4SlideTextElement => {

@@ -34,7 +34,7 @@ describe('v4Parser', (): void => {
     expect(parsedSong.properties).toEqual({
       CCLIArtistCredits: '',
       CCLICopyrightInfo: 2003,
-      CCLIDisplay: 0,
+      CCLIDisplay: false,
       CCLILicenseNumber: '',
       CCLIPublisher: 'Waiting Room Music',
       CCLISongTitle: 'Be Near',
@@ -60,6 +60,7 @@ describe('v4Parser', (): void => {
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '26AAF905-8F45-4252-BFAB-4C10CCFE1476',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -78,6 +79,7 @@ describe('v4Parser', (): void => {
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 1',
+        id: '9734D050-A3BD-4BD2-A8FE-0C15CC0DF0D3',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -110,6 +112,7 @@ Our good`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Verse 1',
+        id: 'C0D4B304-E17E-424F-AF25-A1C4F0E1777E',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -138,6 +141,7 @@ But I'm asking to taste`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Verse 2',
+        id: 'BBD0F6E3-DEC6-4DAD-9D23-5AFC416F4405',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -164,6 +168,7 @@ But Lord I need to hear from You`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Verse 3',
+        id: 'AFEC5480-72AB-4621-B2B9-507C1216557B',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -192,6 +197,7 @@ To feel Your embrace`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Verse 4',
+        id: '6A09BC9B-1B9E-43CF-B170-954772243651',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -218,6 +224,7 @@ But Lord I need to hear from You`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '6C6F7FC2-A5DF-4D7A-8415-F4F9B41AB40F',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -238,6 +245,7 @@ But Lord I need to hear from You`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '01BFD557-5A33-4FBD-B3BC-B88AB38A2AF5',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -262,7 +270,7 @@ But Lord I need to hear from You`,
     expect(parsedSong.properties).toEqual({
       CCLIArtistCredits: '',
       CCLICopyrightInfo: 2000,
-      CCLIDisplay: 0,
+      CCLIDisplay: false,
       CCLILicenseNumber: 2060208,
       CCLIPublisher:
         'worshiptogether.com songs | sixsteps Music (Admin. by EMI Christian Music Publishing) | (Admin. by EMI Christian Music Publishing)',
@@ -289,6 +297,7 @@ But Lord I need to hear from You`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Verse 1',
+        id: '28992D12-9FBA-4233-9618-232DD18CE572',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -315,6 +324,7 @@ Oh Lord we cast down our idols`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 1',
+        id: '014F4DF8-3C1A-4768-BF67-21ACDE647BC4',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -341,6 +351,7 @@ Let us not lift our souls to another`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 1',
+        id: 'E3D922CD-B9E4-485E-AE67-E39DEB34A68F',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -369,6 +380,7 @@ That seeks Your face oh God of Jacob`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'CE8ACA29-5F19-4D8E-901D-0104B146FD96',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -387,6 +399,7 @@ That seeks Your face oh God of Jacob`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Verse 1',
+        id: 'ED90F650-EC28-4299-976E-AE6DA9A92C9B',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -413,6 +426,7 @@ Oh Lord we cast down our idols`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 1',
+        id: 'B1E3ADD6-C9B2-44CC-A963-DEA6009FEDC8',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -439,6 +453,7 @@ Let us not lift our souls to another`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 1',
+        id: '349B7A03-B76B-46B5-B185-5E57834E27DD',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -467,6 +482,7 @@ That seeks Your face oh God of Jacob`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '61CE02D1-4AAD-40E7-93DE-83FEF746B662',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -491,7 +507,7 @@ That seeks Your face oh God of Jacob`,
     expect(parsedSong.properties).toEqual({
       CCLIArtistCredits: '',
       CCLICopyrightInfo: 2008,
-      CCLIDisplay: 0,
+      CCLIDisplay: false,
       CCLILicenseNumber: 5322950,
       CCLIPublisher: 'Thankyou Music (Admin. by EMI Christian Music Publishing)',
       CCLISongTitle: 'Jesus Saves',
@@ -517,6 +533,7 @@ That seeks Your face oh God of Jacob`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'ABEC9943-D4CC-474E-9C06-944A91307B9B',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -535,6 +552,7 @@ That seeks Your face oh God of Jacob`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Verse 1',
+        id: '3533F764-B21A-47BF-BB50-263A4BCDF3A0',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -567,6 +585,7 @@ Jesus saves`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '85AE6E7C-008C-454C-9EF6-114F5CE6FFA5',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -589,6 +608,7 @@ What a joyful noise we'll make`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 1',
+        id: '3AF2BD80-7170-4AED-9980-EF820B626120',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -616,6 +636,7 @@ Raise a shout to let \nAll the world know\nThat Jesus saves`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Verse 2',
+        id: 'E61AD8D1-1DB2-4BB9-AD63-1CA1D9294E2D',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -648,6 +669,7 @@ Jesus saves`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '99F3FC57-41DB-4A31-9D41-A3B86D9E85A9',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -670,6 +692,7 @@ What a joyful noise we'll make`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 1',
+        id: 'B9F65FBE-2BAD-4575-8E6B-318F71784FFE',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -698,6 +721,7 @@ That Jesus saves`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 1',
+        id: '4ED066AA-6E3C-4D52-A14C-233700ADCF9F',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -726,6 +750,7 @@ That Jesus saves`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '(BRIDGE)',
+        id: 'F79D6820-4F50-4BDB-BBDD-FA48A4C35255',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -752,6 +777,7 @@ Your Spirit lives in us`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 2',
+        id: 'B5360E51-E581-4D01-9EA2-0F9099CBD995',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -780,6 +806,7 @@ To let all the world know \nThat Jesus saves`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 2',
+        id: '4406766E-F40A-4D2B-823E-FAE6A3126F5E',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -808,6 +835,7 @@ To let all the world know \nThat Jesus saves`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: 'Chorus 2',
+        id: '53DEB08B-CEC1-48F4-A180-E97C2BF76AED',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -836,6 +864,7 @@ To let all the world know \nThat Jesus saves`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '6A6AF449-3C33-46DE-93ED-8F2A8463EB90',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -865,6 +894,7 @@ We shout for we \nWill know Your name`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '3B42AB1A-1B9C-45A4-829C-FE876F751A1B',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -885,6 +915,7 @@ We shout for we \nWill know Your name`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'D396A088-A9C3-49DD-9856-3E401229A7F6',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -909,7 +940,7 @@ We shout for we \nWill know Your name`,
     expect(parsedSong.properties).toEqual({
       CCLIArtistCredits: '',
       CCLICopyrightInfo: 2006,
-      CCLIDisplay: 0,
+      CCLIDisplay: true,
       CCLILicenseNumber: '',
       CCLIPublisher: 'Robinson Lane Music/BMI',
       CCLISongTitle: 'You Are',
@@ -935,6 +966,7 @@ We shout for we \nWill know Your name`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '2EDD17A7-D869-4DFC-A23B-1967DFF79790',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -957,6 +989,7 @@ to bless Your name`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '304D6BBF-66A9-45C8-B715-CF894DFBBB06',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -979,6 +1012,7 @@ that You are King`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '0FEE7CA8-FFD6-4FBC-893E-92B61928C677',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1001,6 +1035,7 @@ all for Your glory`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '000716DE-7F24-40FB-A168-8045982BDC28',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1023,6 +1058,7 @@ be wiped away`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'FB02B41A-E406-4B38-90E3-6BCE7AB1A4E3',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1045,6 +1081,7 @@ will see Your face`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '28DA8ACD-FE5B-4F28-9500-DE55E5F23A30',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1067,6 +1104,7 @@ all for Your name`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '73C9F594-5CF8-4BFD-A434-2E203F374661',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1089,6 +1127,7 @@ Majesty`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'A88A77BC-ED0E-4DE2-9EC5-712146CE43D5',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1111,6 +1150,7 @@ saving Me`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '9A826672-AA6A-414A-B2CF-4F86C493C2A5',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1131,6 +1171,7 @@ saving Me`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '8EC73805-F251-4F47-8222-62DA92E0A4C7',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1153,6 +1194,7 @@ You are God`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '4E1F2E44-E6F7-4F63-BCCB-6463D6A806A0',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1175,6 +1217,7 @@ to bless Your name`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '29D05B99-AAF3-44EF-8511-814DBF655ABD',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1197,6 +1240,7 @@ that You are King`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '7E78A383-CED1-4636-88FB-290F303B7722',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1219,6 +1263,7 @@ all for Your name`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '6A1D70C9-9C61-47EA-A79C-9C1D86568A7E',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1241,6 +1286,7 @@ Majesty`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'E76C66D2-A009-4BB2-992D-DF3CE01B1F17',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1263,6 +1309,7 @@ saving Me`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '2B2A5315-5B41-424F-86A8-77DA559D7C27',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1283,6 +1330,7 @@ saving Me`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '502B8E0F-D8E4-4ADA-AFD0-EF7A142FF164',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1305,6 +1353,7 @@ You are God`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'CC38D59A-C6AA-4C7E-9666-7DDAD458741E',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1325,6 +1374,7 @@ You are God`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '67E6A506-AD79-4906-9155-CC07C1CD0B7F',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1346,6 +1396,7 @@ hold You}`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'ECD278EB-6FD9-40C7-8367-702CE9F3C7AF',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1368,6 +1419,7 @@ You are alive`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '39EB68E2-E926-4055-A567-9FB29345EE53',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1388,6 +1440,7 @@ You are alive`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'AC0478A4-F4DE-4D4A-8138-91C703CCB17D',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1409,6 +1462,7 @@ hold You}`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '817904D5-B740-4A45-8806-24ECD307F865',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1431,6 +1485,7 @@ You are alive`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '443BF1DD-0647-442C-8DD9-8CD51E91B010',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1453,6 +1508,7 @@ Majesty`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'B4C90763-F9B0-4400-95C9-F315CBB6699A',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1475,6 +1531,7 @@ saving Me`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '944FB294-7BE8-480B-8A92-AE4692BA24E2',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1497,6 +1554,7 @@ all will see that`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '77ED5AB3-51D4-4A97-9F80-933F91242D9E',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1519,6 +1577,7 @@ Majesty`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'B55FB30C-724F-420E-8F22-27A99E905EE5',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1541,6 +1600,7 @@ saving Me`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: 'D956DABC-FCB0-4176-AA36-7982E703607D',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
@@ -1561,6 +1621,7 @@ saving Me`,
         backgroundColor: '0 0 0 0',
         highlightColor: '0 0 0 0',
         label: '',
+        id: '473D3A44-8A2A-4726-9D5E-0C06F4EF917B',
         textElements: [
           {
             color: { b: 255, g: 255, r: 255 },
