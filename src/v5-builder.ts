@@ -1,10 +1,29 @@
 import { XMLBuilder } from 'fast-xml-parser';
 import * as Utils from './utils';
-import { IPro5BuilderOptions } from './v5-builder.model';
-import { IXmlPro5DocRoot, IXmlPro5Slide, IXmlPro5SlideGroup } from './v5-xml.model';
+import { Base64 } from 'js-base64';
+import {
+  IPro5BuilderOptions,
+  IPro5BuilderOptionsSlide,
+  IPro5BuilderOptionsSlideGroup,
+} from './v5-builder.model';
+import {
+  IXmlPro5DocRoot,
+  IXmlPro5Slide,
+  IXmlPro5SlideGroup,
+  IXmlPro5SlideTextElement,
+  IXmlPro5TransitionObj,
+} from './v5-xml.model';
 
 export class v5Builder {
   private readonly xmlBuilder: XMLBuilder;
+
+  private readonly defaultTransitionObj: IXmlPro5TransitionObj = {
+    '@transitionType': -1,
+    '@transitionDuration': 1,
+    '@motionEnabled': 0,
+    '@motionDuration': 20,
+    '@motionSpeed': 100,
+  };
 
   constructor() {
     this.xmlBuilder = new XMLBuilder({
@@ -58,13 +77,7 @@ export class v5Builder {
         bibleReference: {
           '@containerClass': 'NSMutableDictionary',
         },
-        '_-RVProTransitionObject-_transitionObject': {
-          '@transitionType': -1,
-          '@transitionDuration': 1,
-          '@motionEnabled': 0,
-          '@motionDuration': 20,
-          '@motionSpeed': 100,
-        },
+        '_-RVProTransitionObject-_transitionObject': this.defaultTransitionObj,
         groups: {
           '@containerClass': 'NSMutableArray',
           RVSlideGrouping: this.buildSlideGroups(options),
@@ -88,7 +101,7 @@ export class v5Builder {
         '@color': group.groupColor ?? '0 0 0 0',
         '@uuid': Utils.getUniqueID(),
         slides: {
-          RVDisplaySlide: this.buildSlidesForGroup(options),
+          RVDisplaySlide: this.buildSlidesForGroup(group, options),
         },
       });
     }
@@ -96,9 +109,93 @@ export class v5Builder {
     return xmlSlideGroups;
   }
 
-  private buildSlidesForGroup(_options: IPro5BuilderOptions): IXmlPro5Slide[] {
+  private buildSlidesForGroup(
+    thisGroup: IPro5BuilderOptionsSlideGroup,
+    options: IPro5BuilderOptions
+  ): IXmlPro5Slide[] {
     const xmlSlides: IXmlPro5Slide[] = [];
 
+    for (let i = 0; i <= thisGroup.slides.length - 1; i++) {
+      const slide = thisGroup.slides[i];
+      xmlSlides.push({
+        '@backgroundColor': '',
+        '@enabled': 1,
+        '@highlightColor': slide.slideColor ?? '',
+        '@hotKey': '',
+        '@label': slide.label,
+        '@notes': '',
+        '@slideType': 1,
+        '@sort_index': i,
+        '@UUID': Utils.getUniqueID(),
+        '@drawingBackgroundColor': 0,
+        '@chordChartPath': '',
+        '@serialization-array-index': i,
+        cues: {},
+        displayElements: {
+          '@containerClass': 'NSMutableArray',
+          RVTextElement: [this.buildTextElement(slide, options)],
+        },
+        '_-RVProTransitionObject-_transitionObject': this.defaultTransitionObj,
+      });
+    }
+
     return xmlSlides;
+  }
+
+  private buildTextElement(
+    slide: IPro5BuilderOptionsSlide,
+    options: IPro5BuilderOptions
+  ): IXmlPro5SlideTextElement {
+    return {
+      '@displayDelay': 0,
+      '@displayName': 'Default',
+      '@locked': 0,
+      '@persistent': 0,
+      '@typeID': 0,
+      '@fromTemplate': 0,
+      '@bezelRadius': 0,
+      '@drawingFill': 0,
+      '@drawingShadow': 1,
+      '@drawingStroke': 0,
+      '@fillColor': '1 1 1 1',
+      '@rotation': 0,
+      '@source': '',
+      '@adjustsHeightToFit': 0,
+      '@verticalAlignment': 0,
+      '@RTFData': Base64.encode(Utils.formatRtf(slide.text, slide.fontName, slide.fontSize)), //slide.fontColor --parse colors
+      '@revealType': 0,
+      '@serialization-array-index': 0,
+      stroke: {
+        NSColor: {
+          '@serialization-native-value': slide.strokeColor ?? '0 0 0 1',
+          '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey',
+        },
+        NSNumber: {
+          '@serialization-native-value': slide.strokeWidth ?? 1,
+          '@serialization-dictionary-key': 'RVShapeElementStrokeWidthKey',
+        },
+      },
+      '_-D-_serializedShadow': {
+        NSMutableString: {
+          '@serialization-native-value': '{3.4641016, -2}',
+          '@serialization-dictionary-key': 'shadowOffset',
+        },
+        NSNumber: {
+          '@serialization-native-value': 4,
+          '@serialization-dictionary-key': 'shadowBlurRadius',
+        },
+        NSColor: {
+          '@serialization-native-value': '0 0 0 1',
+          '@serialization-dictionary-key': 'shadowColor',
+        },
+      },
+      '_-RVRect3D-_position': {
+        '@x': 0,
+        '@y': 0,
+        '@z': 0,
+        '@width': options.properties.width ?? 0,
+        '@height': options.properties.width ?? 0,
+      },
+    };
   }
 }

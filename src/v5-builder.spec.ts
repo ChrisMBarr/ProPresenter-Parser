@@ -3,7 +3,7 @@ import { v5Builder } from './v5-builder';
 function normalizeDatesAndIdsForTesting(xmlStr: string): string {
   return xmlStr
     .replace(/lastDateUsed=".+?"/, 'lastDateUsed="2023-01-01T01:01:01"')
-    .replace(/uuid=".+?"/g, 'uuid="00001111-2222-3333-4444-555566667777"')
+    .replace(/uuid=".+?"/gi, 'uuid="00001111-2222-3333-4444-555566667777"')
     .trim();
 }
 
@@ -26,7 +26,7 @@ describe('v5Builder', (): void => {
       slideGroups: [
         {
           label: 'Verse 1',
-          slides: [],
+          slides: [{ label: '1', text: 'Hello World' }],
         },
       ],
     });
@@ -41,7 +41,8 @@ describe('v5Builder', (): void => {
   <_-RVProTransitionObject-_transitionObject transitionType="-1" transitionDuration="1" motionEnabled="0" motionDuration="20" motionSpeed="100"></_-RVProTransitionObject-_transitionObject>
   <groups containerClass="NSMutableArray">
     <RVSlideGrouping name="Verse 1" color="0 0 0 0" uuid="16062178-4336-B335-82FC-F4463E715951">
-      <slides></slides>
+      <slides>
+      </slides>
     </RVSlideGrouping>
   </groups>
   <arrangements containerClass="NSMutableArray"></arrangements>

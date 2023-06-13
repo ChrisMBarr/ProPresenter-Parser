@@ -122,6 +122,7 @@ export interface IXmlPro5Slide {
     RVMediaCue?: IXmlPro5SlideCue[];
   };
   displayElements: {
+    '@containerClass': 'NSMutableArray';
     RVTextElement?: IXmlPro5SlideTextElement[];
   };
   '_-RVProTransitionObject-_transitionObject': IXmlPro5TransitionObj;
