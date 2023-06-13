@@ -1,4 +1,4 @@
-import { IRtfColor } from './utils';
+import { IProElementPosition, IRtfColor } from './shared.model';
 
 export interface IPro4Song {
   properties: IPro4Properties;
@@ -38,7 +38,7 @@ export interface IPro4Slide {
 }
 
 export interface IPro4SlideTextElement {
-  position: { x: number; y: number; z: number; width: number; height: number };
+  position: IProElementPosition;
   rawRtfContent: string;
   textContent: string;
   font: string;

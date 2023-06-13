@@ -70,12 +70,9 @@ export class v4Parser {
     const slidesList: IPro4Slide[] = [];
 
     for (const slide of displaySlides) {
-      slidesList.push({
-        label: slide['@label'],
-        id: slide['@UUID'],
-        backgroundColor: slide['@backgroundColor'],
-        highlightColor: slide['@highlightColor'],
-        textElements: slide.displayElements.RVTextElement.map((txt): IPro4SlideTextElement => {
+      let textElements: IPro4SlideTextElement[] = [];
+      if (slide.displayElements.RVTextElement) {
+        textElements = slide.displayElements.RVTextElement.map((txt): IPro4SlideTextElement => {
           const decodedContent = Base64.decode(txt['@RTFData']);
           const textProps = Utils.getTextPropsFromRtf(decodedContent);
           return {
@@ -92,7 +89,15 @@ export class v4Parser {
             font: textProps.font,
             size: textProps.size,
           };
-        }),
+        });
+      }
+
+      slidesList.push({
+        label: slide['@label'],
+        id: slide['@UUID'],
+        backgroundColor: slide['@backgroundColor'],
+        highlightColor: slide['@highlightColor'],
+        textElements,
       });
     }
 

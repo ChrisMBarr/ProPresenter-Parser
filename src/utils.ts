@@ -1,8 +1,4 @@
-export interface IRtfColor {
-  r: number;
-  g: number;
-  b: number;
-}
+import { IRtfColor } from './shared.model';
 
 export const stripRtf = (str: string): string => {
   const basicRtfPattern = /\{\*?\\[^{}]+;}|[{}]|\\[A-Za-z]+\n?(?:-?\d+)?[ ]?/g;

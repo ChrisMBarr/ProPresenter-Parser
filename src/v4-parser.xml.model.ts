@@ -67,7 +67,7 @@ export interface IXmlPro4DisplaySlide {
   '@serialization-array-index': number;
   cues: {};
   displayElements: {
-    RVTextElement: IXmlPro4SlideTextElement[];
+    RVTextElement?: IXmlPro4SlideTextElement[];
   };
 }
 
@@ -89,7 +89,7 @@ export interface IXmlPro4SlideTextElement {
   '@verticalAlignment': number;
   '@RTFData': string;
   '@serialization-array-index': number;
-  stroke: {};
+  stroke: IXmlPro4TextElementStroke;
   '_-D-_serializedShadow': IXmlPro4TextElementShadow;
   '_-RVRect3D-_position': IXmlPro4TextElementPosition;
 }
@@ -107,7 +107,11 @@ export interface IXmlPro4TextElementStroke {
     '@serialization-dictionary-key': 'RVShapeElementStrokeWidthKey';
     '@serialization-native-value': number;
   };
-  NSCachedRGBColor: {
+  NSCachedRGBColor?: {
+    '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey';
+    '@serialization-native-value': string;
+  };
+  NSCachedWhiteColor?: {
     '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey';
     '@serialization-native-value': string;
   };
