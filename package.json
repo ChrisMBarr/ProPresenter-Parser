@@ -15,13 +15,14 @@
   },
   "keywords": [],
   "files": [
-    "!**/*.json",
-    "!**/*.spec.*",
-    "!**/*.tsbuildinfo",
     "LICENSE",
     "README.md",
     "dist/main",
-    "dist/module"
+    "dist/module",
+    "!**/*.json",
+    "!**/*.spec.*",
+    "!**/*.xml.model.*",
+    "!**/*.tsbuildinfo"
   ],
   "prettier": {
     "singleQuote": true,
