@@ -6,6 +6,7 @@ import {
   IPro5Properties,
   IPro5Slide,
   IPro5SlideGroup,
+  IPro5SlideMediaCue,
   IPro5SlideTextElement,
   IPro5Song,
 } from './v5-parser.model';
@@ -122,6 +123,16 @@ export class v5Parser {
         });
       }
 
+      let mediaCues: IPro5SlideMediaCue[] = [];
+      if (slide.cues.RVMediaCue) {
+        mediaCues = slide.cues.RVMediaCue.map(
+          (cue): IPro5SlideMediaCue => ({
+            displayName: cue.element['@displayName'],
+            source: cue.element['@source'],
+          })
+        );
+      }
+
       return {
         backgroundColor: slide['@backgroundColor'],
         chordChartPath: slide['@chordChartPath'],
@@ -130,6 +141,7 @@ export class v5Parser {
         id: slide['@UUID'],
         label: slide['@label'],
         notes: slide['@notes'],
+        mediaCues,
         textElements,
       };
     });

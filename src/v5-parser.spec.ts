@@ -135,6 +135,13 @@ describe('v5Parser', (): void => {
             id: '56c44c88-cfb9-196f-a5fa-40d1b478bb8a',
             label: '',
             notes: '',
+            mediaCues: [
+              {
+                displayName: 'VideoSample.mov',
+                source:
+                  'file://localhost/Users/FiniteLooper/Renewed%20Vision%20Media/Video/VideoSample.mov',
+              },
+            ],
             textElements: [],
           },
         ],
@@ -152,6 +159,7 @@ describe('v5Parser', (): void => {
             id: '349b10c2-362d-06b9-ea34-2b938900f526',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -180,6 +188,7 @@ Beautiful`,
             id: 'b458c19d-19c5-9ca1-0730-34dc0d5de9fa',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -217,6 +226,7 @@ But I'm asking to taste`,
             id: 'E952B056-FF18-4CE6-8911-C1424EDEF86A',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -255,6 +265,7 @@ But Lord I need to hear from You`,
             id: '88d6773f-ce06-db85-49d6-914bef01fee3',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -292,6 +303,7 @@ To us our good`,
             id: 'C7EECDD4-DD7B-48B2-A67A-8FAA86CB5D0C',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -324,6 +336,7 @@ To us our good`,
             id: 'f33a84de-2def-d59b-f989-c777daaa3807',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -350,6 +363,7 @@ Revelation Divine`,
             id: 'd16e1cad-12f2-53b1-d259-7a0e5bf4a57c',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -387,6 +401,7 @@ To feel Your embrace`,
             id: '1B38B80D-C0EA-4680-806D-92126655A963',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -419,6 +434,7 @@ To feel Your embrace`,
             id: 'f6b2050c-8255-f69d-20d3-39b6611de714',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [],
           },
         ],
@@ -526,6 +542,7 @@ To feel Your embrace`,
             id: '3878e231-5b4f-c100-3a75-cf25d0519f72',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [],
           },
         ],
@@ -543,6 +560,7 @@ To feel Your embrace`,
             id: 'f21863f2-4032-4cd0-dcb6-306031eadd27',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -579,6 +597,7 @@ Make us humble`,
             id: 'CF606D3B-7002-413E-BE9D-057795EDF74D',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -622,6 +641,7 @@ Down our idols`,
             id: '25918239-3112-ba21-bb2f-29b4ed6501e5',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -665,6 +685,7 @@ Souls to another`,
             id: 'c245cc4d-fa57-34ed-0e9a-4d1cffae386d',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },
@@ -708,6 +729,7 @@ Oh God of Jacob`,
             id: '0b96003c-bdf7-7ba7-603e-cbf82bcdac8c',
             label: '',
             notes: '',
+            mediaCues: [],
             textElements: [
               {
                 color: { b: 255, g: 255, r: 255 },

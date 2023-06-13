@@ -108,7 +108,7 @@ export interface IXmlPro5Slide {
   '@serialization-array-index': number;
 
   cues: {
-    RVMediaCue: IXmlPro5SlideCue[];
+    RVMediaCue?: IXmlPro5SlideCue[];
   };
   displayElements: {
     RVTextElement?: IXmlPro5SlideTextElement[];

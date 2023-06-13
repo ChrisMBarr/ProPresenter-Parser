@@ -8,7 +8,7 @@ This is a work in progress! I will try to add support for different versions whe
 | Version | Read | Write |
 |:--------|:-----|:------|
 |**4**    | ✅   | 🚫   |
-|**5**    | 🚫   | 🚫   |
+|**5**    | ✅   | 🚫   |
 |**6**    | 🚫   | 🚫   |
 |**7**    | 🚫   | 🚫   |
 

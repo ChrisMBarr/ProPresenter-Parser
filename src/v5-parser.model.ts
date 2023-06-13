@@ -63,8 +63,14 @@ export interface IPro5Slide {
   id: string;
   label: string;
   notes: string;
-  // cues:{}; //purposely omitted for now
+  mediaCues: IPro5SlideMediaCue[];
   textElements: IPro5SlideTextElement[];
+}
+
+export interface IPro5SlideMediaCue {
+  displayName: string;
+  source: string;
+  //lots more could be added here, but not needed now
 }
 
 export interface IPro5SlideTextElement {
@@ -74,5 +80,5 @@ export interface IPro5SlideTextElement {
   font: string;
   size: number;
   color: IRtfColor;
-  //more could be added regarding text formatting, but that may be out of scope for now
+  //more could be added regarding text formatting, but not needed now
 }
