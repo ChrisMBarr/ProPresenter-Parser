@@ -27,18 +27,29 @@ export interface IXmlPro5Doc {
   '@width': number;
 
   arrangements: {
+    '@containerClass': 'NSMutableArray';
     RVSongArrangement: IXmlPro5Arrangement[];
   };
   groups: {
+    '@containerClass': 'NSMutableArray';
     RVSlideGrouping: IXmlPro5SlideGroup[];
   };
-  // slides: {
-  //   RVDisplaySlide: IXmlPro4DisplaySlide[];
-  // };
 
-  //timeline and bibleReferences are not implemented yet
+  //The below are not fully implemented in the parser
+  //We need theme here for building XML documents though
   timeline: IXmlV5Timeline;
   bibleReference: IXmlPro5BibleReferences;
+  '_-RVProTransitionObject-_transitionObject': IXmlPro5TransitionObj;
+}
+
+//------------------------------------------------------
+//General/Shared
+export interface IXmlPro5TransitionObj {
+  '@transitionType': number;
+  '@transitionDuration': number;
+  '@motionEnabled': number;
+  '@motionDuration': number;
+  '@motionSpeed': number;
 }
 
 //------------------------------------------------------
@@ -49,14 +60,20 @@ export interface IXmlV5Timeline {
   '@unitOfMeasure': number;
   '@duration': number;
   '@loop': number;
-  //timeCues & mediaTracks Not implemented here yet
-  timeCues: [];
-  mediaTracks: [];
+  //timeCues & mediaTracks not implemented here yet
+  timeCues: {
+    '@containerClass': 'NSMutableArray';
+  };
+  mediaTracks: {
+    '@containerClass': 'NSMutableArray';
+  };
 }
 
 //------------------------------------------------------
 //Bible References
-export interface IXmlPro5BibleReferences {}
+export interface IXmlPro5BibleReferences {
+  '@containerClass': 'NSMutableDictionary';
+}
 
 //------------------------------------------------------
 //Arrangements
@@ -107,11 +124,11 @@ export interface IXmlPro5Slide {
   displayElements: {
     RVTextElement?: IXmlPro5SlideTextElement[];
   };
-  '_-RVProTransitionObject-_transitionObject': IXmlPro5SlideTransition;
+  '_-RVProTransitionObject-_transitionObject': IXmlPro5TransitionObj;
 }
 
 export interface IXmlPro5SlideCue {
-  '_-RVProTransitionObject-_transitionObject': string | IXmlPro5SlideTransition;
+  '_-RVProTransitionObject-_transitionObject': string | IXmlPro5TransitionObj;
   '@displayName': string;
   '@delayTime': number;
   '@timeStamp': number;
@@ -172,14 +189,6 @@ export interface IXmlPro5SlideCueElement {
   '@playbackBehavior': number;
   '@timeScale': number;
   '@endPoint': number;
-}
-
-export interface IXmlPro5SlideTransition {
-  '@transitionType': number;
-  '@transitionDuration': number;
-  '@motionEnabled': number;
-  '@motionDuration': number;
-  '@motionSpeed': number;
 }
 
 export interface IXmlPro5SlideTextElement {

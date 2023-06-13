@@ -41,24 +41,38 @@ export class v5Builder {
         '@resourcesDirectory': '',
         '@usedCount': 0,
         '@versionNumber': 500,
-        groups: {
-          RVSlideGrouping: this.buildSlideGroups(options),
-        },
 
-        //Create these XML nodes as-is. Just so they exist
-        arrangements: {
-          RVSongArrangement: [],
-        },
         timeline: {
           '@timeOffSet': 0,
           '@selectedMediaTrackIndex': 0,
           '@unitOfMeasure': 60,
           '@duration': 0,
           '@loop': 0,
-          timeCues: [],
-          mediaTracks: [],
+          timeCues: {
+            '@containerClass': 'NSMutableArray',
+          },
+          mediaTracks: {
+            '@containerClass': 'NSMutableArray',
+          },
         },
-        bibleReference: {},
+        bibleReference: {
+          '@containerClass': 'NSMutableDictionary',
+        },
+        '_-RVProTransitionObject-_transitionObject': {
+          '@transitionType': -1,
+          '@transitionDuration': 1,
+          '@motionEnabled': 0,
+          '@motionDuration': 20,
+          '@motionSpeed': 100,
+        },
+        groups: {
+          '@containerClass': 'NSMutableArray',
+          RVSlideGrouping: this.buildSlideGroups(options),
+        },
+        arrangements: {
+          '@containerClass': 'NSMutableArray',
+          RVSongArrangement: [],
+        },
       },
     };
 
