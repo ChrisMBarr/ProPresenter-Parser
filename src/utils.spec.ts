@@ -33,6 +33,81 @@ Souls to another`);
     });
   });
 
+  describe('formatRtf', () => {
+    it('should use the defaults', () => {
+      expect(Utils.formatRtf(`test\ninput\nstring with some words`))
+        .toEqual(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320',
+{\\fonttbl\\f0\\fswiss\\fcharset0 Arial;}
+{\\colortbl;\\red255\\green255\\blue255;}
+\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
+
+\\f0\\fs120 \\cf1 \\\rtest\\\rinput\\\rstring with some words}`);
+    });
+
+    it('should use the options provided', () => {
+      expect(
+        Utils.formatRtf(`test\ninput\nstring with some words`, 'Helvetica', 30, {
+          r: 50,
+          g: 100,
+          b: 150,
+        })
+      ).toEqual(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320',
+{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
+{\\colortbl;\\red50\\green100\\blue150;}
+\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
+
+\\f0\\fs60 \\cf1 \\\rtest\\\rinput\\\rstring with some words}`);
+    });
+  });
+
+  describe('getTextPropsFromRtf', () => {
+    it('should get the text properties when they are all present', () => {
+      const testProps =
+        Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
+{\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
+{\\colortbl;\\red200\\green200\\blue200;}
+\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
+
+\\f0\\fs120 \\cf1 every knee will bow\\
+to bless Your name}`);
+
+      expect(testProps).toEqual({ color: { r: 200, g: 200, b: 200 }, font: 'Impact', size: 60 });
+    });
+
+    it('should get a multi-word font name', () => {
+      const testProps =
+        Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
+{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica Neue;}
+{\\colortbl;\\red0\\green0\\blue0;}
+\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
+
+\\f0\\fs96 \\cf1 every knee will bow\\
+to bless Your name}`);
+
+      expect(testProps).toEqual({
+        color: { r: 0, g: 0, b: 0 },
+        font: 'Helvetica Neue',
+        size: 48,
+      });
+    });
+
+    it('should return default properties when missing', () => {
+      const testProps =
+        Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
+          {\\fonttbl}
+          {\\colortbl;\\red255\\green255\\blue255;}
+          }`);
+
+      expect(testProps).toEqual({ color: { r: 255, g: 255, b: 255 }, font: '', size: 0 });
+    });
+  });
+
+  describe('getIsoDateString', () => {
+    it('should return a date string without milliseconds', () => {
+      expect(Utils.getIsoDateString()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/);
+    });
+  });
+
   describe('mergeArraysByProp()', () => {
     it('should only combine arrays of objects together when all values of the same key are unique', () => {
       const obj1 = [{ foo: 'fooVal' }];
