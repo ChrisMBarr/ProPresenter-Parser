@@ -63,59 +63,59 @@ describe('v5Parser', (): void => {
         slideGroups: [
           {
             groupId: '72801056-2a83-7531-0a6b-c038601f3a57',
-            groupName: '',
+            groupName: 'Background',
           },
           {
             groupId: '879b9305-3db4-7632-b826-715a1c7284cd',
-            groupName: '',
+            groupName: 'Verse 1',
           },
           {
             groupId: 'A8499FCB-AF89-40D8-9671-E85706B8EA0B',
-            groupName: '',
+            groupName: 'Bridge 1',
           },
           {
             groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: 'E5052FF3-7B57-42A7-A348-E5C52C770AED',
-            groupName: '',
+            groupName: 'Post-Chorus',
           },
           {
             groupId: '0173b2d0-7137-58b2-1903-67def417faac',
-            groupName: '',
+            groupName: 'Verse 2',
           },
           {
             groupId: 'A8499FCB-AF89-40D8-9671-E85706B8EA0B',
-            groupName: '',
+            groupName: 'Bridge 1',
           },
           {
             groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: '26520F92-9B90-4CB6-BBB6-65958B7AECDA',
-            groupName: '',
+            groupName: 'Ending',
           },
           {
             groupId: 'cba67af7-515f-5048-79f8-155a2f1ca390',
-            groupName: '',
+            groupName: '*blank*',
           },
         ],
       },
@@ -160,51 +160,51 @@ describe('v5Parser', (): void => {
         slideGroups: [
           {
             groupId: 'f47699e5-16ee-dd17-2d1b-d1e0b273bd17',
-            groupName: '',
+            groupName: 'background',
           },
           {
             groupId: '4247fa5c-7356-d364-f50c-687c3f4f0311',
-            groupName: '',
+            groupName: 'Verse 1',
           },
           {
             groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce',
-            groupName: '',
+            groupName: 'Pre-Chorus',
           },
           {
             groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce',
-            groupName: '',
+            groupName: 'Pre-Chorus',
           },
           {
             groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: '4247fa5c-7356-d364-f50c-687c3f4f0311',
-            groupName: '',
+            groupName: 'Verse 1',
           },
           {
             groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce',
-            groupName: '',
+            groupName: 'Pre-Chorus',
           },
           {
             groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce',
-            groupName: '',
+            groupName: 'Pre-Chorus',
           },
           {
             groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8',
-            groupName: '',
+            groupName: 'Chorus',
           },
           {
             groupId: 'e3972cf2-6527-314f-b423-040244fc089a',
-            groupName: '',
+            groupName: '*blank*',
           },
         ],
       },

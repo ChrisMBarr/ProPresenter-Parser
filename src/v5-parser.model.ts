@@ -1,8 +1,11 @@
 export interface IPro5Song {
   properties: IPro5Properties;
   arrangements: IPro5Arrangement[];
+  slideGroups: IPro5SlideGroup[];
 }
 
+//------------------------------------------------------
+//Properties
 export interface IPro5Properties {
   CCLIArtistCredits: string;
   CCLICopyrightInfo: string | number;
@@ -28,6 +31,8 @@ export interface IPro5Properties {
   width: number;
 }
 
+//------------------------------------------------------
+//Arrangements
 export interface IPro5Arrangement {
   name: string;
   color: string;
@@ -38,3 +43,14 @@ export interface IPro5ArrangementSlideGroup {
   groupName: string;
   groupId: string;
 }
+
+//------------------------------------------------------
+//Slide Groups and Slides
+export interface IPro5SlideGroup {
+  groupName: string;
+  groupId: string;
+  groupColor: string;
+  slides: IPro5Slide[];
+}
+
+export interface IPro5Slide {}

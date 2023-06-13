@@ -29,6 +29,9 @@ export interface IXmlPro5Doc {
   arrangements: {
     RVSongArrangement: IXmlPro5Arrangement[];
   };
+  groups: {
+    RVSlideGrouping: IXmlPro5SlideGroup[];
+  };
   // slides: {
   //   RVDisplaySlide: IXmlPro4DisplaySlide[];
   // };
@@ -77,3 +80,15 @@ export interface IXmlPro5ArrangementGroupId {
   '@serialization-native-value': string;
   '@serialization-array-index': number;
 }
+
+//------------------------------------------------------
+//Slide Groups and Slides
+
+export interface IXmlPro5SlideGroup {
+  '@name': string;
+  '@uuid': string;
+  '@color': string;
+  slides: IXmlPro5Slide[];
+}
+
+export interface IXmlPro5Slide {}

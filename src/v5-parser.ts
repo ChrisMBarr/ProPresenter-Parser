@@ -1,6 +1,11 @@
 import { XMLParser } from 'fast-xml-parser';
-import { IPro5Arrangement, IPro5Properties, IPro5Song } from './v5-parser.model';
-import { IXmlPro5Arrangement, IXmlPro5Doc, IXmlPro5DocRoot } from './v5-parser.xml.model';
+import { IPro5Arrangement, IPro5Properties, IPro5SlideGroup, IPro5Song } from './v5-parser.model';
+import {
+  IXmlPro5Arrangement,
+  IXmlPro5Doc,
+  IXmlPro5DocRoot,
+  IXmlPro5SlideGroup,
+} from './v5-parser.xml.model';
 
 export class v5Parser {
   parse(fileContent: string): IPro5Song {
@@ -12,6 +17,9 @@ export class v5Parser {
       'RVPresentationDocument.timeline.mediaTracks',
       'RVPresentationDocument.arrangements.RVSongArrangement',
       'RVPresentationDocument.arrangements.RVSongArrangement.groupIDs.NSMutableString',
+      'RVPresentationDocument.groups.RVSlideGrouping',
+      'RVPresentationDocument.groups.RVSlideGrouping.slides.RVDisplaySlide',
+      'RVPresentationDocument.groups.RVSlideGrouping.slides.RVDisplaySlide.displayElements.RVTextElement',
     ];
 
     const xmlParser = new XMLParser({
@@ -30,11 +38,15 @@ export class v5Parser {
     }
 
     const properties = this.getProperties(parsedDoc.RVPresentationDocument);
+    const slideGroups = this.getSlideGroups(
+      parsedDoc.RVPresentationDocument.groups.RVSlideGrouping
+    );
     const arrangements = this.getArrangements(
-      parsedDoc.RVPresentationDocument.arrangements.RVSongArrangement
+      parsedDoc.RVPresentationDocument.arrangements.RVSongArrangement,
+      slideGroups
     );
 
-    return { properties, arrangements };
+    return { properties, slideGroups, arrangements };
   }
 
   private getProperties(doc: IXmlPro5Doc): IPro5Properties {
@@ -64,7 +76,26 @@ export class v5Parser {
     };
   }
 
-  private getArrangements(arrangements: IXmlPro5Arrangement[]): IPro5Arrangement[] {
+  private getSlideGroups(groups: IXmlPro5SlideGroup[]): IPro5SlideGroup[] {
+    const groupsArr: IPro5SlideGroup[] = [];
+
+    for (const g of groups) {
+      // console.log(g);
+      groupsArr.push({
+        groupColor: g['@color'],
+        groupName: g['@name'],
+        groupId: g['@uuid'],
+        slides: [],
+      });
+    }
+
+    return groupsArr;
+  }
+
+  private getArrangements(
+    arrangements: IXmlPro5Arrangement[],
+    slideGroups: IPro5SlideGroup[]
+  ): IPro5Arrangement[] {
     const arrangementsArr: IPro5Arrangement[] = [];
 
     for (const a of arrangements) {
@@ -72,9 +103,14 @@ export class v5Parser {
         color: a['@color'],
         name: a['@name'],
         slideGroups: a.groupIDs.NSMutableString.map((group) => {
+          //Look up the actual slide group by ID so we can get its name
+          const slideGroupMatch = slideGroups.find(
+            (sg) => sg.groupId === group['@serialization-native-value']
+          );
+
           return {
             groupId: group['@serialization-native-value'],
-            groupName: '',
+            groupName: slideGroupMatch?.groupName ?? '',
           };
         }),
       });
