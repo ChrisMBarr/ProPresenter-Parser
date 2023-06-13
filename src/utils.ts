@@ -76,6 +76,17 @@ export const getIsoDateString = (): string => {
   return new Date().toISOString().replace(/\.\d{3}Z$/, '');
 };
 
+export const getUniqueID = (): string => {
+  //Native PP ID Example: 26AAF905-8F45-4252-BFAB-4C10CCFE1476
+  function s4(): string {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1)
+      .toUpperCase();
+  }
+  return `${s4() + s4()}-${s4()}-${s4()}-${s4()}-${s4() + s4() + s4()}`;
+};
+
 //https://stackoverflow.com/a/41919138/79677
 export const mergeArraysByProp = <T>(a: T[], b: T[], propName: string): T[] => {
   // We need to ignore the TS compile error since there's no good way to write a typedef for this!

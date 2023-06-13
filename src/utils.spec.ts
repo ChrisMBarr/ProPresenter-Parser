@@ -102,9 +102,33 @@ to bless Your name}`);
     });
   });
 
+  describe('normalizeLineEndings()', () => {
+    it('should replace all line ending combinations with \\n', () => {
+      //Single instances
+      expect(Utils.normalizeLineEndings('\n\r')).toEqual('\n');
+      expect(Utils.normalizeLineEndings('\r\n')).toEqual('\n');
+
+      //Multiple instances
+      expect(Utils.normalizeLineEndings('\n\r\n\r')).toEqual('\n\n');
+      expect(Utils.normalizeLineEndings('\r\n\r\n')).toEqual('\n\n');
+
+      //No changes expected here
+      expect(Utils.normalizeLineEndings('\n')).toEqual('\n');
+      expect(Utils.normalizeLineEndings('\n\n')).toEqual('\n\n');
+    });
+  });
+
   describe('getIsoDateString', () => {
     it('should return a date string without milliseconds', () => {
       expect(Utils.getIsoDateString()).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/);
+    });
+  });
+
+  describe('getUniqueID()', () => {
+    it('should generate a unique ID that matches a specific pattern', () => {
+      expect(Utils.getUniqueID()).toMatch(
+        /[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}/
+      );
     });
   });
 
@@ -137,22 +161,6 @@ to bless Your name}`);
         { foo: 'fooVal3', other: 'newValue2' },
         { foo: 'fooVal2', other: 'MyOverwrittenValue' },
       ]);
-    });
-  });
-
-  describe('normalizeLineEndings()', () => {
-    it('should replace all line ending combinations with \\n', () => {
-      //Single instances
-      expect(Utils.normalizeLineEndings('\n\r')).toEqual('\n');
-      expect(Utils.normalizeLineEndings('\r\n')).toEqual('\n');
-
-      //Multiple instances
-      expect(Utils.normalizeLineEndings('\n\r\n\r')).toEqual('\n\n');
-      expect(Utils.normalizeLineEndings('\r\n\r\n')).toEqual('\n\n');
-
-      //No changes expected here
-      expect(Utils.normalizeLineEndings('\n')).toEqual('\n');
-      expect(Utils.normalizeLineEndings('\n\n')).toEqual('\n\n');
     });
   });
 });
