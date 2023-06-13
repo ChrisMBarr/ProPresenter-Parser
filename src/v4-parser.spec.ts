@@ -13,6 +13,20 @@ describe('v4Parser', (): void => {
     expect(parser).toBeDefined();
   });
 
+  it('should throw an error for a ProPresenter file of a different version number', () => {
+    try {
+      const testFile = readFileSync('./sample-files/v5 - Be Near.pro5').toString();
+      parser.parse(testFile);
+
+      //Test should fail if no error is thrown
+      expect(true).toBe(false);
+    } catch (err: unknown) {
+      expect(err).toEqual(
+        Error(`Expected a ProPresenter 4 file with versionNumber="400" but got versionNumber="500"`)
+      );
+    }
+  });
+
   it('should get the data from "Be Near.pro4"', () => {
     const testFile = readFileSync('./sample-files/v4 - Be Near.pro4').toString();
     const parsedSong = parser.parse(testFile);

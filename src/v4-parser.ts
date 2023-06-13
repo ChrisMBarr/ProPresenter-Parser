@@ -23,6 +23,12 @@ export class v4Parser {
     });
     const parsedDoc: IXmlPro4DocRoot = xmlParser.parse(fileContent);
 
+    if (parsedDoc.RVPresentationDocument['@versionNumber'] !== 400) {
+      throw new Error(
+        `Expected a ProPresenter 4 file with versionNumber="400" but got versionNumber="${parsedDoc.RVPresentationDocument['@versionNumber']}"`
+      );
+    }
+
     const properties = this.getProperties(parsedDoc.RVPresentationDocument);
     const slides = this.getSlides(parsedDoc.RVPresentationDocument.slides.RVDisplaySlide);
 
