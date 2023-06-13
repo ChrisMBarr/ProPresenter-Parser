@@ -4,7 +4,7 @@ export interface IXmlPro5DocRoot {
 
 export interface IXmlPro5Doc {
   '@CCLIArtistCredits': string;
-  '@CCLICopyrightInfo': number;
+  '@CCLICopyrightInfo': string | number;
   '@CCLIDisplay': number;
   '@CCLILicenseNumber': string | number;
   '@CCLIPublisher': string;
@@ -56,13 +56,7 @@ export interface IXmlV5Timeline {
 
 //------------------------------------------------------
 //Bible References
-export interface IXmlPro5BibleReferences {
-  '@transitionType': number;
-  '@transitionDuration': number;
-  '@motionEnabled': number;
-  '@motionDuration': number;
-  '@motionSpeed': number;
-}
+export interface IXmlPro5BibleReferences {}
 
 //------------------------------------------------------
 //Arrangements

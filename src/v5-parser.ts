@@ -16,7 +16,7 @@ import {
   IXmlPro5DocRoot,
   IXmlPro5Slide,
   IXmlPro5SlideGroup,
-} from './v5-parser.xml.model';
+} from './v5-xml.model';
 
 export class v5Parser {
   parse(fileContent: string): IPro5Song {
