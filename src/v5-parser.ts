@@ -1,6 +1,6 @@
 import { XMLParser } from 'fast-xml-parser';
-import { IPro5Properties, IPro5Song } from './v5-parser.model';
-import { IXmlPro5Doc, IXmlPro5DocRoot } from './v5-parser.xml.model';
+import { IPro5Arrangement, IPro5Properties, IPro5Song } from './v5-parser.model';
+import { IXmlPro5Arrangement, IXmlPro5Doc, IXmlPro5DocRoot } from './v5-parser.xml.model';
 
 export class v5Parser {
   parse(fileContent: string): IPro5Song {
@@ -8,8 +8,10 @@ export class v5Parser {
     //Here we maintain a list of node paths to always keep as arrays
     //This keeps our code structure and typedefs more sane and normalized
     const alwaysArray = [
-      'RVPresentationDocument.slides.RVDisplaySlide',
-      'RVPresentationDocument.slides.RVDisplaySlide.displayElements.RVTextElement',
+      'RVPresentationDocument.timeline.timeCues',
+      'RVPresentationDocument.timeline.mediaTracks',
+      'RVPresentationDocument.arrangements.RVSongArrangement',
+      'RVPresentationDocument.arrangements.RVSongArrangement.groupIDs.NSMutableString',
     ];
 
     const xmlParser = new XMLParser({
@@ -28,15 +30,18 @@ export class v5Parser {
     }
 
     const properties = this.getProperties(parsedDoc.RVPresentationDocument);
+    const arrangements = this.getArrangements(
+      parsedDoc.RVPresentationDocument.arrangements.RVSongArrangement
+    );
 
-    return { properties };
+    return { properties, arrangements };
   }
 
   private getProperties(doc: IXmlPro5Doc): IPro5Properties {
     return {
       CCLIArtistCredits: doc['@CCLIArtistCredits'],
       CCLICopyrightInfo: doc['@CCLICopyrightInfo'],
-      CCLIDisplay: doc['@CCLIDisplay'],
+      CCLIDisplay: Boolean(doc['@CCLIDisplay']),
       CCLILicenseNumber: doc['@CCLILicenseNumber'],
       CCLIPublisher: doc['@CCLIPublisher'],
       CCLISongTitle: doc['@CCLISongTitle'],
@@ -46,6 +51,7 @@ export class v5Parser {
       backgroundColor: doc['@backgroundColor'],
       category: doc['@category'],
       creatorCode: doc['@creatorCode'],
+      chordChartPath: doc['@chordChartPath'],
       docType: doc['@docType'],
       drawingBackgroundColor: doc['@drawingBackgroundColor'],
       height: doc['@height'],
@@ -56,5 +62,24 @@ export class v5Parser {
       versionNumber: doc['@versionNumber'],
       width: doc['@width'],
     };
+  }
+
+  private getArrangements(arrangements: IXmlPro5Arrangement[]): IPro5Arrangement[] {
+    const arrangementsArr: IPro5Arrangement[] = [];
+
+    for (const a of arrangements) {
+      arrangementsArr.push({
+        color: a['@color'],
+        name: a['@name'],
+        slideGroups: a.groupIDs.NSMutableString.map((group) => {
+          return {
+            groupId: group['@serialization-native-value'],
+            groupName: '',
+          };
+        }),
+      });
+    }
+
+    return arrangementsArr;
   }
 }

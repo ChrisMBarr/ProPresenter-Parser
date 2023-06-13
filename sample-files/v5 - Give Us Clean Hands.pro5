@@ -1,7 +1,7 @@
 <RVPresentationDocument height="1050" width="1680" versionNumber="500" docType="0"
   creatorCode="1349676880" lastDateUsed="2014-09-27T20:44:26" usedCount="0" category="Song"
   resourcesDirectory="" backgroundColor="0 0 0 1" drawingBackgroundColor="0" notes=""
-  artist="Charlie Hall" author="Charlie Hall" album="" CCLIDisplay="0" CCLIArtistCredits=""
+  artist="Charlie Hall" author="Charlie Hall" album="" CCLIDisplay="1" CCLIArtistCredits=""
   CCLISongTitle="Give Us Clean Hands" CCLIPublisher="" CCLICopyrightInfo="2000"
   CCLILicenseNumber="2060208" chordChartPath="">
   <timeline timeOffSet="0" selectedMediaTrackIndex="0" unitOfMeasure="60" duration="0" loop="0">
