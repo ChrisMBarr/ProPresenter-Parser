@@ -1,9 +1,19 @@
 import { XMLParser } from 'fast-xml-parser';
-import { IPro5Arrangement, IPro5Properties, IPro5SlideGroup, IPro5Song } from './v5-parser.model';
+import { Base64 } from 'js-base64';
+import * as Utils from './utils';
+import {
+  IPro5Arrangement,
+  IPro5Properties,
+  IPro5Slide,
+  IPro5SlideGroup,
+  IPro5SlideTextElement,
+  IPro5Song,
+} from './v5-parser.model';
 import {
   IXmlPro5Arrangement,
   IXmlPro5Doc,
   IXmlPro5DocRoot,
+  IXmlPro5Slide,
   IXmlPro5SlideGroup,
 } from './v5-parser.xml.model';
 
@@ -19,6 +29,7 @@ export class v5Parser {
       'RVPresentationDocument.arrangements.RVSongArrangement.groupIDs.NSMutableString',
       'RVPresentationDocument.groups.RVSlideGrouping',
       'RVPresentationDocument.groups.RVSlideGrouping.slides.RVDisplaySlide',
+      'RVPresentationDocument.groups.RVSlideGrouping.slides.RVDisplaySlide.cues.RVMediaCue',
       'RVPresentationDocument.groups.RVSlideGrouping.slides.RVDisplaySlide.displayElements.RVTextElement',
     ];
 
@@ -49,60 +60,92 @@ export class v5Parser {
     return { properties, slideGroups, arrangements };
   }
 
-  private getProperties(doc: IXmlPro5Doc): IPro5Properties {
+  private getProperties(xmlDoc: IXmlPro5Doc): IPro5Properties {
     return {
-      CCLIArtistCredits: doc['@CCLIArtistCredits'],
-      CCLICopyrightInfo: doc['@CCLICopyrightInfo'],
-      CCLIDisplay: Boolean(doc['@CCLIDisplay']),
-      CCLILicenseNumber: doc['@CCLILicenseNumber'],
-      CCLIPublisher: doc['@CCLIPublisher'],
-      CCLISongTitle: doc['@CCLISongTitle'],
-      album: doc['@album'],
-      artist: doc['@artist'],
-      author: doc['@author'],
-      backgroundColor: doc['@backgroundColor'],
-      category: doc['@category'],
-      creatorCode: doc['@creatorCode'],
-      chordChartPath: doc['@chordChartPath'],
-      docType: doc['@docType'],
-      drawingBackgroundColor: doc['@drawingBackgroundColor'],
-      height: doc['@height'],
-      lastDateUsed: new Date(doc['@lastDateUsed']),
-      notes: doc['@notes'],
-      resourcesDirectory: doc['@resourcesDirectory'],
-      usedCount: doc['@usedCount'],
-      versionNumber: doc['@versionNumber'],
-      width: doc['@width'],
+      CCLIArtistCredits: xmlDoc['@CCLIArtistCredits'],
+      CCLICopyrightInfo: xmlDoc['@CCLICopyrightInfo'],
+      CCLIDisplay: Boolean(xmlDoc['@CCLIDisplay']),
+      CCLILicenseNumber: xmlDoc['@CCLILicenseNumber'],
+      CCLIPublisher: xmlDoc['@CCLIPublisher'],
+      CCLISongTitle: xmlDoc['@CCLISongTitle'],
+      album: xmlDoc['@album'],
+      artist: xmlDoc['@artist'],
+      author: xmlDoc['@author'],
+      backgroundColor: xmlDoc['@backgroundColor'],
+      category: xmlDoc['@category'],
+      creatorCode: xmlDoc['@creatorCode'],
+      chordChartPath: xmlDoc['@chordChartPath'],
+      docType: xmlDoc['@docType'],
+      drawingBackgroundColor: xmlDoc['@drawingBackgroundColor'],
+      height: xmlDoc['@height'],
+      lastDateUsed: new Date(xmlDoc['@lastDateUsed']),
+      notes: xmlDoc['@notes'],
+      resourcesDirectory: xmlDoc['@resourcesDirectory'],
+      usedCount: xmlDoc['@usedCount'],
+      versionNumber: xmlDoc['@versionNumber'],
+      width: xmlDoc['@width'],
     };
   }
 
-  private getSlideGroups(groups: IXmlPro5SlideGroup[]): IPro5SlideGroup[] {
-    const groupsArr: IPro5SlideGroup[] = [];
+  private getSlideGroups(xmlGroups: IXmlPro5SlideGroup[]): IPro5SlideGroup[] {
+    return xmlGroups.map(
+      (sg): IPro5SlideGroup => ({
+        groupColor: sg['@color'],
+        groupLabel: sg['@name'],
+        groupId: sg['@uuid'],
+        slides: this.getSlidesForGroup(sg.slides.RVDisplaySlide),
+      })
+    );
+  }
 
-    for (const g of groups) {
-      // console.log(g);
-      groupsArr.push({
-        groupColor: g['@color'],
-        groupName: g['@name'],
-        groupId: g['@uuid'],
-        slides: [],
-      });
-    }
+  private getSlidesForGroup(xmlSlides: IXmlPro5Slide[]): IPro5Slide[] {
+    return xmlSlides.map((slide): IPro5Slide => {
+      let textElements: IPro5SlideTextElement[] = [];
+      if (slide.displayElements.RVTextElement) {
+        textElements = slide.displayElements.RVTextElement.map((txt): IPro5SlideTextElement => {
+          const decodedContent = Base64.decode(txt['@RTFData']);
+          const textProps = Utils.getTextPropsFromRtf(decodedContent);
+          return {
+            position: {
+              x: txt['_-RVRect3D-_position']['@x'],
+              y: txt['_-RVRect3D-_position']['@y'],
+              z: txt['_-RVRect3D-_position']['@z'],
+              height: txt['_-RVRect3D-_position']['@height'],
+              width: txt['_-RVRect3D-_position']['@width'],
+            },
+            rawRtfContent: decodedContent,
+            textContent: Utils.stripRtf(decodedContent),
+            color: textProps.color,
+            font: textProps.font,
+            size: textProps.size,
+          };
+        });
+      }
 
-    return groupsArr;
+      return {
+        backgroundColor: slide['@backgroundColor'],
+        chordChartPath: slide['@chordChartPath'],
+        enabled: Boolean(slide['@enabled']),
+        highlightColor: slide['@highlightColor'],
+        id: slide['@UUID'],
+        label: slide['@label'],
+        notes: slide['@notes'],
+        textElements,
+      };
+    });
   }
 
   private getArrangements(
-    arrangements: IXmlPro5Arrangement[],
+    xmlArrangements: IXmlPro5Arrangement[],
     slideGroups: IPro5SlideGroup[]
   ): IPro5Arrangement[] {
     const arrangementsArr: IPro5Arrangement[] = [];
 
-    for (const a of arrangements) {
+    for (const a of xmlArrangements) {
       arrangementsArr.push({
         color: a['@color'],
-        name: a['@name'],
-        slideGroups: a.groupIDs.NSMutableString.map((group) => {
+        label: a['@name'],
+        groupOrder: a.groupIDs.NSMutableString.map((group) => {
           //Look up the actual slide group by ID so we can get its name
           const slideGroupMatch = slideGroups.find(
             (sg) => sg.groupId === group['@serialization-native-value']
@@ -110,7 +153,7 @@ export class v5Parser {
 
           return {
             groupId: group['@serialization-native-value'],
-            groupName: slideGroupMatch?.groupName ?? '',
+            groupLabel: slideGroupMatch?.groupLabel ?? '',
           };
         }),
       });
