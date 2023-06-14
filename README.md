@@ -18,24 +18,8 @@ This is a work in progress! I will try to add support for different versions whe
 npm install propresenter-parser --save
 ```
 
-### Usage: For TypeScript projects
-```typescript
-import { readFile } from 'fs';
-import { ProPresenter4Parser, IPro4Song } from 'propresenter-parser';
+## Documentation
+* [ProPresenter 4 Parser](docs/v4-parser.md)
+* [ProPresenter 5 Parser](docs/v5-parser.md)
+* [ProPresenter 5 Builder](docs/v5-builder.md)
 
-readFile('example.pro4', (contents): void => {
-  const song: IPro4Song = ProPresenter4Parser(contents.toString());
-  console.log(song);
-});
-```
-
-### Usage: For JavaScript projects
-```javascript
-const { readFile } = require('fs');
-const { ProPresenter4Parser } = require('propresenter-parser');
-
-readFile('example.pro4', (contents) => {
-  const song = ProPresenter4Parser(contents.toString());
-  console.log(song);
-});
-```
