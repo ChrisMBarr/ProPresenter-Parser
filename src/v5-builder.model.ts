@@ -1,6 +1,7 @@
 import {
   IProBuilderTextFormatting,
   IProBuilderTextFormattingDefinite,
+  IProTransitionType,
   IRgbColor,
 } from './shared.model';
 
@@ -8,6 +9,10 @@ export interface IPro5BuilderOptions {
   properties: IPro5BuilderOptionsProperties;
   slideGroups: IPro5BuilderOptionsSlideGroup[];
   slideTextFormatting?: IProBuilderTextFormatting;
+  transitions?: {
+    duration: number;
+    type: IProTransitionType;
+  };
 }
 
 export interface IPro5BuilderOptionsProperties {

@@ -105,7 +105,7 @@ export class v5Builder {
         bibleReference: {
           '@containerClass': 'NSMutableDictionary',
         },
-        '_-RVProTransitionObject-_transitionObject': this.defaultTransitionObj,
+        '_-RVProTransitionObject-_transitionObject': this.getTransitions(),
         groups: {
           '@containerClass': 'NSMutableArray',
           RVSlideGrouping: this.buildSlideGroups(),
@@ -118,6 +118,16 @@ export class v5Builder {
     };
 
     return this.xmlBuilder.build(documentObj).trim();
+  }
+
+  private getTransitions(): IXmlPro5TransitionObj {
+    if (this.options.transitions) {
+      const transitionsCopy = { ...this.defaultTransitionObj };
+      transitionsCopy['@transitionDuration'] = this.options.transitions.duration;
+      transitionsCopy['@transitionType'] = this.options.transitions.type;
+      return transitionsCopy;
+    }
+    return this.defaultTransitionObj;
   }
 
   private buildSlideGroups(): IXmlPro5SlideGroup[] {
