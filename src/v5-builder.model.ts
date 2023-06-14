@@ -34,8 +34,8 @@ export interface IPro5BuilderOptionsProperties {
 
 export interface IPro5BuilderOptionsSlideGroup {
   label: string;
-  groupColor?: string;
-  slides: string[] | IPro5BuilderOptionsSlide[];
+  groupColor?: string | IRgbColor;
+  slides: (string | IPro5BuilderOptionsSlide)[];
 }
 
 export interface IPro5BuilderOptionsSlide {

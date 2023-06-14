@@ -1,9 +1,12 @@
 # ProPresenter 5 Builder
+Note: This may be imperfect. At the time I am writing this ProPresenter 5 is unable to be installed on my WIndows 11 computer, so I am unable to test the output files. However, ProPresenter 6 can import the generated files just fine so I assume it should work for ProPresenter 5 as well.
+
+
+# Usage
 Import `ProPresenter5Builder` into your project and pass options to it. A string of generated XML will be returned which you can then save as a file.
 
 
-
-## Usage: For TypeScript projects
+## For TypeScript projects
 ```typescript
 import { ProPresenter5Builder, IPro5BuilderOptionsProperties } from 'propresenter-parser';
 
@@ -15,7 +18,7 @@ console.log(songXml);
 
 
 
-## Usage: For JavaScript projects
+## For JavaScript projects
 ```javascript
 const { ProPresenter5Builder } = require('propresenter-parser');
 
@@ -27,7 +30,7 @@ console.log(songXml);
 
 
 
-## Options
+# Options
 The options passed to the `ProPresenter5Builder` object are grouped into categories. See below for more details on each one.
 
 | Name                                                     | Required | Description                                                                     |
@@ -39,7 +42,7 @@ The options passed to the `ProPresenter5Builder` object are grouped into categor
 
 
 
-### Minimal Options
+## Minimal Options
 When building a ProPresenter 5 document a few options must be passed. The bare minimum required is a title and some groups of slides
 
 ```javascript
@@ -68,7 +71,7 @@ const opts = {
 
 
 
-### The `properties` object
+## The `properties` object
 This is a **required** object to pass in the options. You may pass any property to override the default value.
 
 | Name            | Required | Type      | Default Value | Description                                               |
@@ -90,7 +93,7 @@ For all options related to artist, author, CCLI, and copyright, please refer to 
 
 
 
-### The `slideGroups` array
+## The `slideGroups` array
 This is a **required** array to pass in the options. Each slide group is something like "Verse 1", "Chorus", or "Bridge" and it can contain one or multiple slides that comprise the group.  Each item in the array can have the following options:
 
 | Name         | Required | Type                                      | Description                                                                       |
@@ -101,7 +104,7 @@ This is a **required** array to pass in the options. Each slide group is somethi
 
 
 
-#### The `slideGroups` => `slides` => `IPro5BuilderOptionsSlide` objects
+### The `slideGroups` => `slides` => `IPro5BuilderOptionsSlide` objects
 If all you need for each slide in a group is the text, just pass strings instead of these objects.  However if you need more options you can pass these objects instead. Each object can have the following properties:
 
 | Name         | Required | Type                                        | Description                                                                    |
@@ -112,7 +115,7 @@ If all you need for each slide in a group is the text, just pass strings instead
 
 
 
-### The `slideTextFormatting` object
+## The `slideTextFormatting` object
 This is an **optional** object to pass in the options. You may pass any property to override the default value.
 
 | Name               | Required | Type                           | Default Value           | Description                                             |
@@ -126,7 +129,7 @@ This is an **optional** object to pass in the options. You may pass any property
 
 
 
-### The `transitions` object
+## The `transitions` object
 This is an **optional** object to pass in the options. 
 If you choose to omit this the song will just use the default transitions from whatever you have set in ProPresenter.
 Providing this object will set a custom transition for this song, overriding whatever you have set in ProPresenter.
@@ -137,7 +140,7 @@ Providing this object will set a custom transition for this song, overriding wha
 | `type`     | **Yes**  | `IProTransitionType` enum | The type of transition. For JS projects see [the enum itself](/src/shared.model.ts) for possible number values to use. TS projects benefit from intellisense here. |
 
 
-## Larger Example
+# Larger Example
 Below is a larger example object for a song with lots of options provided:
 ```typescript
 import {
@@ -162,7 +165,7 @@ const options: IPro5BuilderOptionsProperties = {
     width: 1920,
   },
   slideTextFormatting: {
-    fontName: "Helvetica",
+    fontName: "Impact",
     textColor: "#FAFAFA",
     textSize: 75,
     textPadding: 40

@@ -137,7 +137,7 @@ export class v5Builder {
       xmlSlideGroups.push({
         '@name': group.label,
         '@uuid': Utils.getUniqueID(),
-        '@color': group.groupColor ?? '0 0 0 0',
+        '@color': Utils.normalizeColorToRgbaString(group.groupColor ?? '0 0 0 0'),
         '@serialization-array-index': i,
         slides: {
           '@containerClass': 'NSMutableArray',

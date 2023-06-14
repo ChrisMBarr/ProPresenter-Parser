@@ -36,13 +36,9 @@ Souls to another`);
 
     describe('formatRtf', () => {
       it('should use the defaults', () => {
-        expect(Utils.formatRtf(`test\ninput\nstring with some words`))
-          .toEqual(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320',
-{\\fonttbl\\f0\\fswiss\\fcharset0 Arial;}
-{\\colortbl;\\red255\\green255\\blue255;}
-\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
-
-\\f0\\fs120 \\cf1 \\\rtest\\\rinput\\\rstring with some words}`);
+        expect(Utils.formatRtf(`test\ninput\nstring with some words`)).toEqual(
+          `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320',{\\fonttbl\\f0\\fswiss\\fcharset0 Arial;}{\\colortbl;\\red255\\green255\\blue255;}\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural\\f0\\fs120 \\cf1 test\\\rinput\\\rstring with some words}`
+        );
       });
 
       it('should use the options provided', () => {
@@ -52,12 +48,9 @@ Souls to another`);
             g: 100,
             b: 150,
           })
-        ).toEqual(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320',
-{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
-{\\colortbl;\\red50\\green100\\blue150;}
-\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
-
-\\f0\\fs60 \\cf1 \\\rtest\\\rinput\\\rstring with some words}`);
+        ).toEqual(
+          `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320',{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}{\\colortbl;\\red50\\green100\\blue150;}\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural\\f0\\fs60 \\cf1 test\\\rinput\\\rstring with some words}`
+        );
       });
     });
 
@@ -68,7 +61,6 @@ Souls to another`);
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
 {\\colortbl;\\red200\\green200\\blue200;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
-
 \\f0\\fs120 \\cf1 every knee will bow\\
 to bless Your name}`);
 
@@ -81,7 +73,6 @@ to bless Your name}`);
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica Neue;}
 {\\colortbl;\\red0\\green0\\blue0;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
-
 \\f0\\fs96 \\cf1 every knee will bow\\
 to bless Your name}`);
 
