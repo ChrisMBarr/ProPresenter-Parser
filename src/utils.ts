@@ -1,7 +1,7 @@
 import { IRgbColor } from './shared.model';
 
 const patternHexColor = /^#?[a-f\d]{6}$/i;
-const patternRgbaStr = /^\d{1,3} \d{1,3} \d{1,3} \d$/;
+const patternRgbaStr = /^[10](\.\d+)? [10](\.\d+)? [10](\.\d+)? [10](\.\d+)?$/;
 
 export const stripRtf = (str: string): string => {
   const basicRtfPattern = /\{\*?\\[^{}]+;}|[{}]|\\[A-Za-z]+\n?(?:-?\d+)?[ ]?/g;
@@ -98,7 +98,7 @@ export const normalizeColorToRgbaString = (color: string | IRgbColor): string =>
   //RGB object, RGBA string, or HEX color all get returned as an RGBA string
 
   if (typeof color !== 'string') {
-    return `${color.r} ${color.g} ${color.b} 1`;
+    return `${color.r / 255} ${color.g / 255} ${color.b / 255} 1`;
   }
 
   if (patternRgbaStr.test(color)) {
@@ -122,9 +122,9 @@ export const normalizeColorToRgbObj = (color: string | IRgbColor): IRgbColor => 
   if (patternRgbaStr.test(color)) {
     const parts = color.split(' ');
     return {
-      r: parseInt(parts[0], 10),
-      g: parseInt(parts[1], 10),
-      b: parseInt(parts[2], 10),
+      r: parseInt(parts[0], 10) * 255,
+      g: parseInt(parts[1], 10) * 255,
+      b: parseInt(parts[2], 10) * 255,
     };
   }
 
