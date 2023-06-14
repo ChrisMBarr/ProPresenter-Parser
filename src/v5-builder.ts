@@ -42,10 +42,10 @@ export class v5Builder {
     const defaultProperties = {
       album: '',
       artist: '',
-      artistCredits: '',
       author: '',
       category: 'Song',
       ccliDisplay: false,
+      notes: '',
       publisher: '',
       height: 720,
       width: 1280,
@@ -65,7 +65,7 @@ export class v5Builder {
   build(): string {
     const documentObj: IXmlPro5DocRoot = {
       RVPresentationDocument: {
-        '@CCLIArtistCredits': this.options.properties.artistCredits,
+        '@CCLIArtistCredits': this.options.properties.artist,
         '@CCLICopyrightInfo': this.options.properties.copyrightYear ?? '',
         '@CCLIDisplay': this.options.properties.ccliDisplay ? 1 : 0,
         '@CCLILicenseNumber': this.options.properties.ccliNumber ?? '',
@@ -83,7 +83,7 @@ export class v5Builder {
         '@height': this.options.properties.height,
         '@width': this.options.properties.width,
         '@lastDateUsed': Utils.getIsoDateString(),
-        '@notes': '',
+        '@notes': this.options.properties.notes,
         '@resourcesDirectory': '',
         '@usedCount': 0,
         '@versionNumber': 500,

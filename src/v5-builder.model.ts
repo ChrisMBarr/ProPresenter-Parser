@@ -21,12 +21,12 @@ export interface IPro5BuilderOptionsProperties {
   //Optional
   album?: string;
   artist?: string;
-  artistCredits?: string;
   author?: string;
   category?: string;
   ccliDisplay?: boolean;
   ccliNumber?: number;
   copyrightYear?: number;
+  notes?: string;
   publisher?: string;
   height?: number;
   width?: number;
@@ -52,10 +52,10 @@ export interface IPro5BuilderOptionsDefinite extends IPro5BuilderOptions {
 export interface IPro5BuilderOptionsPropertiesDefinite extends IPro5BuilderOptionsProperties {
   album: string;
   artist: string;
-  artistCredits: string;
   author: string;
   category: string;
   ccliDisplay: boolean;
+  notes: string;
   publisher: string;
   height: number;
   width: number;
