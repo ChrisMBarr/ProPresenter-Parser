@@ -11,8 +11,6 @@ import {
 import {
   IXmlPro5DocRoot,
   IXmlPro5Slide,
-  IXmlPro5SlideElementShadow,
-  IXmlPro5SlideElementStroke,
   IXmlPro5SlideGroup,
   IXmlPro5SlideTextElement,
   IXmlPro5TransitionObj,
@@ -56,14 +54,8 @@ export class v5Builder {
     this.options.properties = { ...defaultProperties, ...this.options.properties };
 
     const defaultSlideTextFormatting: IProBuilderTextFormattingDefinite = {
-      textColor: '1 1 1 1',
+      textColor: { r: 255, g: 255, b: 255 },
       textPadding: 20,
-      strokeColor: '0 0 0 1',
-      strokeWidth: 1,
-      shadowBlurRadius: 4,
-      shadowColor: '0 0 0 1',
-      shadowOffsetX: 3.4641016,
-      shadowOffsetY: -2,
     };
     this.options.slideTextFormatting = {
       ...defaultSlideTextFormatting,
@@ -208,43 +200,31 @@ export class v5Builder {
       '@RTFData': Base64.encode(rtfText),
       '@revealType': 0,
       '@serialization-array-index': 0,
-      stroke: this.getElementStroke(),
-      '_-D-_serializedShadow': this.getElementShadow(),
+      stroke: {
+        NSColor: {
+          '@serialization-native-value': '0 0 0 1',
+          '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey',
+        },
+        NSNumber: {
+          '@serialization-native-value': 1,
+          '@serialization-dictionary-key': 'RVShapeElementStrokeWidthKey',
+        },
+      },
+      '_-D-_serializedShadow': {
+        NSMutableString: {
+          '@serialization-native-value': `{3.4641016, -2}`,
+          '@serialization-dictionary-key': 'shadowOffset',
+        },
+        NSNumber: {
+          '@serialization-native-value': 4,
+          '@serialization-dictionary-key': 'shadowBlurRadius',
+        },
+        NSColor: {
+          '@serialization-native-value': '0 0 0 1',
+          '@serialization-dictionary-key': 'shadowColor',
+        },
+      },
       '_-RVRect3D-_position': this.getElementPosition(),
-    };
-  }
-
-  private getElementStroke(): IXmlPro5SlideElementStroke {
-    return {
-      NSColor: {
-        '@serialization-native-value': Utils.normalizeColorToRgbaString(
-          this.options.slideTextFormatting.strokeColor
-        ),
-        '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey',
-      },
-      NSNumber: {
-        '@serialization-native-value': this.options.slideTextFormatting.strokeWidth,
-        '@serialization-dictionary-key': 'RVShapeElementStrokeWidthKey',
-      },
-    };
-  }
-
-  private getElementShadow(): IXmlPro5SlideElementShadow {
-    return {
-      NSMutableString: {
-        '@serialization-native-value': `{${this.options.slideTextFormatting.shadowOffsetX}, ${this.options.slideTextFormatting.shadowOffsetY}}`,
-        '@serialization-dictionary-key': 'shadowOffset',
-      },
-      NSNumber: {
-        '@serialization-native-value': this.options.slideTextFormatting.shadowBlurRadius,
-        '@serialization-dictionary-key': 'shadowBlurRadius',
-      },
-      NSColor: {
-        '@serialization-native-value': Utils.normalizeColorToRgbaString(
-          this.options.slideTextFormatting.shadowColor
-        ),
-        '@serialization-dictionary-key': 'shadowColor',
-      },
     };
   }
 
