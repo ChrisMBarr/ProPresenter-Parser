@@ -1,4 +1,7 @@
-import { IRtfColor } from './shared.model';
+import { IRgbColor } from './shared.model';
+
+const patternHexColor = /^#?[a-f\d]{6}$/i;
+const patternRgbaStr = /^\d{1,3} \d{1,3} \d{1,3} \d$/;
 
 export const stripRtf = (str: string): string => {
   const basicRtfPattern = /\{\*?\\[^{}]+;}|[{}]|\\[A-Za-z]+\n?(?:-?\d+)?[ ]?/g;
@@ -17,7 +20,7 @@ export const formatRtf = (
   text: string,
   font = 'Arial',
   size = 60,
-  color: IRtfColor = { r: 255, g: 255, b: 255 }
+  color: IRgbColor = { r: 255, g: 255, b: 255 }
 ): string => {
   //Text will be centered.
   //RTF font size is in half-points. Multiply input size by 2 to get size in half points
@@ -31,9 +34,9 @@ export const formatRtf = (
 
 export const getTextPropsFromRtf = (
   str: string
-): { color: IRtfColor; font: string; size: number } => {
+): { color: IRgbColor; font: string; size: number } => {
   //defaults
-  const color: IRtfColor = { r: 0, g: 0, b: 0 };
+  const color: IRgbColor = { r: 0, g: 0, b: 0 };
   let font = '';
   let size = 0;
 
@@ -62,11 +65,6 @@ export const getTextPropsFromRtf = (
   };
 };
 
-export const normalizeLineEndings = (inputStr: string): string => {
-  //replace all adjacent \n\r or \r\n characters with just \n to simplify
-  return inputStr.replace(/(\r\n)|(\n\r)/g, '\n');
-};
-
 export const getIsoDateString = (): string => {
   //Remove the ending milliseconds: '2023-05-17T16:02:23.245Z' --> '2023-05-17T16:02:23'
   return new Date().toISOString().replace(/\.\d{3}Z$/, '');
@@ -83,11 +81,56 @@ export const getUniqueID = (): string => {
   return `${s4() + s4()}-${s4()}-${s4()}-${s4()}-${s4() + s4() + s4()}`;
 };
 
-//https://stackoverflow.com/a/41919138/79677
-export const mergeArraysByProp = <T>(a: T[], b: T[], propName: string): T[] => {
-  // We need to ignore the TS compile error since there's no good way to write a typedef for this!
-  // @ts-expect-error
-  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-  const reduced = a.filter((aItem) => !b.find((bItem) => aItem[propName] === bItem[propName]));
-  return reduced.concat(b);
+export const hexToRgb = (hex: string): IRgbColor => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  if (result) {
+    return {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    };
+  }
+
+  throw new Error(`Input color '${hex}' could not be parsed! Are you sure this is a hex color?`);
+};
+
+export const normalizeColorToRgbaString = (color: string | IRgbColor): string => {
+  //RGB object, RGBA string, or HEX color all get returned as an RGBA string
+
+  if (typeof color !== 'string') {
+    return `${color.r} ${color.g} ${color.b} 1`;
+  }
+
+  if (patternRgbaStr.test(color)) {
+    return color;
+  }
+
+  if (patternHexColor.test(color)) {
+    return normalizeColorToRgbaString(hexToRgb(color));
+  }
+
+  throw new Error(`Input color '${color}' could not be parsed!`);
+};
+
+export const normalizeColorToRgbObj = (color: string | IRgbColor): IRgbColor => {
+  //RGB object, RGBA string, or HEX color all get returned as an RGB Object
+
+  if (typeof color !== 'string') {
+    return color;
+  }
+
+  if (patternRgbaStr.test(color)) {
+    const parts = color.split(' ');
+    return {
+      r: parseInt(parts[0], 10),
+      g: parseInt(parts[1], 10),
+      b: parseInt(parts[2], 10),
+    };
+  }
+
+  if (patternHexColor.test(color)) {
+    return hexToRgb(color);
+  }
+
+  throw new Error(`Input color '${color}' could not be parsed!`);
 };

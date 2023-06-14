@@ -1,3 +1,4 @@
+import { IXmlProElementPosition } from './shared.model';
 export interface IXmlPro5DocRoot {
   RVPresentationDocument: IXmlPro5Doc;
 }
@@ -144,7 +145,7 @@ export interface IXmlPro5SlideCue {
 }
 
 export interface IXmlPro5SlideCueElement {
-  '_-RVRect3D-_position': IXmlPro5SlideElementPosition;
+  '_-RVRect3D-_position': IXmlProElementPosition;
   '_-D-_serializedShadow': IXmlPro5SlideElementShadow;
   '@displayDelay': number;
   '@displayName': string;
@@ -213,15 +214,7 @@ export interface IXmlPro5SlideTextElement {
   '@serialization-array-index': number;
   stroke: IXmlPro5SlideElementStroke;
   '_-D-_serializedShadow': IXmlPro5SlideElementShadow;
-  '_-RVRect3D-_position': IXmlPro5SlideElementPosition;
-}
-
-export interface IXmlPro5SlideElementPosition {
-  '@x': number;
-  '@y': number;
-  '@z': number;
-  '@width': number;
-  '@height': number;
+  '_-RVRect3D-_position': IXmlProElementPosition;
 }
 
 export interface IXmlPro5SlideElementStroke {

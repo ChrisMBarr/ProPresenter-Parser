@@ -1,4 +1,4 @@
-import { IProElementPosition, IRtfColor } from './shared.model';
+import { IProElementPosition, IRgbColor } from './shared.model';
 
 export interface IPro4Song {
   properties: IPro4Properties;
@@ -43,5 +43,5 @@ export interface IPro4SlideTextElement {
   textContent: string;
   font: string;
   size: number;
-  color: IRtfColor;
+  color: IRgbColor;
 }
