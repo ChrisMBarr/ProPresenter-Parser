@@ -5,7 +5,6 @@ import * as Utils from './utils';
 import {
   IPro5BuilderOptions,
   IPro5BuilderOptionsDefinite,
-  IPro5BuilderOptionsSlide,
   IPro5BuilderOptionsSlideGroup,
 } from './v5-builder.model';
 import {
@@ -155,13 +154,26 @@ export class v5Builder {
 
     for (let i = 0; i < thisGroup.slides.length; i++) {
       const slide = thisGroup.slides[i];
-      const highlightColor = Utils.normalizeColorToRgbaString(slide.slideColor ?? '0 0 0 0');
+
+      //Defaults
+      let highlightColor = '0 0 0 0'; //transparent/none
+      let label = '';
+      let text;
+
+      if (typeof slide === 'string') {
+        text = slide;
+      } else {
+        highlightColor = Utils.normalizeColorToRgbaString(slide.slideColor ?? highlightColor);
+        label = slide.label ?? '';
+        text = slide.text;
+      }
+
       xmlSlides.push({
-        '@backgroundColor': '0 0 0 0',
+        '@backgroundColor': '0 0 0 0', //transparent/none
         '@enabled': 1,
         '@highlightColor': highlightColor,
         '@hotKey': '',
-        '@label': slide.label,
+        '@label': label,
         '@notes': '',
         '@slideType': 1,
         '@sort_index': i,
@@ -174,7 +186,7 @@ export class v5Builder {
         },
         displayElements: {
           '@containerClass': 'NSMutableArray',
-          RVTextElement: [this.buildTextElement(slide)],
+          RVTextElement: [this.buildTextElement(text)],
         },
         '_-RVProTransitionObject-_transitionObject': this.defaultTransitionObj,
       });
@@ -183,9 +195,9 @@ export class v5Builder {
     return xmlSlides;
   }
 
-  private buildTextElement(slide: IPro5BuilderOptionsSlide): IXmlPro5SlideTextElement {
+  private buildTextElement(text: string): IXmlPro5SlideTextElement {
     const rtfText = Utils.formatRtf(
-      slide.text,
+      text,
       this.options.slideTextFormatting.fontName,
       this.options.slideTextFormatting.textSize,
       Utils.normalizeColorToRgbObj(this.options.slideTextFormatting.textColor)
