@@ -1,4 +1,5 @@
 import { IXmlProElementPosition } from './shared.model';
+
 export interface IXmlPro5DocRoot {
   RVPresentationDocument: IXmlPro5Doc;
 }
@@ -100,7 +101,9 @@ export interface IXmlPro5SlideGroup {
   '@name': string;
   '@uuid': string;
   '@color': string;
+  '@serialization-array-index': number;
   slides: {
+    '@containerClass': 'NSMutableArray';
     RVDisplaySlide: IXmlPro5Slide[];
   };
 }
@@ -120,6 +123,7 @@ export interface IXmlPro5Slide {
   '@serialization-array-index': number;
 
   cues: {
+    '@containerClass': 'NSMutableArray';
     RVMediaCue?: IXmlPro5SlideCue[];
   };
   displayElements: {

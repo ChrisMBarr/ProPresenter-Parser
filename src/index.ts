@@ -19,6 +19,6 @@ export const ProPresenter5Parser = (fileContent: string): IPro5Song => {
 
 export * from './v5-builder.model';
 export const ProPresenter5Builder = (options: IPro5BuilderOptions): string => {
-  const builder = new v5Builder();
-  return builder.build(options);
+  const builder = new v5Builder(options);
+  return builder.build();
 };

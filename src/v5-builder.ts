@@ -1,14 +1,18 @@
 import { XMLBuilder } from 'fast-xml-parser';
-import * as Utils from './utils';
 import { Base64 } from 'js-base64';
+import { IProBuilderTextFormattingDefinite, IXmlProElementPosition } from './shared.model';
+import * as Utils from './utils';
 import {
   IPro5BuilderOptions,
+  IPro5BuilderOptionsDefinite,
   IPro5BuilderOptionsSlide,
   IPro5BuilderOptionsSlideGroup,
 } from './v5-builder.model';
 import {
   IXmlPro5DocRoot,
   IXmlPro5Slide,
+  IXmlPro5SlideElementShadow,
+  IXmlPro5SlideElementStroke,
   IXmlPro5SlideGroup,
   IXmlPro5SlideTextElement,
   IXmlPro5TransitionObj,
@@ -16,6 +20,7 @@ import {
 
 export class v5Builder {
   private readonly xmlBuilder: XMLBuilder;
+  private readonly options: IPro5BuilderOptionsDefinite;
 
   private readonly defaultTransitionObj: IXmlPro5TransitionObj = {
     '@transitionType': -1,
@@ -25,36 +30,67 @@ export class v5Builder {
     '@motionSpeed': 100,
   };
 
-  constructor() {
+  constructor(options: IPro5BuilderOptions) {
     this.xmlBuilder = new XMLBuilder({
       attributeNamePrefix: '@',
       format: true,
       ignoreAttributes: false,
       processEntities: false,
     });
+
+    //Set the options, and force the type
+    this.options = options as IPro5BuilderOptionsDefinite;
+
+    //Now use all the default options, but overwrite those with any passed in by the user
+    const defaultProperties = {
+      album: '',
+      artist: '',
+      artistCredits: '',
+      author: '',
+      category: 'Song',
+      ccliDisplay: false,
+      publisher: '',
+      height: 720,
+      width: 1280,
+    };
+    this.options.properties = { ...defaultProperties, ...this.options.properties };
+
+    const defaultSlideTextFormatting: IProBuilderTextFormattingDefinite = {
+      textColor: '1 1 1 1',
+      textPadding: 20,
+      strokeColor: '0 0 0 1',
+      strokeWidth: 1,
+      shadowBlurRadius: 4,
+      shadowColor: '0 0 0 1',
+      shadowOffsetX: 3.4641016,
+      shadowOffsetY: -2,
+    };
+    this.options.slideTextFormatting = {
+      ...defaultSlideTextFormatting,
+      ...this.options.slideTextFormatting,
+    };
   }
 
-  build(options: IPro5BuilderOptions): string {
+  build(): string {
     const documentObj: IXmlPro5DocRoot = {
       RVPresentationDocument: {
-        '@CCLIArtistCredits': options.properties.artistCredits ?? '',
-        '@CCLICopyrightInfo': options.properties.copyrightYear ?? '',
-        '@CCLIDisplay':
-          options.properties.ccliDisplay == null || !options.properties.ccliDisplay ? 0 : 1,
-        '@CCLILicenseNumber': options.properties.ccliNumber ?? '',
-        '@CCLIPublisher': options.properties.publisher ?? '',
-        '@CCLISongTitle': options.properties.title,
-        '@album': options.properties.album ?? '',
-        '@artist': options.properties.artist ?? '',
-        '@author': options.properties.author ?? '',
+        '@CCLIArtistCredits': this.options.properties.artistCredits,
+        '@CCLICopyrightInfo': this.options.properties.copyrightYear ?? '',
+        '@CCLIDisplay': this.options.properties.ccliDisplay ? 1 : 0,
+        '@CCLILicenseNumber': this.options.properties.ccliNumber ?? '',
+        '@CCLIPublisher': this.options.properties.publisher,
+        '@CCLISongTitle': this.options.properties.title,
+        '@album': this.options.properties.album,
+        '@artist': this.options.properties.artist,
+        '@author': this.options.properties.author,
         '@backgroundColor': '0 0 0 1',
-        '@category': options.properties.category ?? 'Song',
+        '@category': this.options.properties.category,
         '@creatorCode': 0, //not sure what this is
         '@chordChartPath': '',
         '@docType': 0,
         '@drawingBackgroundColor': 0,
-        '@height': options.properties.height == null ? 720 : options.properties.height,
-        '@width': options.properties.width == null ? 1280 : options.properties.width,
+        '@height': this.options.properties.height,
+        '@width': this.options.properties.width,
         '@lastDateUsed': Utils.getIsoDateString(),
         '@notes': '',
         '@resourcesDirectory': '',
@@ -80,7 +116,7 @@ export class v5Builder {
         '_-RVProTransitionObject-_transitionObject': this.defaultTransitionObj,
         groups: {
           '@containerClass': 'NSMutableArray',
-          RVSlideGrouping: this.buildSlideGroups(options),
+          RVSlideGrouping: this.buildSlideGroups(),
         },
         arrangements: {
           '@containerClass': 'NSMutableArray',
@@ -92,16 +128,19 @@ export class v5Builder {
     return this.xmlBuilder.build(documentObj).trim();
   }
 
-  private buildSlideGroups(options: IPro5BuilderOptions): IXmlPro5SlideGroup[] {
+  private buildSlideGroups(): IXmlPro5SlideGroup[] {
     const xmlSlideGroups: IXmlPro5SlideGroup[] = [];
 
-    for (const group of options.slideGroups) {
+    for (let i = 0; i < this.options.slideGroups.length; i++) {
+      const group = this.options.slideGroups[i];
       xmlSlideGroups.push({
         '@name': group.label,
-        '@color': group.groupColor ?? '0 0 0 0',
         '@uuid': Utils.getUniqueID(),
+        '@color': group.groupColor ?? '0 0 0 0',
+        '@serialization-array-index': i,
         slides: {
-          RVDisplaySlide: this.buildSlidesForGroup(group, options),
+          '@containerClass': 'NSMutableArray',
+          RVDisplaySlide: this.buildSlidesForGroup(group),
         },
       });
     }
@@ -109,18 +148,16 @@ export class v5Builder {
     return xmlSlideGroups;
   }
 
-  private buildSlidesForGroup(
-    thisGroup: IPro5BuilderOptionsSlideGroup,
-    options: IPro5BuilderOptions
-  ): IXmlPro5Slide[] {
+  private buildSlidesForGroup(thisGroup: IPro5BuilderOptionsSlideGroup): IXmlPro5Slide[] {
     const xmlSlides: IXmlPro5Slide[] = [];
 
-    for (let i = 0; i <= thisGroup.slides.length - 1; i++) {
+    for (let i = 0; i < thisGroup.slides.length; i++) {
       const slide = thisGroup.slides[i];
+      const highlightColor = Utils.normalizeColorToRgbaString(slide.slideColor ?? '0 0 0 0');
       xmlSlides.push({
-        '@backgroundColor': '',
+        '@backgroundColor': '0 0 0 0',
         '@enabled': 1,
-        '@highlightColor': slide.slideColor ?? '',
+        '@highlightColor': highlightColor,
         '@hotKey': '',
         '@label': slide.label,
         '@notes': '',
@@ -130,10 +167,12 @@ export class v5Builder {
         '@drawingBackgroundColor': 0,
         '@chordChartPath': '',
         '@serialization-array-index': i,
-        cues: {},
+        cues: {
+          '@containerClass': 'NSMutableArray',
+        },
         displayElements: {
           '@containerClass': 'NSMutableArray',
-          RVTextElement: [this.buildTextElement(slide, options)],
+          RVTextElement: [this.buildTextElement(slide)],
         },
         '_-RVProTransitionObject-_transitionObject': this.defaultTransitionObj,
       });
@@ -142,10 +181,14 @@ export class v5Builder {
     return xmlSlides;
   }
 
-  private buildTextElement(
-    slide: IPro5BuilderOptionsSlide,
-    options: IPro5BuilderOptions
-  ): IXmlPro5SlideTextElement {
+  private buildTextElement(slide: IPro5BuilderOptionsSlide): IXmlPro5SlideTextElement {
+    const rtfText = Utils.formatRtf(
+      slide.text,
+      this.options.slideTextFormatting.fontName,
+      this.options.slideTextFormatting.textSize,
+      Utils.normalizeColorToRgbObj(this.options.slideTextFormatting.textColor)
+    );
+
     return {
       '@displayDelay': 0,
       '@displayName': 'Default',
@@ -162,40 +205,56 @@ export class v5Builder {
       '@source': '',
       '@adjustsHeightToFit': 0,
       '@verticalAlignment': 0,
-      '@RTFData': Base64.encode(Utils.formatRtf(slide.text, slide.fontName, slide.fontSize)), //slide.fontColor --parse colors
+      '@RTFData': Base64.encode(rtfText),
       '@revealType': 0,
       '@serialization-array-index': 0,
-      stroke: {
-        NSColor: {
-          '@serialization-native-value': slide.strokeColor ?? '0 0 0 1',
-          '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey',
-        },
-        NSNumber: {
-          '@serialization-native-value': slide.strokeWidth ?? 1,
-          '@serialization-dictionary-key': 'RVShapeElementStrokeWidthKey',
-        },
+      stroke: this.getElementStroke(),
+      '_-D-_serializedShadow': this.getElementShadow(),
+      '_-RVRect3D-_position': this.getElementPosition(),
+    };
+  }
+
+  private getElementStroke(): IXmlPro5SlideElementStroke {
+    return {
+      NSColor: {
+        '@serialization-native-value': Utils.normalizeColorToRgbaString(
+          this.options.slideTextFormatting.strokeColor
+        ),
+        '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey',
       },
-      '_-D-_serializedShadow': {
-        NSMutableString: {
-          '@serialization-native-value': '{3.4641016, -2}',
-          '@serialization-dictionary-key': 'shadowOffset',
-        },
-        NSNumber: {
-          '@serialization-native-value': 4,
-          '@serialization-dictionary-key': 'shadowBlurRadius',
-        },
-        NSColor: {
-          '@serialization-native-value': '0 0 0 1',
-          '@serialization-dictionary-key': 'shadowColor',
-        },
+      NSNumber: {
+        '@serialization-native-value': this.options.slideTextFormatting.strokeWidth,
+        '@serialization-dictionary-key': 'RVShapeElementStrokeWidthKey',
       },
-      '_-RVRect3D-_position': {
-        '@x': 0,
-        '@y': 0,
-        '@z': 0,
-        '@width': options.properties.width ?? 0,
-        '@height': options.properties.width ?? 0,
+    };
+  }
+
+  private getElementShadow(): IXmlPro5SlideElementShadow {
+    return {
+      NSMutableString: {
+        '@serialization-native-value': `{${this.options.slideTextFormatting.shadowOffsetX}, ${this.options.slideTextFormatting.shadowOffsetY}}`,
+        '@serialization-dictionary-key': 'shadowOffset',
       },
+      NSNumber: {
+        '@serialization-native-value': this.options.slideTextFormatting.shadowBlurRadius,
+        '@serialization-dictionary-key': 'shadowBlurRadius',
+      },
+      NSColor: {
+        '@serialization-native-value': Utils.normalizeColorToRgbaString(
+          this.options.slideTextFormatting.shadowColor
+        ),
+        '@serialization-dictionary-key': 'shadowColor',
+      },
+    };
+  }
+
+  private getElementPosition(): IXmlProElementPosition {
+    return {
+      '@x': this.options.slideTextFormatting.textPadding,
+      '@y': this.options.slideTextFormatting.textPadding,
+      '@z': 0,
+      '@width': this.options.properties.width - this.options.slideTextFormatting.textPadding * 2,
+      '@height': this.options.properties.height - this.options.slideTextFormatting.textPadding * 2,
     };
   }
 }
