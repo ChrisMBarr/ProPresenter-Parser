@@ -158,14 +158,17 @@ export class v5Parser {
         color: a['@color'],
         label: a['@name'],
         groupOrder: a.groupIDs.NSMutableString.map((group) => {
-          //Look up the actual slide group by ID so we can get its name
+          //This should always find a match since you can't put something in an arrangement that doesn't already exist
+          //So because of that it's OK to have a non-null assertion here
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           const slideGroupMatch = slideGroups.find(
+            //Look up the actual slide group by ID so we can get its name
             (sg) => sg.groupId === group['@serialization-native-value']
-          );
+          )!;
 
           return {
             groupId: group['@serialization-native-value'],
-            groupLabel: slideGroupMatch?.groupLabel ?? '',
+            groupLabel: slideGroupMatch.groupLabel,
           };
         }),
       });
