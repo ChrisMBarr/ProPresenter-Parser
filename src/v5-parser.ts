@@ -10,13 +10,7 @@ import {
   IPro5SlideTextElement,
   IPro5Song,
 } from './v5-parser.model';
-import {
-  IXmlPro5Arrangement,
-  IXmlPro5Doc,
-  IXmlPro5DocRoot,
-  IXmlPro5Slide,
-  IXmlPro5SlideGroup,
-} from './v5-xml.model';
+import { IXmlPro5Arrangement, IXmlPro5Doc, IXmlPro5DocRoot, IXmlPro5Slide, IXmlPro5SlideGroup } from './v5-xml.model';
 
 export class v5Parser {
   parse(fileContent: string): IPro5Song {
@@ -50,13 +44,8 @@ export class v5Parser {
     }
 
     const properties = this.getProperties(parsedDoc.RVPresentationDocument);
-    const slideGroups = this.getSlideGroups(
-      parsedDoc.RVPresentationDocument.groups.RVSlideGrouping
-    );
-    const arrangements = this.getArrangements(
-      parsedDoc.RVPresentationDocument.arrangements.RVSongArrangement,
-      slideGroups
-    );
+    const slideGroups = this.getSlideGroups(parsedDoc.RVPresentationDocument.groups.RVSlideGrouping);
+    const arrangements = this.getArrangements(parsedDoc.RVPresentationDocument.arrangements.RVSongArrangement, slideGroups);
 
     return { properties, slideGroups, arrangements };
   }
@@ -147,10 +136,7 @@ export class v5Parser {
     });
   }
 
-  private getArrangements(
-    xmlArrangements: IXmlPro5Arrangement[],
-    slideGroups: IPro5SlideGroup[]
-  ): IPro5Arrangement[] {
+  private getArrangements(xmlArrangements: IXmlPro5Arrangement[], slideGroups: IPro5SlideGroup[]): IPro5Arrangement[] {
     const arrangementsArr: IPro5Arrangement[] = [];
 
     for (const a of xmlArrangements) {

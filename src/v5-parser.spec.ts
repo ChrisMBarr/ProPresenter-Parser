@@ -21,9 +21,7 @@ describe('v5Parser', (): void => {
       //Test should fail if no error is thrown
       expect(true).toBe(false);
     } catch (err: unknown) {
-      expect(err).toEqual(
-        Error(`Expected a ProPresenter 5 file with versionNumber="500" but got versionNumber="400"`)
-      );
+      expect(err).toEqual(Error(`Expected a ProPresenter 5 file with versionNumber="500" but got versionNumber="400"`));
     }
   });
 
@@ -138,8 +136,7 @@ describe('v5Parser', (): void => {
             mediaCues: [
               {
                 displayName: 'VideoSample.mov',
-                source:
-                  'file://localhost/Users/FiniteLooper/Renewed%20Vision%20Media/Video/VideoSample.mov',
+                source: 'file://localhost/Users/FiniteLooper/Renewed%20Vision%20Media/Video/VideoSample.mov',
               },
             ],
             textElements: [],

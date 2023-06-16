@@ -21,9 +21,7 @@ describe('v6Parser', (): void => {
       //Test should fail if no error is thrown
       expect(true).toBe(false);
     } catch (err: unknown) {
-      expect(err).toEqual(
-        Error(`Expected a ProPresenter 6 file with versionNumber="600" but got versionNumber="400"`)
-      );
+      expect(err).toEqual(Error(`Expected a ProPresenter 6 file with versionNumber="600" but got versionNumber="400"`));
     }
   });
 

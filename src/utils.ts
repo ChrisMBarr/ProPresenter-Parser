@@ -9,19 +9,10 @@ export const stripRtf = (str: string): string => {
   const ctrlCharPattern = /\n\\f[0-9]\s/g;
 
   //Remove RTF Formatting, replace RTF new lines with real line breaks, and remove whitespace
-  return str
-    .replace(ctrlCharPattern, '')
-    .replace(basicRtfPattern, '')
-    .replace(newLineSlashesPattern, '\n')
-    .trim();
+  return str.replace(ctrlCharPattern, '').replace(basicRtfPattern, '').replace(newLineSlashesPattern, '\n').trim();
 };
 
-export const formatRtf = (
-  text: string,
-  font = 'Arial',
-  size = 60,
-  color: IRgbColor = { r: 255, g: 255, b: 255 }
-): string => {
+export const formatRtf = (text: string, font = 'Arial', size = 60, color: IRgbColor = { r: 255, g: 255, b: 255 }): string => {
   //Text will be centered.
   //RTF font size is in half-points. Multiply input size by 2 to get size in half points
   return `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320',{\\fonttbl\\f0\\fswiss\\fcharset0 ${font};}{\\colortbl;\\red${
@@ -33,9 +24,7 @@ export const formatRtf = (
   } \\cf1 ${text.replace(/\r|\n/g, '\\\r')}}`;
 };
 
-export const getTextPropsFromRtf = (
-  str: string
-): { color: IRgbColor; font: string; size: number } => {
+export const getTextPropsFromRtf = (str: string): { color: IRgbColor; font: string; size: number } => {
   //defaults
   const color: IRgbColor = { r: 0, g: 0, b: 0 };
   let font = '';

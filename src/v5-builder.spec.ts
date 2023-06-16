@@ -8,7 +8,7 @@ function normalizeDatesAndIdsForTesting(xmlStr: string): string {
     .trim();
 }
 
-fdescribe('v5Builder', (): void => {
+describe('v5Builder', (): void => {
   it('should create an song with minimal options, using a string array for slide text', () => {
     const builder = new v5Builder({
       properties: {
@@ -72,8 +72,7 @@ fdescribe('v5Builder', (): void => {
         ccliNumber: 12345678,
         copyrightYear: 2006,
         notes: 'Pastor Bill loves this one',
-        publisher:
-          'worshiptogether.com Songs/sixsteps Music, Vamos Publishing, admin. Capitol CMG Publishing',
+        publisher: 'worshiptogether.com Songs/sixsteps Music, Vamos Publishing, admin. Capitol CMG Publishing',
         height: 1080,
         width: 1920,
       },

@@ -56,8 +56,7 @@ Souls to another`);
 
     describe('getTextPropsFromRtf()', () => {
       it('should get the text properties when they are all present', () => {
-        const testProps =
-          Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
+        const testProps = Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
 {\\colortbl;\\red200\\green200\\blue200;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
@@ -68,8 +67,7 @@ to bless Your name}`);
       });
 
       it('should get a multi-word font name', () => {
-        const testProps =
-          Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
+        const testProps = Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica Neue;}
 {\\colortbl;\\red0\\green0\\blue0;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
@@ -84,8 +82,7 @@ to bless Your name}`);
       });
 
       it('should return default properties when missing', () => {
-        const testProps =
-          Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
+        const testProps = Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
           {\\fonttbl}
           {\\colortbl;\\red255\\green255\\blue255;}
           }`);
@@ -103,9 +100,7 @@ to bless Your name}`);
 
   describe('getUniqueID()', () => {
     it('should generate a unique ID that matches a specific pattern', () => {
-      expect(Utils.getUniqueID()).toMatch(
-        /[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}/
-      );
+      expect(Utils.getUniqueID()).toMatch(/[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}/);
     });
   });
 
@@ -132,9 +127,7 @@ to bless Your name}`);
           //cause the test to fail is no error is thrown
           expect(true).toBe(false);
         } catch (err: unknown) {
-          expect(err).toEqual(
-            Error(`Input color '000' could not be parsed! Are you sure this is a hex color?`)
-          );
+          expect(err).toEqual(Error(`Input color '000' could not be parsed! Are you sure this is a hex color?`));
         }
       });
     });
@@ -154,9 +147,7 @@ to bless Your name}`);
         expect(Utils.normalizeColorToRgbaString('#FFFFFF')).toEqual('1 1 1 1');
         expect(Utils.normalizeColorToRgbaString('#FF0000')).toEqual('1 0 0 1');
         expect(Utils.normalizeColorToRgbaString('#00FF00')).toEqual('0 1 0 1');
-        expect(Utils.normalizeColorToRgbaString('#808080')).toEqual(
-          '0.5019607843137255 0.5019607843137255 0.5019607843137255 1'
-        );
+        expect(Utils.normalizeColorToRgbaString('#808080')).toEqual('0.5019607843137255 0.5019607843137255 0.5019607843137255 1');
       });
       it('should parse RGB objects to RGBA float string', () => {
         expect(Utils.normalizeColorToRgbaString({ r: 0, g: 0, b: 0 })).toEqual('0 0 0 1');

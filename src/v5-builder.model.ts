@@ -1,9 +1,4 @@
-import {
-  IProBuilderTextFormatting,
-  IProBuilderTextFormattingDefinite,
-  IProTransitionType,
-  IRgbColor,
-} from './shared.model';
+import { IProBuilderTextFormatting, IProBuilderTextFormattingDefinite, IProTransitionType, IRgbColor } from './shared.model';
 
 export interface IPro5BuilderOptions {
   properties: IPro5BuilderOptionsProperties;

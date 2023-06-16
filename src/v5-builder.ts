@@ -2,11 +2,7 @@ import { XMLBuilder } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
 import { IProBuilderTextFormattingDefinite, IXmlProElementPosition } from './shared.model';
 import * as Utils from './utils';
-import {
-  IPro5BuilderOptions,
-  IPro5BuilderOptionsDefinite,
-  IPro5BuilderOptionsSlideGroup,
-} from './v5-builder.model';
+import { IPro5BuilderOptions, IPro5BuilderOptionsDefinite, IPro5BuilderOptionsSlideGroup } from './v5-builder.model';
 import {
   IXmlPro5DocRoot,
   IXmlPro5Slide,
