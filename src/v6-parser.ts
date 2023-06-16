@@ -1,7 +1,24 @@
 import { XMLParser } from 'fast-xml-parser';
-import { IPro6Properties, IPro6Song } from './v6-parser.model';
-import { IXmlPro6Doc, IXmlPro6DocRoot } from './v6-xml.model';
+import { Base64 } from 'js-base64';
+import { IProElementPosition } from './shared.model';
 import * as Utils from './utils';
+import {
+  IPro6ElementShadow,
+  IPro6Properties,
+  IPro6Slide,
+  IPro6SlideGroup,
+  IPro6SlideTextElement,
+  IPro6Song,
+} from './v6-parser.model';
+import {
+  IXmlPro6DisplaySlide,
+  IXmlPro6DisplaySlideDisplayElement,
+  IXmlPro6Doc,
+  IXmlPro6DocArrayElementGroups,
+  IXmlPro6DocRoot,
+  IXmlPro6SlideGroup,
+  IXmlPro6TextElement,
+} from './v6-xml.model';
 
 export class v6Parser {
   parse(fileContent: string): IPro6Song {
@@ -12,6 +29,8 @@ export class v6Parser {
       'RVPresentationDocument.array.RVSlideGrouping',
       'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide',
       'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide.array.RVTextElement',
+      'RVPresentationDocument.array.RVSongArrangement',
+      'RVPresentationDocument.array.RVSongArrangement.array.NSString',
     ];
 
     const xmlParser = new XMLParser({
@@ -33,7 +52,16 @@ export class v6Parser {
 
     const properties = this.getProperties(parsedDoc.RVPresentationDocument);
 
-    return { properties };
+    //Find the correct slide groups XML
+    const groupsXml = parsedDoc.RVPresentationDocument.array.find(
+      (el): el is IXmlPro6DocArrayElementGroups => el['@rvXMLIvarName'] === 'groups'
+    );
+    let slideGroups: IPro6SlideGroup[] = [];
+    if (groupsXml) {
+      slideGroups = this.getSlideGroups(groupsXml.RVSlideGrouping);
+    }
+
+    return { properties, slideGroups };
   }
 
   private getProperties(xmlDoc: IXmlPro6Doc): IPro6Properties {
@@ -61,5 +89,157 @@ export class v6Parser {
       versionNumber: xmlDoc['@versionNumber'],
       width: xmlDoc['@width'],
     };
+  }
+
+  private getSlideGroups(groupsXmlArr: IXmlPro6SlideGroup[]): IPro6SlideGroup[] {
+    const groupsArr: IPro6SlideGroup[] = [];
+
+    for (const group of groupsXmlArr) {
+      groupsArr.push({
+        groupColor: Utils.normalizeColorToRgbObj(group['@color']),
+        id: group['@uuid'],
+        name: group['@name'],
+        slides: this.getSlidesForGroup(group.array.RVDisplaySlide),
+      });
+    }
+    return groupsArr;
+  }
+
+  private getSlidesForGroup(slidesXmlArr: IXmlPro6DisplaySlide[]): IPro6Slide[] {
+    const slidesArr: IPro6Slide[] = [];
+
+    for (const slide of slidesXmlArr) {
+      let textElements: IPro6SlideTextElement[] = [];
+      const xmlDisplayElements = slide.array.find(
+        (s): s is IXmlPro6DisplaySlideDisplayElement => s['@rvXMLIvarName'] === 'displayElements'
+      );
+      if (xmlDisplayElements?.RVTextElement) {
+        textElements = this.getTextElementsForSlide(xmlDisplayElements.RVTextElement);
+      }
+
+      const highlightColor = slide['@highlightColor'] === '' ? null : Utils.normalizeColorToRgbObj(slide['@highlightColor']);
+
+      slidesArr.push({
+        backgroundColor: slide['@backgroundColor'],
+        chordChartPath: slide['@chordChartPath'],
+        drawingBackgroundColor: slide['@drawingBackgroundColor'],
+        enabled: slide['@enabled'],
+        highlightColor,
+        hotKey: slide['@hotKey'],
+        id: slide['@UUID'],
+        label: slide['@label'],
+        notes: slide['@notes'],
+        textElements,
+      });
+    }
+
+    // console.log(JSON.stringify(slidesXmlArr, null, 2));
+    // console.log(slidesArr);
+
+    return slidesArr;
+  }
+
+  private getTextElementsForSlide(textElementXmlArr: IXmlPro6TextElement[]): IPro6SlideTextElement[] {
+    //Most slides will only have one text element, but it's easy enough to allow this to handle multiples
+    const textElementArr: IPro6SlideTextElement[] = [];
+
+    for (const txt of textElementXmlArr) {
+      let plainText = '';
+      let rtfData = '';
+      let winFlowData = '';
+      let winFontData = '';
+      txt.NSString.forEach((str) => {
+        if (str['@rvXMLIvarName'] === 'PlainText') {
+          plainText = Base64.decode(str['#text']);
+        } else if (str['@rvXMLIvarName'] === 'RTFData') {
+          rtfData = Base64.decode(str['#text']);
+        } else if (str['@rvXMLIvarName'] === 'WinFlowData') {
+          winFlowData = Base64.decode(str['#text']);
+
+          //There could be other types, so we ignore this rule here
+          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        } else if (str['@rvXMLIvarName'] === 'WinFontData') {
+          winFontData = Base64.decode(str['#text']);
+        }
+      });
+
+      textElementArr.push({
+        adjustsHeightToFit: txt['@adjustsHeightToFit'],
+        bezelRadius: txt['@bezelRadius'],
+        displayDelay: txt['@displayDelay'],
+        displayName: txt['@displayName'],
+        drawingFill: txt['@drawingFill'],
+        drawingStroke: txt['@drawingStroke'],
+        fillColor: Utils.normalizeColorToRgbObj(txt['@fillColor']),
+        fromTemplate: txt['@fromTemplate'],
+        id: txt['@UUID'],
+        locked: txt['@locked'],
+        opacity: txt['@opacity'],
+        persistent: txt['@persistent'],
+        revealType: txt['@revealType'],
+        rotation: txt['@rotation'],
+        source: txt['@source'],
+        typeID: txt['@typeID'],
+        verticalAlignment: txt['@verticalAlignment'],
+
+        //These are `<NSString>` elements we decode above
+        plainText,
+        rtfData,
+        winFlowData,
+        winFontData,
+
+        //These elements need to have their values parsed to be more useful
+        position: this.getPosition(txt.RVRect3D['#text']),
+        shadow: this.getShadow(txt.shadow['#text'], txt['@drawingShadow']),
+      });
+    }
+
+    // console.log(JSON.stringify(textElementXmlArr, null, 2));
+    console.log(textElementArr);
+
+    return textElementArr;
+  }
+
+  private getPosition(positionStr: string): IProElementPosition {
+    //The position string looks like this: '{20 20 0 1880 1040}'
+    const positionParts = positionStr
+      //remove the curly braces
+      .replace(/[{}]/g, '')
+      //Split the remaining space-separated numbers into an array
+      .split(' ')
+      //Parse them as real numbers
+      .map((n) => parseInt(n, 10));
+
+    return {
+      x: positionParts[0],
+      y: positionParts[1],
+      z: positionParts[2],
+      width: positionParts[3],
+      height: positionParts[4],
+    };
+  }
+
+  private getShadow(shadowStr: string, enabled: boolean): IPro6ElementShadow {
+    //A shadow string looks like this: '10|0 0 0 1|{1.41421356237309, -1.4142135623731}'
+    //The format is as follows:      radius|color|{offsetX, offsetY}
+
+    const pattern = new RegExp(
+      '^(\\d+)\\|(' + Utils.patternRgbaStrAsString + ')\\|\\{(-?\\d(?:\\.\\d+)), (-?\\d(?:\\.\\d+))\\}$'
+    );
+
+    //This is OK to disable here. If we got here then we know the string will be in this format
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const match = pattern.exec(shadowStr)!;
+
+    const radius = parseInt(match[1], 10);
+    const color = Utils.normalizeColorToRgbObj(match[2]);
+    const offsetX = parseFloat(match[3]);
+    const offsetY = parseFloat(match[4]);
+
+    //https://stackoverflow.com/a/76492788/79677
+    const angle = (Math.atan2(offsetX, offsetY) * 180) / Math.PI;
+    const length = Math.round(Math.hypot(offsetX, offsetY));
+
+    return { angle, color, enabled, length, radius };
   }
 }

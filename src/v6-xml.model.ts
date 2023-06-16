@@ -27,10 +27,14 @@ export interface IXmlPro6Doc {
   '@width': number;
 
   RVTimeline: IXmlPro6Timeline;
-  array: IXmlPro6DocArrayElement[]; //multiple "<array>" elements could be various kinds of data
+  array: (IXmlPro6DocArrayElementGroups | IXmlPro6DocArrayElementArrangements)[]; //multiple "<array>" elements could be various kinds of data
 }
 
-export interface IXmlPro6Timeline {
+export interface IXmlPro6ElementWithVarName {
+  '@rvXMLIvarName': string;
+}
+
+export interface IXmlPro6Timeline extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'timeline';
   '@timeOffset': number;
   '@duration': number;
@@ -39,29 +43,31 @@ export interface IXmlPro6Timeline {
   array: IXmlPro6TimelineArray[];
 }
 
-export interface IXmlPro6TimelineArray {
+export interface IXmlPro6TimelineArray extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'timeCues' | 'mediaTracks';
 }
 
-export interface IXmlPro6DocArrayElement {
-  RVSlideGrouping?: IXmlPro6SlideGrouping[];
-  '@rvXMLIvarName': 'groups' | 'arrangements';
+//-----------------------------------------
+//Slide Groups & Slides
+export interface IXmlPro6DocArrayElementGroups extends IXmlPro6ElementWithVarName {
+  '@rvXMLIvarName': 'groups';
+  RVSlideGrouping: IXmlPro6SlideGroup[];
 }
 
-export interface IXmlPro6SlideGrouping {
+export interface IXmlPro6SlideGroup {
   array: IXmlPro6SlideGroupingArray;
   '@name': string;
   '@color': string;
   '@uuid': string;
 }
 
-export interface IXmlPro6SlideGroupingArray {
+export interface IXmlPro6SlideGroupingArray extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'slides';
   RVDisplaySlide: IXmlPro6DisplaySlide[];
 }
 
 export interface IXmlPro6DisplaySlide {
-  array: IXmlPro6DisplaySlideArray[];
+  array: (IXmlPro6DisplaySlideCue | IXmlPro6DisplaySlideDisplayElement)[];
   '@backgroundColor': string;
   '@highlightColor': string;
   '@drawingBackgroundColor': boolean;
@@ -73,8 +79,14 @@ export interface IXmlPro6DisplaySlide {
   '@chordChartPath': string;
 }
 
-export interface IXmlPro6DisplaySlideArray {
-  '@rvXMLIvarName': 'cues' | 'displayElements';
+export interface IXmlPro6DisplaySlideCue extends IXmlPro6ElementWithVarName {
+  '@rvXMLIvarName': 'cues';
+}
+
+//-----------------------------------------
+//Slide Display Element - Text & text properties
+export interface IXmlPro6DisplaySlideDisplayElement extends IXmlPro6ElementWithVarName {
+  '@rvXMLIvarName': 'displayElements';
   RVTextElement?: IXmlPro6TextElement[];
 }
 
@@ -103,22 +115,22 @@ export interface IXmlPro6TextElement {
   '@revealType': number;
 }
 
-export interface IXmlPro6TextRect3D {
+export interface IXmlPro6TextRect3D extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'position';
   '#text': string;
 }
 
-export interface IXmlPro6TextShadow {
+export interface IXmlPro6TextShadow extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'shadow';
   '#text': string;
 }
 
-export interface IXmlPro6TextString {
+export interface IXmlPro6TextString extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'PlainText' | 'RTFData' | 'WinFlowData' | 'WinFontData';
   '#text': string;
 }
 
-export interface IXmlPro6TextStroke {
+export interface IXmlPro6TextStroke extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'stroke';
   NSColor: {
     '#text': string;
@@ -129,4 +141,24 @@ export interface IXmlPro6TextStroke {
     '@rvXMLDictionaryKey': 'RVShapeElementStrokeWidthKey';
     '@hint': 'double';
   };
+}
+
+//-----------------------------------------
+//Arrangements
+export interface IXmlPro6DocArrayElementArrangements extends IXmlPro6ElementWithVarName {
+  '@rvXMLIvarName': 'arrangements';
+  RVSongArrangement?: IXmlPro6Arrangement[];
+}
+
+export interface IXmlPro6Arrangement {
+  '@name': string;
+  '@uuid': string;
+  '@color': string;
+  array: {
+    NsString: IXmlPro6ArrangementItem[];
+  };
+}
+
+export interface IXmlPro6ArrangementItem {
+  '#text': string;
 }

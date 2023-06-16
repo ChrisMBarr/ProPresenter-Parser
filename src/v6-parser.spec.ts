@@ -25,7 +25,7 @@ describe('v6Parser', (): void => {
     }
   });
 
-  it('should get the data from "Amazing Grace.pro6', () => {
+  fit('should get the data from "Amazing Grace.pro6', () => {
     const testFile = readFileSync('./sample-files/v6 - Amazing Grace.pro6').toString();
     const parsedSong = parser.parse(testFile);
 

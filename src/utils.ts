@@ -1,7 +1,8 @@
 import { IRgbColor } from './shared.model';
 
-const patternHexColor = /^#?[a-f\d]{6}$/i;
-const patternRgbaStr = /^[10](\.\d+)? [10](\.\d+)? [10](\.\d+)? [10](\.\d+)?$/;
+export const patternHexColor = /^#?[a-f\d]{6}$/i;
+export const patternRgbaStrAsString = '[10](?:\\.\\d+)? [10](?:\\.\\d+)? [10](?:\\.\\d+)? [10](?:\\.\\d+)?';
+export const patternRgbaStr = new RegExp('^' + patternRgbaStrAsString + '$');
 
 export const stripRtf = (str: string): string => {
   const basicRtfPattern = /\{\*?\\[^{}]+;}|[{}]|\\[A-Za-z]+\n?(?:-?\d+)?[ ]?/g;

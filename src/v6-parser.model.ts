@@ -1,7 +1,8 @@
-import { IRgbColor } from './shared.model';
+import { IProElementPosition, IRgbColor } from './shared.model';
 
 export interface IPro6Song {
   properties: IPro6Properties;
+  slideGroups: IPro6SlideGroup[];
 }
 
 export interface IPro6Properties {
@@ -27,4 +28,63 @@ export interface IPro6Properties {
   usedCount: number;
   versionNumber: number;
   width: number;
+}
+
+export interface IPro6SlideGroup {
+  name: string;
+  id: string;
+  groupColor: IRgbColor;
+  slides: IPro6Slide[];
+}
+
+export interface IPro6Slide {
+  backgroundColor: string;
+  chordChartPath: string;
+  drawingBackgroundColor: boolean;
+  enabled: boolean;
+  highlightColor: IRgbColor | null;
+  hotKey: string;
+  id: string;
+  label: string;
+  notes: string;
+
+  textElements: IPro6SlideTextElement[];
+}
+
+export interface IPro6SlideTextElement {
+  adjustsHeightToFit: boolean;
+  bezelRadius: number;
+  displayDelay: number;
+  displayName: string;
+  drawingFill: boolean;
+  drawingStroke: boolean;
+  fillColor: IRgbColor;
+  fromTemplate: boolean;
+  id: string;
+  locked: boolean;
+  opacity: number;
+  persistent: number;
+  revealType: number;
+  rotation: number;
+  source: string;
+  typeID: number;
+  verticalAlignment: number;
+
+  //These are `<NSString>` elements we decode
+  plainText: string;
+  rtfData: string;
+  winFlowData: string;
+  winFontData: string;
+
+  //These are elements that must have child properties that must be processed
+  position: IProElementPosition;
+  shadow: IPro6ElementShadow;
+}
+
+export interface IPro6ElementShadow {
+  angle: number;
+  color: IRgbColor;
+  enabled: boolean;
+  length: number;
+  radius: number;
 }
