@@ -1,3 +1,5 @@
+import { IRgbColor } from './shared.model';
+
 export interface IPro6Song {
   properties: IPro6Properties;
 }
@@ -10,7 +12,7 @@ export interface IPro6Properties {
   CCLIPublisher: string;
   CCLISongNumber: string | number;
   CCLISongTitle: string;
-  backgroundColor: string;
+  backgroundColor: IRgbColor;
   buildNumber: number;
   category: string;
   chordChartPath: string;

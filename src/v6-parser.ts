@@ -1,6 +1,7 @@
 import { XMLParser } from 'fast-xml-parser';
 import { IPro6Properties, IPro6Song } from './v6-parser.model';
 import { IXmlPro6Doc, IXmlPro6DocRoot } from './v6-xml.model';
+import * as Utils from './utils';
 
 export class v6Parser {
   parse(fileContent: string): IPro6Song {
@@ -44,7 +45,7 @@ export class v6Parser {
       CCLIPublisher: xmlDoc['@CCLIPublisher'],
       CCLISongNumber: xmlDoc['@CCLISongNumber'],
       CCLISongTitle: xmlDoc['@CCLISongTitle'],
-      backgroundColor: xmlDoc['@backgroundColor'],
+      backgroundColor: Utils.normalizeColorToRgbObj(xmlDoc['@backgroundColor']),
       buildNumber: xmlDoc['@buildNumber'],
       category: xmlDoc['@category'],
       chordChartPath: xmlDoc['@chordChartPath'],
