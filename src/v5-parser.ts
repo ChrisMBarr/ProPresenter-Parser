@@ -61,12 +61,12 @@ export class v5Parser {
       album: xmlDoc['@album'],
       artist: xmlDoc['@artist'],
       author: xmlDoc['@author'],
-      backgroundColor: xmlDoc['@backgroundColor'],
+      backgroundColor: Utils.normalizeColorToRgbObj(xmlDoc['@backgroundColor']),
       category: xmlDoc['@category'],
       creatorCode: xmlDoc['@creatorCode'],
       chordChartPath: xmlDoc['@chordChartPath'],
       docType: xmlDoc['@docType'],
-      drawingBackgroundColor: xmlDoc['@drawingBackgroundColor'],
+      drawingBackgroundColor: xmlDoc['@drawingBackgroundColor'] == null ? false : Boolean(xmlDoc['@drawingBackgroundColor']),
       height: xmlDoc['@height'],
       lastDateUsed: new Date(xmlDoc['@lastDateUsed']),
       notes: xmlDoc['@notes'],
@@ -78,14 +78,15 @@ export class v5Parser {
   }
 
   private getSlideGroups(xmlGroups: IXmlPro5SlideGroup[]): IPro5SlideGroup[] {
-    return xmlGroups.map(
-      (sg): IPro5SlideGroup => ({
-        groupColor: sg['@color'],
+    return xmlGroups.map((sg): IPro5SlideGroup => {
+      const groupColor = sg['@color'] === '' ? null : Utils.normalizeColorToRgbObj(sg['@color']);
+      return {
+        groupColor,
         groupLabel: sg['@name'],
         groupId: sg['@uuid'],
         slides: this.getSlidesForGroup(sg.slides.RVDisplaySlide),
-      })
-    );
+      };
+    });
   }
 
   private getSlidesForGroup(xmlSlides: IXmlPro5Slide[]): IPro5Slide[] {
@@ -122,11 +123,13 @@ export class v5Parser {
         );
       }
 
+      const highlightColor = slide['@highlightColor'] === '' ? null : Utils.normalizeColorToRgbObj(slide['@highlightColor']);
+
       return {
-        backgroundColor: slide['@backgroundColor'],
+        backgroundColor: Utils.normalizeColorToRgbObj(slide['@backgroundColor']),
         chordChartPath: slide['@chordChartPath'],
         enabled: Boolean(slide['@enabled']),
-        highlightColor: slide['@highlightColor'],
+        highlightColor,
         id: slide['@UUID'],
         label: slide['@label'],
         notes: slide['@notes'],
@@ -141,7 +144,7 @@ export class v5Parser {
 
     for (const a of xmlArrangements) {
       arrangementsArr.push({
-        color: a['@color'],
+        color: Utils.normalizeColorToRgbObj(a['@color']),
         label: a['@name'],
         groupOrder: a.groupIDs.NSMutableString.map((group) => {
           //This should always find a match since you can't put something in an arrangement that doesn't already exist

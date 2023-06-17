@@ -18,12 +18,12 @@ export interface IPro5Properties {
   album: string;
   artist: string;
   author: string;
-  backgroundColor: string;
+  backgroundColor: IRgbColor;
   category: string;
   creatorCode: number;
   chordChartPath: string;
   docType?: number;
-  drawingBackgroundColor?: number;
+  drawingBackgroundColor: boolean;
   height: number;
   lastDateUsed: Date;
   notes: string;
@@ -37,7 +37,7 @@ export interface IPro5Properties {
 //Arrangements
 export interface IPro5Arrangement {
   label: string;
-  color: string;
+  color: IRgbColor;
   groupOrder: IPro5ArrangementSlideGroup[];
 }
 
@@ -51,15 +51,15 @@ export interface IPro5ArrangementSlideGroup {
 export interface IPro5SlideGroup {
   groupLabel: string;
   groupId: string;
-  groupColor: string;
+  groupColor: IRgbColor | null;
   slides: IPro5Slide[];
 }
 
 export interface IPro5Slide {
-  backgroundColor: string;
+  backgroundColor: IRgbColor;
   chordChartPath: string;
   enabled: boolean;
-  highlightColor: string;
+  highlightColor: IRgbColor | null;
   id: string;
   label: string;
   notes: string;

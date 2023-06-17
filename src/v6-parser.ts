@@ -195,7 +195,7 @@ export class v6Parser {
     }
 
     // console.log(JSON.stringify(textElementXmlArr, null, 2));
-    console.log(textElementArr);
+    // console.log(textElementArr);
 
     return textElementArr;
   }

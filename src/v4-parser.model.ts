@@ -15,11 +15,11 @@ export interface IPro4Properties {
   album: string;
   artist: string;
   author: string;
-  backgroundColor: string;
+  backgroundColor: IRgbColor;
   category: string;
   creatorCode: number;
   docType?: number;
-  drawingBackgroundColor?: number;
+  drawingBackgroundColor?: boolean;
   height: number;
   lastDateUsed: Date;
   notes: string;
@@ -32,8 +32,8 @@ export interface IPro4Properties {
 export interface IPro4Slide {
   label: string;
   id: string;
-  backgroundColor: string;
-  highlightColor: string;
+  backgroundColor: IRgbColor;
+  highlightColor: IRgbColor | null;
   textElements: IPro4SlideTextElement[];
 }
 

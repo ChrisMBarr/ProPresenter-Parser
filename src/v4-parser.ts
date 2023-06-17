@@ -51,11 +51,11 @@ export class v4Parser {
       album: doc['@album'],
       artist: doc['@artist'],
       author: doc['@author'],
-      backgroundColor: doc['@backgroundColor'],
+      backgroundColor: Utils.normalizeColorToRgbObj(doc['@backgroundColor']),
       category: doc['@category'],
       creatorCode: doc['@creatorCode'],
       docType: doc['@docType'],
-      drawingBackgroundColor: doc['@drawingBackgroundColor'],
+      drawingBackgroundColor: doc['@drawingBackgroundColor'] == null ? false : Boolean(doc['@drawingBackgroundColor']),
       height: doc['@height'],
       lastDateUsed: new Date(doc['@lastDateUsed']),
       notes: doc['@notes'],
@@ -92,11 +92,13 @@ export class v4Parser {
         });
       }
 
+      const highlightColor = slide['@highlightColor'] === '' ? null : Utils.normalizeColorToRgbObj(slide['@highlightColor']);
+
       slidesList.push({
         label: slide['@label'],
         id: slide['@UUID'],
-        backgroundColor: slide['@backgroundColor'],
-        highlightColor: slide['@highlightColor'],
+        backgroundColor: Utils.normalizeColorToRgbObj(slide['@backgroundColor']),
+        highlightColor,
         textElements,
       });
     }
