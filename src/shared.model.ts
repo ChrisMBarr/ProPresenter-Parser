@@ -4,6 +4,11 @@ export interface IRgbColor {
   b: number;
 }
 
+//TODO: Use this when parsing from RGBA colors!
+export interface IRgbaColor extends IRgbColor {
+  a: number;
+}
+
 export interface IProBuilderTextFormatting {
   fontName?: string;
   textColor?: string | IRgbColor;
