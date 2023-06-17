@@ -22,7 +22,7 @@ export interface IPro5Properties {
   category: string;
   creatorCode: number;
   chordChartPath: string;
-  docType?: number;
+  docType: number | null;
   drawingBackgroundColor: boolean;
   height: number;
   lastDateUsed: Date;
@@ -74,11 +74,11 @@ export interface IPro5SlideMediaCue {
 }
 
 export interface IPro5SlideTextElement {
+  color: IRgbColor;
+  font: string;
   position: IProElementPosition;
   rawRtfContent: string;
-  textContent: string;
-  font: string;
   size: number;
-  color: IRgbColor;
+  textContent: string;
   //more could be added regarding text formatting, but not needed now
 }

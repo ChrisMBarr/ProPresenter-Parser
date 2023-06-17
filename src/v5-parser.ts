@@ -65,7 +65,7 @@ export class v5Parser {
       category: xmlDoc['@category'],
       creatorCode: xmlDoc['@creatorCode'],
       chordChartPath: xmlDoc['@chordChartPath'],
-      docType: xmlDoc['@docType'],
+      docType: xmlDoc['@docType'] == null ? null : xmlDoc['@docType'],
       drawingBackgroundColor: xmlDoc['@drawingBackgroundColor'] == null ? false : Boolean(xmlDoc['@drawingBackgroundColor']),
       height: xmlDoc['@height'],
       lastDateUsed: new Date(xmlDoc['@lastDateUsed']),

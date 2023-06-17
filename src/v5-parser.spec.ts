@@ -59,62 +59,20 @@ describe('v5Parser', (): void => {
         label: 'Worship',
         color: { r: 0, g: 0, b: 0 },
         groupOrder: [
-          {
-            groupId: '72801056-2a83-7531-0a6b-c038601f3a57',
-            groupLabel: 'Background',
-          },
-          {
-            groupId: '879b9305-3db4-7632-b826-715a1c7284cd',
-            groupLabel: 'Verse 1',
-          },
-          {
-            groupId: 'A8499FCB-AF89-40D8-9671-E85706B8EA0B',
-            groupLabel: 'Bridge 1',
-          },
-          {
-            groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: 'E5052FF3-7B57-42A7-A348-E5C52C770AED',
-            groupLabel: 'Post-Chorus',
-          },
-          {
-            groupId: '0173b2d0-7137-58b2-1903-67def417faac',
-            groupLabel: 'Verse 2',
-          },
-          {
-            groupId: 'A8499FCB-AF89-40D8-9671-E85706B8EA0B',
-            groupLabel: 'Bridge 1',
-          },
-          {
-            groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: '319f1463-3c59-9268-623b-be2da570f476',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: '26520F92-9B90-4CB6-BBB6-65958B7AECDA',
-            groupLabel: 'Ending',
-          },
-          {
-            groupId: 'cba67af7-515f-5048-79f8-155a2f1ca390',
-            groupLabel: '*blank*',
-          },
+          { groupLabel: 'Background', groupId: '72801056-2a83-7531-0a6b-c038601f3a57' },
+          { groupLabel: 'Verse 1', groupId: '879b9305-3db4-7632-b826-715a1c7284cd' },
+          { groupLabel: 'Bridge 1', groupId: 'A8499FCB-AF89-40D8-9671-E85706B8EA0B' },
+          { groupLabel: 'Chorus', groupId: '319f1463-3c59-9268-623b-be2da570f476' },
+          { groupLabel: 'Chorus', groupId: '319f1463-3c59-9268-623b-be2da570f476' },
+          { groupLabel: 'Post-Chorus', groupId: 'E5052FF3-7B57-42A7-A348-E5C52C770AED' },
+          { groupLabel: 'Verse 2', groupId: '0173b2d0-7137-58b2-1903-67def417faac' },
+          { groupLabel: 'Bridge 1', groupId: 'A8499FCB-AF89-40D8-9671-E85706B8EA0B' },
+          { groupLabel: 'Chorus', groupId: '319f1463-3c59-9268-623b-be2da570f476' },
+          { groupLabel: 'Chorus', groupId: '319f1463-3c59-9268-623b-be2da570f476' },
+          { groupLabel: 'Chorus', groupId: '319f1463-3c59-9268-623b-be2da570f476' },
+          { groupLabel: 'Chorus', groupId: '319f1463-3c59-9268-623b-be2da570f476' },
+          { groupLabel: 'Ending', groupId: '26520F92-9B90-4CB6-BBB6-65958B7AECDA' },
+          { groupLabel: '*blank*', groupId: 'cba67af7-515f-5048-79f8-155a2f1ca390' },
         ],
       },
     ] as IPro5Arrangement[]);
@@ -473,54 +431,18 @@ To feel Your embrace`,
         label: 'Worship',
         color: { r: 0, g: 0, b: 0 },
         groupOrder: [
-          {
-            groupId: 'f47699e5-16ee-dd17-2d1b-d1e0b273bd17',
-            groupLabel: 'background',
-          },
-          {
-            groupId: '4247fa5c-7356-d364-f50c-687c3f4f0311',
-            groupLabel: 'Verse 1',
-          },
-          {
-            groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce',
-            groupLabel: 'Pre-Chorus',
-          },
-          {
-            groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce',
-            groupLabel: 'Pre-Chorus',
-          },
-          {
-            groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: '4247fa5c-7356-d364-f50c-687c3f4f0311',
-            groupLabel: 'Verse 1',
-          },
-          {
-            groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce',
-            groupLabel: 'Pre-Chorus',
-          },
-          {
-            groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce',
-            groupLabel: 'Pre-Chorus',
-          },
-          {
-            groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8',
-            groupLabel: 'Chorus',
-          },
-          {
-            groupId: 'e3972cf2-6527-314f-b423-040244fc089a',
-            groupLabel: '*blank*',
-          },
+          { groupLabel: 'background', groupId: 'f47699e5-16ee-dd17-2d1b-d1e0b273bd17' },
+          { groupLabel: 'Verse 1', groupId: '4247fa5c-7356-d364-f50c-687c3f4f0311' },
+          { groupLabel: 'Pre-Chorus', groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce' },
+          { groupLabel: 'Pre-Chorus', groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce' },
+          { groupLabel: 'Chorus', groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8' },
+          { groupLabel: 'Chorus', groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8' },
+          { groupLabel: 'Verse 1', groupId: '4247fa5c-7356-d364-f50c-687c3f4f0311' },
+          { groupLabel: 'Pre-Chorus', groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce' },
+          { groupLabel: 'Pre-Chorus', groupId: 'aab101ba-6d12-524d-a896-91c8e3c936ce' },
+          { groupLabel: 'Chorus', groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8' },
+          { groupLabel: 'Chorus', groupId: 'B8A48E6A-3FBF-444D-B8A8-FBF350C619C8' },
+          { groupLabel: '*blank*', groupId: 'e3972cf2-6527-314f-b423-040244fc089a' },
         ],
       },
     ] as IPro5Arrangement[]);
