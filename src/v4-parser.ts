@@ -54,7 +54,7 @@ export class v4Parser {
       backgroundColor: Utils.normalizeColorToRgbObj(doc['@backgroundColor']),
       category: doc['@category'],
       creatorCode: doc['@creatorCode'],
-      docType: doc['@docType'],
+      docType: doc['@docType'] == null ? null : doc['@docType'],
       drawingBackgroundColor: doc['@drawingBackgroundColor'] == null ? false : Boolean(doc['@drawingBackgroundColor']),
       height: doc['@height'],
       lastDateUsed: new Date(doc['@lastDateUsed']),

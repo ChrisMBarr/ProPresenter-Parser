@@ -18,8 +18,8 @@ export interface IPro4Properties {
   backgroundColor: IRgbColor;
   category: string;
   creatorCode: number;
-  docType?: number;
-  drawingBackgroundColor?: boolean;
+  docType: number | null;
+  drawingBackgroundColor: boolean;
   height: number;
   lastDateUsed: Date;
   notes: string;
@@ -38,10 +38,10 @@ export interface IPro4Slide {
 }
 
 export interface IPro4SlideTextElement {
+  color: IRgbColor;
+  font: string;
   position: IProElementPosition;
   rawRtfContent: string;
-  textContent: string;
-  font: string;
   size: number;
-  color: IRgbColor;
+  textContent: string;
 }
