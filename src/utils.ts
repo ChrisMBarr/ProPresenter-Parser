@@ -113,9 +113,9 @@ export const normalizeColorToRgbObj = (color: string | IRgbColor): IRgbColor => 
   if (patternRgbaStr.test(color)) {
     const parts = color.split(' ');
     return {
-      r: parseInt(parts[0], 10) * 255,
-      g: parseInt(parts[1], 10) * 255,
-      b: parseInt(parts[2], 10) * 255,
+      r: parseFloat(parts[0]) * 255,
+      g: parseFloat(parts[1]) * 255,
+      b: parseFloat(parts[2]) * 255,
     };
   }
 

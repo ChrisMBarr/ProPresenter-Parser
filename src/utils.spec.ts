@@ -112,6 +112,8 @@ to bless Your name}`);
         expect(Utils.hexToRgb('#FF0000')).toEqual({ r: 255, g: 0, b: 0 });
         expect(Utils.hexToRgb('#00FF00')).toEqual({ r: 0, g: 255, b: 0 });
         expect(Utils.hexToRgb('#0000FF')).toEqual({ r: 0, g: 0, b: 255 });
+        expect(Utils.hexToRgb('#14c183')).toEqual({ r: 20, g: 193, b: 131 });
+        expect(Utils.hexToRgb('#3f2938')).toEqual({ r: 63, g: 41, b: 56 });
       });
       it('should parse hex codes to RGB without a starting #', () => {
         expect(Utils.hexToRgb('000000')).toEqual({ r: 0, g: 0, b: 0 });
@@ -119,6 +121,8 @@ to bless Your name}`);
         expect(Utils.hexToRgb('FF0000')).toEqual({ r: 255, g: 0, b: 0 });
         expect(Utils.hexToRgb('00FF00')).toEqual({ r: 0, g: 255, b: 0 });
         expect(Utils.hexToRgb('0000FF')).toEqual({ r: 0, g: 0, b: 255 });
+        expect(Utils.hexToRgb('14c183')).toEqual({ r: 20, g: 193, b: 131 });
+        expect(Utils.hexToRgb('3f2938')).toEqual({ r: 63, g: 41, b: 56 });
       });
       it('should throw an error when something else is passed in', () => {
         try {
@@ -140,7 +144,11 @@ to bless Your name}`);
         expect(Utils.normalizeColorToRgbaString('1 0 0 1')).toEqual('1 0 0 1');
         expect(Utils.normalizeColorToRgbaString('0 1 0 1')).toEqual('0 1 0 1');
         expect(Utils.normalizeColorToRgbaString('0 0 1 1')).toEqual('0 0 1 1');
+        expect(Utils.normalizeColorToRgbaString('0.5 0 0.5 1')).toEqual('0.5 0 0.5 1');
         expect(Utils.normalizeColorToRgbaString('0.5 0.5 0.5 1')).toEqual('0.5 0.5 0.5 1');
+        expect(Utils.normalizeColorToRgbaString('0.5019607843137255 0.5019607843137255 0.5019607843137255 1')).toEqual(
+          '0.5019607843137255 0.5019607843137255 0.5019607843137255 1'
+        );
       });
       it('should parse hex codes to RGBA float string', () => {
         expect(Utils.normalizeColorToRgbaString('#000000')).toEqual('0 0 0 1');
@@ -148,13 +156,19 @@ to bless Your name}`);
         expect(Utils.normalizeColorToRgbaString('#FF0000')).toEqual('1 0 0 1');
         expect(Utils.normalizeColorToRgbaString('#00FF00')).toEqual('0 1 0 1');
         expect(Utils.normalizeColorToRgbaString('#808080')).toEqual('0.5019607843137255 0.5019607843137255 0.5019607843137255 1');
+        expect(Utils.normalizeColorToRgbaString('#14c183')).toEqual('0.0784313725490196 0.7568627450980392 0.5137254901960784 1');
+        expect(Utils.normalizeColorToRgbaString('#3f2938')).toEqual(
+          '0.24705882352941178 0.1607843137254902 0.2196078431372549 1'
+        );
       });
+
       it('should parse RGB objects to RGBA float string', () => {
         expect(Utils.normalizeColorToRgbaString({ r: 0, g: 0, b: 0 })).toEqual('0 0 0 1');
         expect(Utils.normalizeColorToRgbaString({ r: 255, g: 255, b: 255 })).toEqual('1 1 1 1');
         expect(Utils.normalizeColorToRgbaString({ r: 255, g: 0, b: 0 })).toEqual('1 0 0 1');
         expect(Utils.normalizeColorToRgbaString({ r: 0, g: 255, b: 0 })).toEqual('0 1 0 1');
         expect(Utils.normalizeColorToRgbaString({ r: 0, g: 0, b: 255 })).toEqual('0 0 1 1');
+        expect(Utils.normalizeColorToRgbaString({ r: 127.5, g: 0, b: 127.5 })).toEqual('0.5 0 0.5 1');
         expect(Utils.normalizeColorToRgbaString({ r: 128, g: 128, b: 128 })).toEqual(
           '0.5019607843137255 0.5019607843137255 0.5019607843137255 1'
         );
@@ -196,6 +210,7 @@ to bless Your name}`);
         expect(Utils.normalizeColorToRgbObj('1 0 0 1')).toEqual({ r: 255, g: 0, b: 0 });
         expect(Utils.normalizeColorToRgbObj('0 1 0 1')).toEqual({ r: 0, g: 255, b: 0 });
         expect(Utils.normalizeColorToRgbObj('0 0 1 1')).toEqual({ r: 0, g: 0, b: 255 });
+        expect(Utils.normalizeColorToRgbObj('0.5 0 0.5 1')).toEqual({ r: 127.5, g: 0, b: 127.5 });
       });
       it('should parse hex codes to RGB objects', () => {
         expect(Utils.normalizeColorToRgbObj('#000000')).toEqual({ r: 0, g: 0, b: 0 });
@@ -203,6 +218,8 @@ to bless Your name}`);
         expect(Utils.normalizeColorToRgbObj('#FF0000')).toEqual({ r: 255, g: 0, b: 0 });
         expect(Utils.normalizeColorToRgbObj('#00FF00')).toEqual({ r: 0, g: 255, b: 0 });
         expect(Utils.normalizeColorToRgbObj('#0000FF')).toEqual({ r: 0, g: 0, b: 255 });
+        expect(Utils.normalizeColorToRgbObj('#14c183')).toEqual({ r: 20, g: 193, b: 131 });
+        expect(Utils.normalizeColorToRgbObj('#3f2938')).toEqual({ r: 63, g: 41, b: 56 });
       });
       it('should pass RGB objects to straight through', () => {
         // prettier-ignore
