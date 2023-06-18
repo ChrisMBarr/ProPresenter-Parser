@@ -150,12 +150,12 @@ Each slide contains an array of text elements. Most slides will just have a sing
 | `displayDelay`       | `number`              |  |
 | `displayName`        | `string`              |  |
 | `drawingFill`        | `boolean`             |  |
-| `drawingStroke`      | `boolean`             |  |
+| `drawingStroke`      | `boolean`             | Wether the stroke around the text is displayed or not |
 | `fillColor`          | `IRgbColor`           |  |
 | `fromTemplate`       | `boolean`             |  |
-| `id`                 | `string`              |  |
-| `locked`             | `boolean`             |  |
-| `opacity`            | `number`              |  |
+| `id`                 | `string`              | The unique ID ProPresenter uses internally for this text element |
+| `locked`             | `boolean`             | Wether this text element is locked or not |
+| `opacity`            | `number`              | The opacity of the text as a range between 0 and 1 |
 | `persistent`         | `number`              |  |
 | `revealType`         | `number`              |  |
 | `rotation`           | `number`              |  |
@@ -164,7 +164,9 @@ Each slide contains an array of text elements. Most slides will just have a sing
 | `verticalAlignment`  | `number`              |  |
 | `winFlowData`        | `string`              |  |
 | `winFontData`        | `string`              |  |
-| `shadow`             | `IPro6ElementShadow`  |  |
+| `strokeColor`        | `IRbgColor`           | The color of the stroke around the text. See the [colors docs](colors.md) for details  |
+| `strokeWidth`        | `number`              | The width of the stroke around the text.  |
+| `shadow`             | `IPro6ElementShadow`  | An object that describes the text shadow |
 | `rtfData`            | `string`              | ProPresenter stores slide text in RTF format. This is the unchanged RTF content that ProPresenter generated |
 | `plainText`          | `string`              | The plain text of the slide          |
 | `position`           | `IProElementPosition` | The position of this text element on the side. See the [position docs](position.md) for details             |

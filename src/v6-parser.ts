@@ -204,6 +204,8 @@ export class v6Parser {
         winFontData,
 
         //These elements need to have their values parsed to be more useful
+        strokeColor: Utils.normalizeColorToRgbObj(txt.dictionary.NSColor['#text']),
+        strokeWidth: txt.dictionary.NSNumber['#text'],
         position: this.getPosition(txt.RVRect3D['#text']),
         shadow: this.getShadow(txt.shadow['#text'], txt['@drawingShadow']),
       });

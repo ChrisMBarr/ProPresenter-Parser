@@ -78,6 +78,8 @@ export interface IPro6SlideTextElement {
   winFontData: string;
 
   //These are elements that must have child properties that must be processed
+  strokeColor: IRgbColor;
+  strokeWidth: number;
   position: IProElementPosition;
   shadow: IPro6ElementShadow;
 }

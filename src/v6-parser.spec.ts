@@ -119,6 +119,8 @@ describe('v6Parser', (): void => {
                 opacity: 1,
                 persistent: 0,
                 plainText: 'Amazing grace how sweet the sound\r\nThat saved a wretch like me',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
@@ -165,6 +167,8 @@ describe('v6Parser', (): void => {
                 opacity: 1,
                 persistent: 0,
                 plainText: "I once was lost but now I'm found\r\nWas blind but now I see",
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
@@ -218,6 +222,8 @@ describe('v6Parser', (): void => {
                 opacity: 1,
                 persistent: 0,
                 plainText: 'Twas grace that taught my heart to fear\r\nAnd grace my fears relieved',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
@@ -264,6 +270,8 @@ describe('v6Parser', (): void => {
                 opacity: 1,
                 persistent: 0,
                 plainText: 'How precious did that grace appear\r\nThe hour I first believed',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
@@ -317,6 +325,8 @@ describe('v6Parser', (): void => {
                 opacity: 1,
                 persistent: 0,
                 plainText: 'Through many dangers, toils\r\nAnd snares I have already come',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
@@ -363,6 +373,8 @@ describe('v6Parser', (): void => {
                 opacity: 1,
                 persistent: 0,
                 plainText: "'Tis grace that brought me safe thus far\r\nAnd grace will lead me home",
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
@@ -416,6 +428,8 @@ describe('v6Parser', (): void => {
                 opacity: 1,
                 persistent: 0,
                 plainText: "When we've been there ten thousand years\r\nBright shining as the sun",
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
@@ -462,6 +476,8 @@ describe('v6Parser', (): void => {
                 opacity: 1,
                 persistent: 0,
                 plainText: "We've no less days to sing God's praise\r\nThan when we'd first begun!",
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
@@ -580,6 +596,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
@@ -627,6 +645,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Run FontFamily="Arial" FontSize="60" Block.TextAlignment="Center">\',</Run><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><Run FontFamily="Arial" FontSize="60" Block.TextAlignment="Center" xml:space="preserve" /><LineBreak Block.TextAlignment="Center" /></Span><Run FontFamily="Arial" FontSize="60" Foreground="#FFFFFFFF" Block.TextAlignment="Center">You are all</Run><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><Run FontFamily="Arial" FontSize="60" Block.TextAlignment="Center" xml:space="preserve" /><LineBreak Block.TextAlignment="Center" /></Span><Run FontFamily="Arial" FontSize="60" Foreground="#FFFFFFFF" Block.TextAlignment="Center">Big and small</Run><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><Run FontFamily="Arial" FontSize="60" Block.TextAlignment="Center" xml:space="preserve" /><LineBreak Block.TextAlignment="Center" /></Span><Run FontFamily="Arial" FontSize="60" Foreground="#FFFFFFFF" Block.TextAlignment="Center">Beautiful</Run></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 1876, height: 1012 },
                 shadow: {
                   angle: 135,
@@ -674,6 +694,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center" xml:space="preserve">And wonderful to </Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Trust in grace</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Through faith</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">But I\'m asking to taste</Run></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
@@ -722,6 +744,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">For dark is light to You</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Depths are Height to you</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Far is near</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">But Lord I need to hear from You</Run></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
@@ -769,6 +793,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Be near O God</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Be near O God of us</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Your nearness is</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">To us our good</Run></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
@@ -816,6 +842,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Our Good</Run></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
@@ -863,6 +891,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Your fullness is mine</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Revelation Divine</Run></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
@@ -910,6 +940,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">But oh to taste</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">To know much</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">More than a page</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">To feel Your embrace</Run></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
@@ -957,6 +989,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">My Good</Run></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
@@ -1004,6 +1038,8 @@ describe('v6Parser', (): void => {
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span></Paragraph></FlowDocument>',
                 winFontData:
                   '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>0</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>0</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
+                strokeColor: { r: 0, g: 0, b: 0 },
+                strokeWidth: 0,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
                 shadow: {
                   angle: 135,
