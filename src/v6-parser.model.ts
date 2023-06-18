@@ -31,8 +31,8 @@ export interface IPro6Properties {
 }
 
 export interface IPro6SlideGroup {
-  name: string;
-  id: string;
+  groupLabel: string;
+  groupId: string;
   groupColor: IRgbColor;
   slides: IPro6Slide[];
 }

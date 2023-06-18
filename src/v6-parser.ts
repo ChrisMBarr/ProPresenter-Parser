@@ -97,8 +97,8 @@ export class v6Parser {
     for (const group of groupsXmlArr) {
       groupsArr.push({
         groupColor: Utils.normalizeColorToRgbObj(group['@color']),
-        id: group['@uuid'],
-        name: group['@name'],
+        groupId: group['@uuid'],
+        groupLabel: group['@name'],
         slides: this.getSlidesForGroup(group.array.RVDisplaySlide),
       });
     }
