@@ -39,7 +39,7 @@ export interface IPro6SlideGroup {
 }
 
 export interface IPro6Slide {
-  backgroundColor: string;
+  backgroundColor: IRgbColor;
   chordChartPath: string;
   drawingBackgroundColor: boolean;
   enabled: boolean;

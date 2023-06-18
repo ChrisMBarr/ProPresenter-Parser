@@ -135,7 +135,7 @@ export class v6Parser {
       const highlightColor = slide['@highlightColor'] === '' ? null : Utils.normalizeColorToRgbObj(slide['@highlightColor']);
 
       slidesArr.push({
-        backgroundColor: slide['@backgroundColor'],
+        backgroundColor: Utils.normalizeColorToRgbObj(slide['@backgroundColor']),
         chordChartPath: slide['@chordChartPath'],
         drawingBackgroundColor: slide['@drawingBackgroundColor'],
         enabled: slide['@enabled'],
