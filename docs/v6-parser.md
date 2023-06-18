@@ -177,9 +177,8 @@ Here is an example of one object which could appear in the `slideGroups` array. 
 ```
 
 
-<!-- 
 ### The `arrangements` array
-ProPresenter 5 can store multiple arrangements for each song. Each arrangement can show the slide groups in differing orders.
+ProPresenter 6 can store multiple arrangements for each song. Each arrangement can show the slide groups in differing orders.
 Each object in this array will contain the following properties
 
 | Property Name   | Return Type                        | Description                                                                        |
@@ -221,4 +220,4 @@ Here is an example object which could appear in the `arrangements` array. Notice
     { groupLabel: '*blank*',     groupId: 'cba67af7-515f-5048-79f8-155a2f1ca390' }
   ]
 }
-``` -->
+```

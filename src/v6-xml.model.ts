@@ -155,10 +155,7 @@ export interface IXmlPro6Arrangement {
   '@uuid': string;
   '@color': string;
   array: {
-    NsString: IXmlPro6ArrangementItem[];
+    '@rvXMLIvarName': 'groupIDs';
+    NSString: string[];
   };
-}
-
-export interface IXmlPro6ArrangementItem {
-  '#text': string;
 }

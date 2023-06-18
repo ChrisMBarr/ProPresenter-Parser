@@ -3,6 +3,8 @@ import { Base64 } from 'js-base64';
 import { IProElementPosition } from './shared.model';
 import * as Utils from './utils';
 import {
+  IPro6Arrangement,
+  IPro6ArrangementSlideGroup,
   IPro6ElementShadow,
   IPro6Properties,
   IPro6Slide,
@@ -11,14 +13,18 @@ import {
   IPro6Song,
 } from './v6-parser.model';
 import {
+  IXmlPro6Arrangement,
   IXmlPro6DisplaySlide,
   IXmlPro6DisplaySlideDisplayElement,
   IXmlPro6Doc,
+  IXmlPro6DocArrayElementArrangements,
   IXmlPro6DocArrayElementGroups,
   IXmlPro6DocRoot,
   IXmlPro6SlideGroup,
   IXmlPro6TextElement,
 } from './v6-xml.model';
+
+//TODO: Slide cues, extract font/size/color from slide text
 
 export class v6Parser {
   parse(fileContent: string): IPro6Song {
@@ -53,15 +59,24 @@ export class v6Parser {
     const properties = this.getProperties(parsedDoc.RVPresentationDocument);
 
     //Find the correct slide groups XML
+    let slideGroups: IPro6SlideGroup[] = [];
     const groupsXml = parsedDoc.RVPresentationDocument.array.find(
       (el): el is IXmlPro6DocArrayElementGroups => el['@rvXMLIvarName'] === 'groups'
     );
-    let slideGroups: IPro6SlideGroup[] = [];
     if (groupsXml) {
       slideGroups = this.getSlideGroups(groupsXml.RVSlideGrouping);
     }
 
-    return { properties, slideGroups };
+    //Find the correct arrangements XML
+    let arrangements: IPro6Arrangement[] = [];
+    const arrangementsXml = parsedDoc.RVPresentationDocument.array.find(
+      (el): el is IXmlPro6DocArrayElementArrangements => el['@rvXMLIvarName'] === 'arrangements'
+    );
+    if (arrangementsXml?.RVSongArrangement) {
+      arrangements = this.getArrangements(arrangementsXml.RVSongArrangement, slideGroups);
+    }
+
+    return { properties, slideGroups, arrangements };
   }
 
   private getProperties(xmlDoc: IXmlPro6Doc): IPro6Properties {
@@ -241,5 +256,28 @@ export class v6Parser {
     const length = Math.round(Math.hypot(offsetX, offsetY));
 
     return { angle, color, enabled, length, radius };
+  }
+
+  private getArrangements(arrangementsXml: IXmlPro6Arrangement[], slideGroups: IPro6SlideGroup[]): IPro6Arrangement[] {
+    const arrangementsArr: IPro6Arrangement[] = [];
+
+    for (const arrangement of arrangementsXml) {
+      const groupOrder: IPro6ArrangementSlideGroup[] = arrangement.array.NSString.map((groupIdStr) => {
+        return {
+          groupId: groupIdStr,
+          //This rule is OK to disable here since we know the ID will exist in the group if it is also in an arrangement
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          groupLabel: slideGroups.find((g) => g.groupId === groupIdStr)!.groupLabel,
+        };
+      });
+
+      arrangementsArr.push({
+        label: arrangement['@name'],
+        color: Utils.normalizeColorToRgbObj(arrangement['@color']),
+        groupOrder,
+      });
+    }
+
+    return arrangementsArr;
   }
 }
