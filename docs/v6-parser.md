@@ -121,19 +121,7 @@ Each object in this array is a slide that is contained in a group of slides.  Ea
 | `id`                     | `string`                      | The internal unique id for the side                                   |
 | `label`                  | `string`                      | The label for the slide that is shown in the ProPresenter UI          |
 | `notes`                  | `string`                      | Stage display notes. This can be any text.                   |
-<!-- | `mediaCues`              | `IPro6SlideMediaCue` array    | An array of all the media cues for this slide. See the [`IPro6SlideMediaCue` docs](#the-slidegroups--slides--ipro6slide--mediacues-array) below for details | -->
 | `textElements`           | `IPro6SlideTextElement` array | An array of all the text elements on this slide. See the [`IPro6SlideTextElement` docs](#the-slidegroups--slides--ipro6slide--ipro6slidetextelement-array) below for details |
-
-
-<!-- 
-### The `slideGroups` => `slides` => `IPro6Slide` => `mediaCues` array
-Each slide can have a custom media cue saved on it. Media cues can be complex and I doubt many people will need this data extracted from this version of ProPresenter files, so only basic information is returned right now. Each found media cue will only contain the following properties
-
-| Property Name     | Return Type | Description                                                     |
-|:------------------|:------------|:----------------------------------------------------------------|
-| `displayName`     | `string`    | The display name of the cue. This will probably be a file name. |
-| `source`          | `string`    | The path to the file used in the cue                            |
--->
 
 
 
@@ -145,7 +133,7 @@ Each slide contains an array of text elements. Most slides will just have a sing
 | `adjustsHeightToFit` | `boolean`             | Whether the "adjusts to fit" box is checked in ProPresenter. If so, the height of this element depends on the text inside it   |
 | `bezelRadius`        | `number`              | The radius of the rounded corners on this text element                                                                         |
 | `displayDelay`       | `number`              | ❓ Not sure what this represents. When setting a build in/out delay for a text element that delay amount is applied elsewhere |
-| `displayName`        | `string`              | If name of this text element, if one was given to it                                                                           |
+| `displayName`        | `string`              | The name of this text element                                                                                                  |
 | `drawingFill`        | `boolean`             | Whether the background fill color on the text is displayed or not. If so, the color specified in `fillColor` property is used. |
 | `drawingStroke`      | `boolean`             | Whether the stroke around the text is displayed or not. If so, the `strokeColor` and `strokeWidth` are applied.                |
 | `fillColor`          | `IRgbColor`           | The fill color of the text element (the background color of the text box)                                                      |
@@ -154,7 +142,7 @@ Each slide contains an array of text elements. Most slides will just have a sing
 | `id`                 | `string`              | The unique ID ProPresenter uses internally for this text element                                                               |
 | `locked`             | `boolean`             | Whether this text element is locked or not                                                                                     |
 | `opacity`            | `number`              | The opacity of the text as a range between 0 and 1                                                                             |
-| `persistent`         | `number`              | ❓ Not sure what this if for                                                                                                  |
+| `persistent`         | `number`              | ❓ Not sure what this represents                                                                                              |
 | `position`           | `IProElementPosition` | The position of this text element on the side. See the [position docs](position.md) for details                                |
 | `revealType`         | `number`              | `0` is no reveal, `1` is "Bulleted List", and `2` is "Fill in the Blank"                                                       |
 | `rotation`           | `number`              | The angle of rotation for this text element                                                                                    |

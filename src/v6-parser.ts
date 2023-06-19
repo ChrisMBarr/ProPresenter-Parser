@@ -24,8 +24,6 @@ import {
   IXmlPro6TextElement,
 } from './v6-xml.model';
 
-//TODO: Slide cues
-
 export class v6Parser {
   parse(fileContent: string): IPro6Song {
     //When certain XML nodes only have one item the parser will convert them into objects
