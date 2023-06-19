@@ -25,3 +25,4 @@ npm install propresenter-parser --save
 * [ProPresenter 5 File Parser](docs/v5-parser.md)
 * [ProPresenter 5 File Builder](docs/v5-builder.md)
 * [ProPresenter 6 File Parser](docs/v6-parser.md)
+* [ProPresenter 6 File Builder](docs/v6-builder.md)
