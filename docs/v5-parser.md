@@ -118,7 +118,7 @@ Each object in this array is a slide that is contained in a group of slides.  Ea
 | `highlightColor`  | `IRgbColor` or `null`         | The slide highlight color in the ProPresenter UI. See the [colors docs](colors.md) for details |
 | `id`              | `string`                      | The internal unique id for the side                                   |
 | `label`           | `string`                      | The label for the slide that is shown in the ProPresenter UI          |
-| `notes`           | `string`                      | Any saved notes on this side. This can be any text.                   |
+| `notes`           | `string`                      | Stage display notes. This can be any text.                   |
 | `mediaCues`       | `IPro5SlideMediaCue` array    | An array of all the media cues for this slide. See the [`IPro5SlideMediaCue` docs](#the-slidegroups--slides--ipro5slide--mediacues-array) below for details |
 | `textElements`    | `IPro5SlideTextElement` array | An array of all the text elements on this slide. See the [`IPro5SlideTextElement` docs](#the-slidegroups--slides--ipro5slide--ipro5slidetextelement-array) below for details |
 
