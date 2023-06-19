@@ -145,31 +145,31 @@ Each slide contains an array of text elements. Most slides will just have a sing
 <!-- | `color`         | `IRgbColor`           | See the [colors docs](colors.md) for details                                                                |
 | `font`          | `string`              | The name of the font used for the text                                                                      |
 | `size`          | `number`              | The font size used for the text                                                                             | -->
-| `adjustsHeightToFit` | `boolean`             |  |
-| `bezelRadius`        | `number`              |  |
-| `displayDelay`       | `number`              | The |
-| `displayName`        | `string`              | If name of this text element, if one was given to it |
-| `drawingFill`        | `boolean`             |  |
-| `drawingStroke`      | `boolean`             | Whether the stroke around the text is displayed or not |
-| `fillColor`          | `IRgbColor`           | The fill color of the text element (the background color of the text box) |
-| `fromTemplate`       | `boolean`             |  |
-| `id`                 | `string`              | The unique ID ProPresenter uses internally for this text element |
-| `locked`             | `boolean`             | Whether this text element is locked or not |
-| `opacity`            | `number`              | The opacity of the text as a range between 0 and 1 |
-| `persistent`         | `number`              |  |
-| `revealType`         | `number`              | `0` is no reveal, `1` is "Bulleted List", and `2` is "Fill in the Blank" |
-| `rotation`           | `number`              | The angle of rotation for this text element |
-| `source`             | `string`              | I am not sure what this represents. I do not think it applies to text elements but the property does exist on it. |
-| `typeID`             | `number`              | I do not know what this number represents. Possibly the type of element? This parser will only return text elements right now. |
-| `verticalAlignment`  | `number`              | `0` is center aligned, `1` is top aligned, and `2` is bottom aligned |
-| `winFlowData`        | `string`              | The text represented as a Windows Flow document. See the [Microsoft documentation page](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/advanced/flow-document-overview?view=netframeworkdesktop-4.8) for more details |
-| `winFontData`        | `string`              | The font data about the text (color, size, stroke, etc.) represented as some kind of XML. I am not sure exactly! |
-| `strokeColor`        | `IRbgColor`           | The color of the stroke around the text. See the [colors docs](colors.md) for details  |
-| `strokeWidth`        | `number`              | The width of the stroke around the text.  |
-| `shadow`             | `IPro6ElementShadow`  | An object that describes the text shadow |
-| `rtfData`            | `string`              | The text represented as RTF data |
-| `plainText`          | `string`              | The plain text of the slide          |
-| `position`           | `IProElementPosition` | The position of this text element on the side. See the [position docs](position.md) for details             |
+| `adjustsHeightToFit` | `boolean`             | Whether the "adjusts to fit" box is checked in ProPresenter. If so, the height of this element depends on the text inside it   |
+| `bezelRadius`        | `number`              | The radius of the rounded corners on this text element                                                                         |
+| `displayDelay`       | `number`              | ❓ Not sure what this represents. When setting a build in/out delay for a text element that delay amount is applied elsewhere |
+| `displayName`        | `string`              | If name of this text element, if one was given to it                                                                           |
+| `drawingFill`        | `boolean`             | Whether the background fill color on the text is displayed or not. If so, the color specified in `fillColor` property is used. |
+| `drawingStroke`      | `boolean`             | Whether the stroke around the text is displayed or not. If so, the `strokeColor` and `strokeWidth` are applied.                |
+| `fillColor`          | `IRgbColor`           | The fill color of the text element (the background color of the text box)                                                      |
+| `fromTemplate`       | `boolean`             | Whether this text element was generated from a template or not                                                                 |
+| `id`                 | `string`              | The unique ID ProPresenter uses internally for this text element                                                               |
+| `locked`             | `boolean`             | Whether this text element is locked or not                                                                                     |
+| `opacity`            | `number`              | The opacity of the text as a range between 0 and 1                                                                             |
+| `persistent`         | `number`              | ❓ Not sure what this if for                                                                                                  |
+| `position`           | `IProElementPosition` | The position of this text element on the side. See the [position docs](position.md) for details                                |
+| `revealType`         | `number`              | `0` is no reveal, `1` is "Bulleted List", and `2` is "Fill in the Blank"                                                       |
+| `rotation`           | `number`              | The angle of rotation for this text element                                                                                    |
+| `shadow`             | `IPro6ElementShadow`  | An object that describes the text shadow                                                                                       |
+| `source`             | `string`              | ❓ Not sure what this represents. I do not think it applies to text elements but the property does exist on it.               |
+| `strokeColor`        | `IRbgColor`           | The color of the stroke around the text. See the [colors docs](colors.md) for details                                          |
+| `strokeWidth`        | `number`              | The width of the stroke around the text.                                                                                       |
+| `typeID`             | `number`              | ❓ Not sure what this represents. Possibly the type of element? This parser will only return text elements right now.         |
+| `verticalAlignment`  | `number`              | `0` is center aligned, `1` is top aligned, and `2` is bottom aligned                                                           |
+| `plainText`          | `string`              | The plain text of the slide                                                                                                    |
+| `rtfData`            | `string`              | The text of the side represented as RTF data                                                                                   |
+| `winFlowData`        | `string`              | The text of the side represented as a Windows Flow document. See the [Microsoft documentation page](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/advanced/flow-document-overview?view=netframeworkdesktop-4.8) for more details |
+| `winFontData`        | `string`              | ❓ The font data about the text (color, size, stroke, etc.) represented as some kind of XML. I am not sure exactly!           |
 
 
 
@@ -204,13 +204,11 @@ Here is an example of one object which could appear in the `slideGroups` array. 
           locked: false,
           opacity: 1,
           persistent: 0,
-          plainText: 'Amazing grace how sweet the sound\r\nThat saved a wretch like me',
           strokeColor: { r: 0, g: 0, b: 0 },
           strokeWidth: 0,
           position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
           revealType: 0,
           rotation: 0,
-          rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Amazing grace how sweet the sound}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch That saved a wretch like me}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
           shadow: {
             angle: 135,
             color: { r: 0, g: 0, b: 0 },
@@ -221,6 +219,8 @@ Here is an example of one object which could appear in the `slideGroups` array. 
           source: '',
           typeID: 0,
           verticalAlignment: 0,
+          plainText: 'Amazing grace how sweet the sound\r\nThat saved a wretch like me',
+          rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Amazing grace how sweet the sound}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch That saved a wretch like me}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
           winFlowData: '<FlowDocument TextAlignment="Center" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Arial" FontSize="60"><Run FontFamily="Impact" FontStretch="Condensed" FontSize="75" Foreground="#FFFFFFFF" Block.TextAlignment="Center">Amazing grace how sweet the sound</Run></Paragraph><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Arial" FontSize="60"><Run FontFamily="Impact" FontStretch="Condensed" FontSize="75" Foreground="#FFFFFFFF" Block.TextAlignment="Center">That saved a wretch like me</Run></Paragraph></FlowDocument>',
           winFontData: '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>255</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>1</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
         },
@@ -250,13 +250,11 @@ Here is an example of one object which could appear in the `slideGroups` array. 
           locked: false,
           opacity: 1,
           persistent: 0,
-          plainText: "I once was lost but now I'm found\r\nWas blind but now I see",
           strokeColor: { r: 0, g: 0, b: 0 },
           strokeWidth: 0,
           position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
           revealType: 0,
           rotation: 0,
-          rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch I once was lost but now I'm found}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch Was blind but now I see}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
           shadow: {
             angle: 135,
             color: { r: 0, g: 0, b: 0 },
@@ -267,6 +265,8 @@ Here is an example of one object which could appear in the `slideGroups` array. 
           source: '',
           typeID: 0,
           verticalAlignment: 0,
+          plainText: "I once was lost but now I'm found\r\nWas blind but now I see",
+          rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch I once was lost but now I'm found}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch Was blind but now I see}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
           winFlowData: '<FlowDocument FontFamily="Georgia" TextAlignment="Center" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph TextAlignment="Center"><Run FontFamily="Impact" FontStyle="Normal" FontWeight="Normal" FontStretch="Condensed" FontSize="75" Foreground="#FFFFFFFF" Block.TextAlignment="Center"><Run.TextDecorations><TextDecorationCollection /></Run.TextDecorations>I once was lost but now I\'m found</Run></Paragraph><Paragraph TextAlignment="Center"><Run FontFamily="Impact" FontStyle="Normal" FontWeight="Normal" FontStretch="Condensed" FontSize="75" Foreground="#FFFFFFFF" Block.TextAlignment="Center"><Run.TextDecorations><TextDecorationCollection /></Run.TextDecorations>Was blind but now I see</Run></Paragraph></FlowDocument>',
           winFontData: '<?xml version="1.0" encoding="utf-16"?><RVFont xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ProPresenter.Common"><Kerning>0</Kerning><LineSpacing>0</LineSpacing><OutlineColor xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Windows.Media"><d2p1:A>255</d2p1:A><d2p1:B>0</d2p1:B><d2p1:G>0</d2p1:G><d2p1:R>0</d2p1:R><d2p1:ScA>1</d2p1:ScA><d2p1:ScB>0</d2p1:ScB><d2p1:ScG>0</d2p1:ScG><d2p1:ScR>0</d2p1:ScR></OutlineColor><OutlineWidth>0</OutlineWidth><Variants>Normal</Variants></RVFont>',
         },

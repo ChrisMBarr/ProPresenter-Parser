@@ -71,6 +71,11 @@ export interface IPro6SlideTextElement {
   typeID: number;
   verticalAlignment: number;
 
+  //Attributes extracted from the RTF data
+  fontName: string;
+  textColor: IRgbColor;
+  textSize: number;
+
   //These are `<NSString>` elements we decode
   plainText: string;
   rtfData: string;

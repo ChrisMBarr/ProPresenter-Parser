@@ -31,22 +31,25 @@ export const getTextPropsFromRtf = (str: string): { color: IRgbColor; font: stri
   let font = '';
   let size = 0;
 
-  const fontMatch = /\\fcharset0 (.+);/i.exec(str);
-  if (fontMatch) {
-    font = fontMatch[1];
+  //Might contain multiple fonts, but RTF mutates text by commands, so we only need to get the last font command to get the final applied font
+  const fontMatches = Array.from(str.matchAll(/\\fcharset0 (.+?);/gi));
+  if (fontMatches.length > 0) {
+    font = fontMatches[fontMatches.length - 1][1];
   }
 
-  const colorMatch = /\\colortbl;\\red(\d+)\\green(\d+)\\blue(\d+);/.exec(str);
+  //Might contain multiple colors, but RTF mutates text by commands, so we only need to get the last color command to get the final applied color
+  const colorMatch = /\\red(\d+)\\green(\d+)\\blue(\d+);}/i.exec(str);
   if (colorMatch) {
     color.r = parseInt(colorMatch[1], 10);
     color.g = parseInt(colorMatch[2], 10);
     color.b = parseInt(colorMatch[3], 10);
   }
 
-  const sizeMatch = /\\fs(\d+) \\/i.exec(str);
-  if (sizeMatch) {
+  //Might contain multiple font sizes, but RTF mutates text by commands, so we only need to get the last font size command to get the final applied size
+  const sizeMatch = Array.from(str.matchAll(/\\fs(\d+) ?\\/gi));
+  if (sizeMatch.length > 0) {
     //RTF font size is in half-points. Divide by 2 to get size in full points
-    size = parseInt(sizeMatch[1], 10) / 2;
+    size = parseInt(sizeMatch[sizeMatch.length - 1][1], 10) / 2;
   }
 
   return {

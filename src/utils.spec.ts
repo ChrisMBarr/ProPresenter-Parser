@@ -58,12 +58,12 @@ Souls to another`);
       it('should get the text properties when they are all present', () => {
         const testProps = Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
-{\\colortbl;\\red200\\green200\\blue200;}
+{\\colortbl;\\red200\\green201\\blue202;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
 \\f0\\fs120 \\cf1 every knee will bow\\
 to bless Your name}`);
 
-        expect(testProps).toEqual({ color: { r: 200, g: 200, b: 200 }, font: 'Impact', size: 60 });
+        expect(testProps).toEqual({ color: { r: 200, g: 201, b: 202 }, font: 'Impact', size: 60 });
       });
 
       it('should get a multi-word font name', () => {
@@ -81,13 +81,28 @@ to bless Your name}`);
         });
       });
 
+      it('should get only the last font name when there are multiples', () => {
+        const testProps = Utils.getTextPropsFromRtf(
+          `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Twas grace that taught my heart to fear}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch And grace my fears relieved}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`
+        );
+
+        expect(testProps.font).toEqual('Impact');
+      });
+
+      it('should get only the last font colors when there are multiples', () => {
+        const testProps = Utils.getTextPropsFromRtf(
+          `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green254\\blue253;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Twas grace that taught my heart to fear}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch And grace my fears relieved}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`
+        );
+
+        expect(testProps.color).toEqual({ r: 255, g: 254, b: 253 });
+      });
+
       it('should return default properties when missing', () => {
         const testProps = Utils.getTextPropsFromRtf(`{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
           {\\fonttbl}
-          {\\colortbl;\\red255\\green255\\blue255;}
           }`);
 
-        expect(testProps).toEqual({ color: { r: 255, g: 255, b: 255 }, font: '', size: 0 });
+        expect(testProps).toEqual({ color: { r: 0, g: 0, b: 0 }, font: '', size: 0 });
       });
     });
   });

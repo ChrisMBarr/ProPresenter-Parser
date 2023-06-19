@@ -24,7 +24,7 @@ import {
   IXmlPro6TextElement,
 } from './v6-xml.model';
 
-//TODO: Slide cues, extract font/size/color from slide text
+//TODO: Slide cues
 
 export class v6Parser {
   parse(fileContent: string): IPro6Song {
@@ -178,6 +178,8 @@ export class v6Parser {
         }
       });
 
+      const textProps = Utils.getTextPropsFromRtf(rtfData);
+
       textElementArr.push({
         adjustsHeightToFit: txt['@adjustsHeightToFit'],
         bezelRadius: txt['@bezelRadius'],
@@ -196,6 +198,11 @@ export class v6Parser {
         source: txt['@source'],
         typeID: txt['@typeID'],
         verticalAlignment: txt['@verticalAlignment'],
+
+        //Attributes extracted from the RTF data
+        fontName: textProps.font,
+        textColor: textProps.color,
+        textSize: textProps.size,
 
         //These are `<NSString>` elements we decode above
         plainText,
