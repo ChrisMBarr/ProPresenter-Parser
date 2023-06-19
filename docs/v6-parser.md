@@ -140,11 +140,8 @@ Each slide can have a custom media cue saved on it. Media cues can be complex an
 ### The `slideGroups` => `slides` => `IPro6Slide` => `IPro6SlideTextElement` array
 Each slide contains an array of text elements. Most slides will just have a single item in this array, but if there are multiples they should be returned here too. Each item in this array will have the following properties
 
-| Property Name   | Return Type           | Description                                                                                                 |
-|:----------------|:----------------------|:------------------------------------------------------------------------------------------------------------|
-<!-- | `color`         | `IRgbColor`           | See the [colors docs](colors.md) for details                                                                |
-| `font`          | `string`              | The name of the font used for the text                                                                      |
-| `size`          | `number`              | The font size used for the text                                                                             | -->
+| Property Name   | Return Type           | Description                                                                                                                         |
+|:----------------|:----------------------|:------------------------------------------------------------------------------------------------------------------------------------|
 | `adjustsHeightToFit` | `boolean`             | Whether the "adjusts to fit" box is checked in ProPresenter. If so, the height of this element depends on the text inside it   |
 | `bezelRadius`        | `number`              | The radius of the rounded corners on this text element                                                                         |
 | `displayDelay`       | `number`              | ❓ Not sure what this represents. When setting a build in/out delay for a text element that delay amount is applied elsewhere |
@@ -152,6 +149,7 @@ Each slide contains an array of text elements. Most slides will just have a sing
 | `drawingFill`        | `boolean`             | Whether the background fill color on the text is displayed or not. If so, the color specified in `fillColor` property is used. |
 | `drawingStroke`      | `boolean`             | Whether the stroke around the text is displayed or not. If so, the `strokeColor` and `strokeWidth` are applied.                |
 | `fillColor`          | `IRgbColor`           | The fill color of the text element (the background color of the text box)                                                      |
+| `fontName`           | `string`              | The name of the font used for the text                                                                                         |
 | `fromTemplate`       | `boolean`             | Whether this text element was generated from a template or not                                                                 |
 | `id`                 | `string`              | The unique ID ProPresenter uses internally for this text element                                                               |
 | `locked`             | `boolean`             | Whether this text element is locked or not                                                                                     |
@@ -164,6 +162,8 @@ Each slide contains an array of text elements. Most slides will just have a sing
 | `source`             | `string`              | ❓ Not sure what this represents. I do not think it applies to text elements but the property does exist on it.               |
 | `strokeColor`        | `IRbgColor`           | The color of the stroke around the text. See the [colors docs](colors.md) for details                                          |
 | `strokeWidth`        | `number`              | The width of the stroke around the text.                                                                                       |
+| `textColor`          | `IRgbColor`           | The color of the text. See the [colors docs](colors.md) for details                                                            |
+| `textSize`           | `number`              | The font size used for the text                                                                                                |
 | `typeID`             | `number`              | ❓ Not sure what this represents. Possibly the type of element? This parser will only return text elements right now.         |
 | `verticalAlignment`  | `number`              | `0` is center aligned, `1` is top aligned, and `2` is bottom aligned                                                           |
 | `plainText`          | `string`              | The plain text of the slide                                                                                                    |
