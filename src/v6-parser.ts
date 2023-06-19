@@ -35,6 +35,10 @@ export class v6Parser {
       'RVPresentationDocument.array.RVSlideGrouping',
       'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide',
       'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide.array.RVTextElement',
+      'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide.array.RVImageElement',
+      'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide.array.RVBezierPathElement',
+      'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide.array.RVShapeElement',
+      'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide.array.RVHTMLShapeElement',
       'RVPresentationDocument.array.RVSongArrangement',
       'RVPresentationDocument.array.RVSongArrangement.array.NSString',
     ];
@@ -81,12 +85,12 @@ export class v6Parser {
 
   private getProperties(xmlDoc: IXmlPro6Doc): IPro6Properties {
     return {
-      CCLIArtistCredits: xmlDoc['@CCLIArtistCredits'],
-      CCLIAuthor: xmlDoc['@CCLIAuthor'],
-      CCLICopyrightYear: xmlDoc['@CCLICopyrightYear'],
+      CCLIArtistCredits: xmlDoc['@CCLIArtistCredits'] ?? '',
+      CCLIAuthor: xmlDoc['@CCLIAuthor'] ?? '',
+      CCLICopyrightYear: xmlDoc['@CCLICopyrightYear'] ?? '',
       CCLIDisplay: xmlDoc['@CCLIDisplay'],
-      CCLIPublisher: xmlDoc['@CCLIPublisher'],
-      CCLISongNumber: xmlDoc['@CCLISongNumber'],
+      CCLIPublisher: xmlDoc['@CCLIPublisher'] ?? '',
+      CCLISongNumber: xmlDoc['@CCLISongNumber'] ?? '',
       CCLISongTitle: xmlDoc['@CCLISongTitle'],
       backgroundColor: Utils.normalizeColorToRgbObj(xmlDoc['@backgroundColor']),
       buildNumber: xmlDoc['@buildNumber'],
@@ -131,6 +135,22 @@ export class v6Parser {
       if (xmlDisplayElements?.RVTextElement) {
         textElements = this.getTextElementsForSlide(xmlDisplayElements.RVTextElement);
       }
+
+      // if (xmlDisplayElements?.RVImageElement) {
+      //   //TODO: parse any image elements
+      // }
+
+      // if (xmlDisplayElements?.RVShapeElement) {
+      //   //TODO: parse any shape elements
+      // }
+
+      // if (xmlDisplayElements?.RVHTMLShapeElement) {
+      //   //TODO: parse any live HTML elements
+      // }
+
+      // if (xmlDisplayElements?.RVBezierPathElement) {
+      //   //TODO: parse any bezier paths
+      // }
 
       const highlightColor = slide['@highlightColor'] === '' ? null : Utils.normalizeColorToRgbObj(slide['@highlightColor']);
 
@@ -248,7 +268,7 @@ export class v6Parser {
     //The format is as follows:      radius|color|{offsetX, offsetY}
 
     const pattern = new RegExp(
-      '^(\\d+)\\|(' + Utils.patternRgbaStrAsString + ')\\|\\{(-?\\d(?:\\.\\d+)), (-?\\d(?:\\.\\d+))\\}$'
+      '^(\\d+)\\|(' + Utils.patternRgbaStrAsString + ')\\|\\{(-?\\d(?:\\.\\d+)?), (-?\\d(?:\\.\\d+)?)\\}$'
     );
 
     //This is OK to disable here. If we got here then we know the string will be in this format

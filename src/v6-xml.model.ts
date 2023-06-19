@@ -3,12 +3,12 @@ export interface IXmlPro6DocRoot {
 }
 
 export interface IXmlPro6Doc {
-  '@CCLIArtistCredits': string;
-  '@CCLIAuthor': string;
-  '@CCLICopyrightYear': string | number;
+  '@CCLIArtistCredits'?: string;
+  '@CCLIAuthor'?: string;
+  '@CCLICopyrightYear'?: string | number;
   '@CCLIDisplay': boolean;
-  '@CCLIPublisher': string;
-  '@CCLISongNumber': string | number;
+  '@CCLIPublisher'?: string;
+  '@CCLISongNumber'?: string | number;
   '@CCLISongTitle': string;
   '@backgroundColor': string;
   '@buildNumber': number;
@@ -88,13 +88,16 @@ export interface IXmlPro6DisplaySlideCue extends IXmlPro6ElementWithVarName {
 export interface IXmlPro6DisplaySlideDisplayElement extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'displayElements';
   RVTextElement?: IXmlPro6TextElement[];
+  RVImageElement?: IXmlPro6ImageElement[];
+  RVShapeElement?: IXmlPro6ShapeElement[];
+  RVHTMLShapeElement?: IXmlPro6HtmlElement[];
+  RVBezierPathElement?: IXmlPro6BezierPathElement[];
 }
 
-export interface IXmlPro6TextElement {
+interface IXmlPro6DisplayElementBase {
   RVRect3D: IXmlPro6TextRect3D;
   shadow: IXmlPro6TextShadow;
   dictionary: IXmlPro6TextStroke;
-  NSString: IXmlPro6TextString[];
   '@displayName': string;
   '@UUID': string;
   '@typeID': number;
@@ -110,9 +113,48 @@ export interface IXmlPro6TextElement {
   '@drawingShadow': boolean;
   '@drawingStroke': boolean;
   '@fillColor': string;
+}
+
+export interface IXmlPro6TextElement extends IXmlPro6DisplayElementBase {
+  NSString: IXmlPro6TextString[];
   '@adjustsHeightToFit': boolean;
   '@verticalAlignment': number;
   '@revealType': number;
+}
+
+export interface IXmlPro6ImageElement extends IXmlPro6DisplayElementBase {
+  '@scaleSize': string;
+  '@imageOffset': string;
+  '@manufactureURL': string;
+  '@manufactureName': string;
+  '@format': string;
+}
+
+export interface IXmlPro6ShapeElement extends IXmlPro6DisplayElementBase {
+  //Same as base
+}
+
+export interface IXmlPro6BezierPathElement extends IXmlPro6DisplayElementBase {
+  '@shouldClose': number;
+  '@isCircle': number;
+  '@isRectangle': number;
+  '@feather': number;
+  array: {
+    '@rvXMLIvarName': 'points';
+    RVPoint: IXmlPro6BezierPathPoint[];
+  };
+}
+
+export interface IXmlPro6BezierPathPoint {
+  '@point': string;
+  '@behindControlPoint': string;
+  '@frontControlPoint': string;
+}
+
+export interface IXmlPro6HtmlElement extends IXmlPro6DisplayElementBase {
+  '@urlString': string;
+  '@requestInterval': number;
+  '@requiresLiveUpdates': boolean;
 }
 
 export interface IXmlPro6TextRect3D extends IXmlPro6ElementWithVarName {
