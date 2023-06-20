@@ -1,4 +1,4 @@
-import { IProElementPosition, IRgbColor } from './shared.model';
+import { IProElementPosition, IRgbColor } from '../shared.model';
 
 export interface IPro4Song {
   properties: IPro4Properties;

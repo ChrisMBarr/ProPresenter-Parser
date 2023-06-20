@@ -1,8 +1,8 @@
 import { XMLBuilder } from 'fast-xml-parser';
-import { IProBuilderTextFormattingDefinite, IProTransitionType } from './shared.model';
-import * as Utils from './utils';
-import { IPro6BuilderOptions, IPro6BuilderOptionsDefinite } from './v6-builder.model';
-import { IXmlPro6DocRoot, IXmlPro6SlideGroup, IXmlPro6Transition } from './v6-xml.model';
+import { IProBuilderTextFormattingDefinite, IProTransitionType } from '../shared.model';
+import * as Utils from '../utils';
+import { IPro6BuilderOptions, IPro6BuilderOptionsDefinite } from './builder.model';
+import { IXmlPro6DocRoot, IXmlPro6SlideGroup, IXmlPro6Transition } from './xml.model';
 
 export class v6Builder {
   private readonly xmlBuilder: XMLBuilder;

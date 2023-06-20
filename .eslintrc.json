@@ -45,8 +45,8 @@
         "eslint-comments/disable-enable-pair": ["error", { "allowWholeFile": true }],
         "eslint-comments/no-unused-disable": "error",
         "functional/no-return-void": "off",
-        "import/order": ["error", { "alphabetize": { "order": "asc" } }],
-        "sort-imports": ["error", { "ignoreDeclarationSort": true, "ignoreCase": true }]
+        "import/order": ["warn", { "alphabetize": { "order": "asc" } }],
+        "sort-imports": ["warn", { "ignoreDeclarationSort": true, "ignoreCase": true }]
       }
     },
     {

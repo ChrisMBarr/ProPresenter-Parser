@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
-import { v5Parser } from './v5-parser';
-import { IPro5Arrangement, IPro5Properties, IPro5SlideGroup } from './v5-parser.model';
+import { v5Parser } from './parser';
+import { IPro5Arrangement, IPro5Properties, IPro5SlideGroup } from './parser.model';
 
-describe('v5Parser', (): void => {
+describe('V5 - Parser', (): void => {
   let parser: v5Parser;
 
   beforeEach(() => {

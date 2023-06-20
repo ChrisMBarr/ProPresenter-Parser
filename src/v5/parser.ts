@@ -1,6 +1,6 @@
 import { XMLParser } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
-import * as Utils from './utils';
+import * as Utils from '../utils';
 import {
   IPro5Arrangement,
   IPro5Properties,
@@ -9,8 +9,8 @@ import {
   IPro5SlideMediaCue,
   IPro5SlideTextElement,
   IPro5Song,
-} from './v5-parser.model';
-import { IXmlPro5Arrangement, IXmlPro5Doc, IXmlPro5DocRoot, IXmlPro5Slide, IXmlPro5SlideGroup } from './v5-xml.model';
+} from './parser.model';
+import { IXmlPro5Arrangement, IXmlPro5Doc, IXmlPro5DocRoot, IXmlPro5Slide, IXmlPro5SlideGroup } from './xml.model';
 
 export class v5Parser {
   parse(fileContent: string): IPro5Song {

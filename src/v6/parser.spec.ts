@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
-import { v6Parser } from './v6-parser';
-import { IPro6Arrangement, IPro6Properties, IPro6SlideGroup } from './v6-parser.model';
+import { v6Parser } from './parser';
+import { IPro6Arrangement, IPro6Properties, IPro6SlideGroup } from './parser.model';
 
-describe('v6Parser', (): void => {
+describe('V6 - Parser', (): void => {
   let parser: v6Parser;
 
   beforeEach(() => {

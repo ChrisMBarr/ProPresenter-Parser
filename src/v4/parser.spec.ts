@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
-import { v4Parser } from './v4-parser';
-import { IPro4Properties, IPro4Slide } from './v4-parser.model';
+import { v4Parser } from './parser';
+import { IPro4Properties, IPro4Slide } from './parser.model';
 
-describe('v4Parser', (): void => {
+describe('V4 - Parser', (): void => {
   let parser: v4Parser;
 
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { IProTransitionType } from './shared.model';
+import { IProTransitionType } from '../shared.model';
 
 export interface IXmlPro6DocRoot {
   RVPresentationDocument: IXmlPro6Doc;

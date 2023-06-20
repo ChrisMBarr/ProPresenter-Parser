@@ -1,5 +1,5 @@
-import { IProTransitionType } from './shared.model';
-import { v5Builder } from './v5-builder';
+import { IProTransitionType } from '../shared.model';
+import { v5Builder } from './builder';
 
 function normalizeDatesAndIdsForTesting(xmlStr: string): string {
   return xmlStr
@@ -8,7 +8,7 @@ function normalizeDatesAndIdsForTesting(xmlStr: string): string {
     .trim();
 }
 
-describe('v5Builder', (): void => {
+describe('V5 - Builder', (): void => {
   it('should create an song with minimal options, using a string array for slide text', () => {
     const builder = new v5Builder({
       properties: {

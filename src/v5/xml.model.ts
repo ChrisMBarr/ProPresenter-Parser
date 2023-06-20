@@ -1,4 +1,4 @@
-import { IProTransitionType, IXmlProElementPosition } from './shared.model';
+import { IProTransitionType, IXmlProElementPosition } from '../shared.model';
 
 export interface IXmlPro5DocRoot {
   RVPresentationDocument: IXmlPro5Doc;

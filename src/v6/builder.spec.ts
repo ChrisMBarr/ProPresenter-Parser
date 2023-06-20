@@ -1,4 +1,4 @@
-import { v6Builder } from './v6-builder';
+import { v6Builder } from './builder';
 
 function normalizeDatesAndIdsForTesting(xmlStr: string): string {
   return xmlStr
@@ -7,7 +7,7 @@ function normalizeDatesAndIdsForTesting(xmlStr: string): string {
     .trim();
 }
 
-describe('v6Builder', (): void => {
+describe('V6 - Builder', (): void => {
   it('should create an song with minimal options, using a string array for slide text', () => {
     const builder = new v6Builder({
       properties: {

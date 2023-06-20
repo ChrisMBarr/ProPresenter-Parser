@@ -1,7 +1,7 @@
 import { XMLParser } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
-import { IProElementPosition } from './shared.model';
-import * as Utils from './utils';
+import { IProElementPosition } from '../shared.model';
+import * as Utils from '../utils';
 import {
   IPro6Arrangement,
   IPro6ArrangementSlideGroup,
@@ -11,7 +11,7 @@ import {
   IPro6SlideGroup,
   IPro6SlideTextElement,
   IPro6Song,
-} from './v6-parser.model';
+} from './parser.model';
 import {
   IXmlPro6Arrangement,
   IXmlPro6DisplaySlide,
@@ -22,7 +22,7 @@ import {
   IXmlPro6DocRoot,
   IXmlPro6SlideGroup,
   IXmlPro6TextElement,
-} from './v6-xml.model';
+} from './xml.model';
 
 export class v6Parser {
   parse(fileContent: string): IPro6Song {

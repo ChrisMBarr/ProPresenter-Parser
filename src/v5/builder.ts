@@ -1,15 +1,9 @@
 import { XMLBuilder } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
-import { IProBuilderTextFormattingDefinite, IProTransitionType, IXmlProElementPosition } from './shared.model';
-import * as Utils from './utils';
-import { IPro5BuilderOptions, IPro5BuilderOptionsDefinite, IPro5BuilderOptionsSlideGroup } from './v5-builder.model';
-import {
-  IXmlPro5DocRoot,
-  IXmlPro5Slide,
-  IXmlPro5SlideGroup,
-  IXmlPro5SlideTextElement,
-  IXmlPro5TransitionObj,
-} from './v5-xml.model';
+import { IProBuilderTextFormattingDefinite, IProTransitionType, IXmlProElementPosition } from '../shared.model';
+import * as Utils from '../utils';
+import { IPro5BuilderOptions, IPro5BuilderOptionsDefinite, IPro5BuilderOptionsSlideGroup } from './builder.model';
+import { IXmlPro5DocRoot, IXmlPro5Slide, IXmlPro5SlideGroup, IXmlPro5SlideTextElement, IXmlPro5TransitionObj } from './xml.model';
 
 export class v5Builder {
   private readonly xmlBuilder: XMLBuilder;
