@@ -1,7 +1,6 @@
 import {
   IProBuilderTextFormatting,
   IProBuilderTextFormattingDefinite,
-  IProElementOutline,
   IProElementShadow,
   IProTransitionType,
   IRgbColor,
