@@ -128,7 +128,7 @@ describe('V6 - Parser', (): void => {
                 revealType: 0,
                 rotation: 0,
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Amazing grace how sweet the sound}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch That saved a wretch like me}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { b: 0, g: 0, r: 0 },
                   enabled: false,
@@ -179,7 +179,7 @@ describe('V6 - Parser', (): void => {
                 revealType: 0,
                 rotation: 0,
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch I once was lost but now I'm found}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch Was blind but now I see}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { b: 0, g: 0, r: 0 },
                   enabled: false,
@@ -237,7 +237,7 @@ describe('V6 - Parser', (): void => {
                 revealType: 0,
                 rotation: 0,
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Twas grace that taught my heart to fear}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch And grace my fears relieved}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { b: 0, g: 0, r: 0 },
                   enabled: false,
@@ -288,7 +288,7 @@ describe('V6 - Parser', (): void => {
                 revealType: 0,
                 rotation: 0,
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch How precious did that grace appear}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch The hour I first believed}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { b: 0, g: 0, r: 0 },
                   enabled: false,
@@ -346,7 +346,7 @@ describe('V6 - Parser', (): void => {
                 revealType: 0,
                 rotation: 0,
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Through many dangers, toils}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch And snares I have already come}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { b: 0, g: 0, r: 0 },
                   enabled: false,
@@ -397,7 +397,7 @@ describe('V6 - Parser', (): void => {
                 revealType: 0,
                 rotation: 0,
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch 'Tis grace that brought me safe thus far}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch And grace will lead me home}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { b: 0, g: 0, r: 0 },
                   enabled: false,
@@ -455,7 +455,7 @@ describe('V6 - Parser', (): void => {
                 revealType: 0,
                 rotation: 0,
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch When we've been there ten thousand years}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch Bright shining as the sun}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { b: 0, g: 0, r: 0 },
                   enabled: false,
@@ -506,7 +506,7 @@ describe('V6 - Parser', (): void => {
                 revealType: 0,
                 rotation: 0,
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch We've no less days to sing God's praise}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch Than when we'd first begun!}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { b: 0, g: 0, r: 0 },
                   enabled: false,
@@ -626,7 +626,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -678,7 +678,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 60,
                 position: { x: 20, y: 20, z: 0, width: 1876, height: 1012 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -730,7 +730,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -783,7 +783,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -835,7 +835,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -887,7 +887,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -939,7 +939,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -991,7 +991,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -1043,7 +1043,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -1095,7 +1095,7 @@ describe('V6 - Parser', (): void => {
                 textColor: { r: 255, g: 255, b: 255 },
                 textSize: 16,
                 position: { x: 20, y: 20, z: 0, width: 984, height: 728 },
-                shadow: {
+                textShadow: {
                   angle: 135,
                   color: { r: 0, g: 0, b: 0 },
                   enabled: false,
@@ -1221,7 +1221,7 @@ describe('V6 - Parser', (): void => {
               },
               strokeWidth: 12,
               position: { x: 117, y: 520, z: 0, width: 900, height: 399 },
-              shadow: {
+              textShadow: {
                 angle: 154.99999999999997,
                 color: { r: 0, g: 0, b: 0 },
                 enabled: true,
@@ -1268,7 +1268,7 @@ describe('V6 - Parser', (): void => {
               },
               strokeWidth: 12,
               position: { x: 948, y: 126, z: 0, width: 900, height: 399 },
-              shadow: {
+              textShadow: {
                 angle: 135,
                 color: { r: 0, g: 0, b: 0 },
                 enabled: false,
@@ -1320,7 +1320,7 @@ describe('V6 - Parser', (): void => {
               strokeColor: { r: 0, g: 0, b: 0 },
               strokeWidth: 0,
               position: { x: 105, y: 757, z: 0, width: 1685, height: 167 },
-              shadow: {
+              textShadow: {
                 angle: 135,
                 color: { r: 0, g: 0, b: 0 },
                 enabled: false,
@@ -1359,7 +1359,7 @@ describe('V6 - Parser', (): void => {
               strokeColor: { r: 0, g: 0, b: 0 },
               strokeWidth: 0,
               position: { x: 928, y: 936, z: 0, width: 825, height: 55 },
-              shadow: {
+              textShadow: {
                 angle: 135,
                 color: { r: 0, g: 0, b: 0 },
                 enabled: false,
@@ -1411,7 +1411,7 @@ describe('V6 - Parser', (): void => {
               strokeColor: { r: 255, g: 255, b: 255 },
               strokeWidth: 0,
               position: { x: 56, y: 42, z: 0, width: 1808, height: 996 },
-              shadow: {
+              textShadow: {
                 angle: 135,
                 color: { r: 0, g: 0, b: 0 },
                 enabled: false,
@@ -1471,7 +1471,7 @@ describe('V6 - Parser', (): void => {
               strokeColor: { r: 255, g: 255, b: 255 },
               strokeWidth: 0,
               position: { x: 56, y: 42, z: 0, width: 1808, height: 996 },
-              shadow: {
+              textShadow: {
                 angle: 135,
                 color: { r: 0, g: 0, b: 0 },
                 enabled: false,

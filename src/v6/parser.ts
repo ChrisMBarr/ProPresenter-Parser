@@ -1,11 +1,10 @@
 import { XMLParser } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
-import { IProElementPosition } from '../shared.model';
+import { IProElementPosition, IProElementShadow } from '../shared.model';
 import * as Utils from '../utils';
 import {
   IPro6Arrangement,
   IPro6ArrangementSlideGroup,
-  IPro6ElementShadow,
   IPro6Properties,
   IPro6Slide,
   IPro6SlideGroup,
@@ -204,7 +203,6 @@ export class v6Parser {
         displayDelay: txt['@displayDelay'],
         displayName: txt['@displayName'],
         drawingFill: txt['@drawingFill'],
-        drawingStroke: txt['@drawingStroke'],
         fillColor: Utils.normalizeColorToRgbObj(txt['@fillColor']),
         fromTemplate: txt['@fromTemplate'],
         id: txt['@UUID'],
@@ -229,10 +227,13 @@ export class v6Parser {
         winFontData,
 
         //These elements need to have their values parsed to be more useful
-        strokeColor: Utils.normalizeColorToRgbObj(txt.dictionary.NSColor['#text']),
-        strokeWidth: txt.dictionary.NSNumber['#text'],
+        outline: {
+          color: Utils.normalizeColorToRgbObj(txt.dictionary.NSColor['#text']),
+          size: txt.dictionary.NSNumber['#text'],
+          enabled: txt['@drawingStroke'],
+        },
         position: this.getPosition(txt.RVRect3D['#text']),
-        shadow: this.getShadow(txt.shadow['#text'], txt['@drawingShadow']),
+        textShadow: this.getShadow(txt.shadow['#text'], txt['@drawingShadow']),
       });
     }
 
@@ -261,7 +262,7 @@ export class v6Parser {
     };
   }
 
-  private getShadow(shadowStr: string, enabled: boolean): IPro6ElementShadow {
+  private getShadow(shadowStr: string, enabled: boolean): IProElementShadow {
     //A shadow string looks like this: '10|0 0 0 1|{1.41421356237309, -1.4142135623731}'
     //The format is as follows:      radius|color|{offsetX, offsetY}
 

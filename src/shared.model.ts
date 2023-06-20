@@ -29,12 +29,18 @@ export interface IProElementPosition {
   height: number;
 }
 
-export interface IXmlProElementPosition {
-  '@x': number;
-  '@y': number;
-  '@z': number;
-  '@width': number;
-  '@height': number;
+export interface IProElementShadow {
+  angle: number;
+  color: IRgbColor;
+  enabled: boolean;
+  length: number;
+  radius: number;
+}
+
+export interface IProElementOutline {
+  color: IRgbColor;
+  enabled: boolean;
+  size: number;
 }
 
 export enum IProTransitionType {

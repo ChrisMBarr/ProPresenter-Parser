@@ -135,7 +135,6 @@ Each slide contains an array of text elements. Most slides will just have a sing
 | `displayDelay`       | `number`              | ❓ Not sure what this represents. When setting a build in/out delay for a text element that delay amount is applied elsewhere |
 | `displayName`        | `string`              | The name of this text element                                                                                                  |
 | `drawingFill`        | `boolean`             | Whether the background fill color on the text is displayed or not. If so, the color specified in `fillColor` property is used. |
-| `drawingStroke`      | `boolean`             | Whether the stroke around the text is displayed or not. If so, the `strokeColor` and `strokeWidth` are applied.                |
 | `fillColor`          | `IRgbColor`           | The fill color of the text element (the background color of the text box)                                                      |
 | `fontName`           | `string`              | The name of the font used for the text                                                                                         |
 | `fromTemplate`       | `boolean`             | Whether this text element was generated from a template or not                                                                 |
@@ -146,11 +145,10 @@ Each slide contains an array of text elements. Most slides will just have a sing
 | `position`           | `IProElementPosition` | The position of this text element on the side. See the [position docs](position.md) for details                                |
 | `revealType`         | `number`              | `0` is no reveal, `1` is "Bulleted List", and `2` is "Fill in the Blank"                                                       |
 | `rotation`           | `number`              | The angle of rotation for this text element                                                                                    |
-| `shadow`             | `IPro6ElementShadow`  | An object that describes the text shadow                                                                                       |
+| `textShadow`         | `IProElementShadow`   | An object that describes the text shadow. See the [shadows docs](shadows.md) for details                                       |
 | `source`             | `string`              | ❓ Not sure what this represents. I do not think it applies to text elements but the property does exist on it.               |
-| `strokeColor`        | `IRbgColor`           | The color of the stroke around the text. See the [colors docs](colors.md) for details                                          |
-| `strokeWidth`        | `number`              | The width of the stroke around the text.                                                                                       |
 | `textColor`          | `IRgbColor`           | The color of the text. See the [colors docs](colors.md) for details                                                            |
+| `outline`             | `IProElementOutline` | An object that describes the text element outline. This is around the text element, NOT around the actual letters of the text! See the [outlines docs](outlines.md) for details                                      |
 | `textSize`           | `number`              | The font size used for the text                                                                                                |
 | `typeID`             | `number`              | ❓ Not sure what this represents. Possibly the type of element? This parser will only return text elements right now.         |
 | `verticalAlignment`  | `number`              | `0` is center aligned, `1` is top aligned, and `2` is bottom aligned                                                           |
@@ -185,7 +183,6 @@ Here is an example of one object which could appear in the `slideGroups` array. 
           displayDelay: 0,
           displayName: 'Default',
           drawingFill: false,
-          drawingStroke: false,
           fillColor: { b: 255, g: 255, r: 255 },
           fromTemplate: false,
           id: '9328c28d-fe52-4fe9-99be-49ce26f242db',
@@ -193,22 +190,25 @@ Here is an example of one object which could appear in the `slideGroups` array. 
           opacity: 1,
           persistent: 0,
           plainText: 'Amazing grace how sweet the sound\r\nThat saved a wretch like me',
-          strokeColor: { r: 0, g: 0, b: 0 },
-          strokeWidth: 0,
+          outline: {
+            color: { r: 0, g: 0, b: 0 }
+            enabled: false,
+            size: 0,
+          },
           fontName: 'Impact',
           textColor: { r: 255, g: 255, b: 255 },
-          textSize: 74.5,
-          position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
-          revealType: 0,
-          rotation: 0,
-          rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Amazing grace how sweet the sound}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch That saved a wretch like me}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-          shadow: {
+          textShadow: {
             angle: 135,
             color: { r: 0, g: 0, b: 0 },
             enabled: false,
             length: 7,
             radius: 10
           },
+          textSize: 74.5,
+          position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
+          revealType: 0,
+          rotation: 0,
+          rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Amazing grace how sweet the sound}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch That saved a wretch like me}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
           source: '',
           typeID: 0,
           verticalAlignment: 0,
@@ -236,7 +236,6 @@ Here is an example of one object which could appear in the `slideGroups` array. 
           displayDelay: 0,
           displayName: 'Default',
           drawingFill: false,
-          drawingStroke: false,
           fillColor: { r: 255, g: 255, b: 255 },
           fromTemplate: false,
           id: '66b37b9a-4513-40df-8d81-12e8f756c43e',
@@ -244,22 +243,25 @@ Here is an example of one object which could appear in the `slideGroups` array. 
           opacity: 1,
           persistent: 0,
           plainText: "I once was lost but now I'm found\r\nWas blind but now I see",
-          strokeColor: { r: 0, g: 0, b: 0 },
-          strokeWidth: 0,
+          outline: {
+            color: { r: 0, g: 0, b: 0 }
+            enabled: false,
+            size: 0,
+          },
           fontName: 'Impact',
           textColor: { r: 255, g: 255, b: 255 },
-          textSize: 74.5,
-          position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
-          revealType: 0,
-          rotation: 0,
-          rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch I once was lost but now I'm found}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch Was blind but now I see}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
-          shadow: {
+          textShadow: {
             angle: 135,
             color: { r: 0, g: 0, b: 0 },
             enabled: false,
             length: 7,
             radius: 10
           },
+          textSize: 74.5,
+          position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
+          revealType: 0,
+          rotation: 0,
+          rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch I once was lost but now I'm found}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch Was blind but now I see}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
           source: '',
           typeID: 0,
           verticalAlignment: 0,

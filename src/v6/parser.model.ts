@@ -1,4 +1,4 @@
-import { IProElementPosition, IRgbColor } from '../shared.model';
+import { IProElementOutline, IProElementPosition, IProElementShadow, IRgbColor } from '../shared.model';
 
 export interface IPro6Song {
   properties: IPro6Properties;
@@ -58,7 +58,6 @@ export interface IPro6SlideTextElement {
   displayDelay: number;
   displayName: string;
   drawingFill: boolean;
-  drawingStroke: boolean;
   fillColor: IRgbColor;
   fromTemplate: boolean;
   id: string;
@@ -83,18 +82,9 @@ export interface IPro6SlideTextElement {
   winFontData: string;
 
   //These are elements that must have child properties that must be processed
-  strokeColor: IRgbColor;
-  strokeWidth: number;
+  outline: IProElementOutline;
   position: IProElementPosition;
-  shadow: IPro6ElementShadow;
-}
-
-export interface IPro6ElementShadow {
-  angle: number;
-  color: IRgbColor;
-  enabled: boolean;
-  length: number;
-  radius: number;
+  textShadow: IProElementShadow;
 }
 
 //------------------------------------------------------
