@@ -1,3 +1,5 @@
+import { IProTransitionType } from './shared.model';
+
 export interface IXmlPro6DocRoot {
   RVPresentationDocument: IXmlPro6Doc;
 }
@@ -17,7 +19,7 @@ export interface IXmlPro6Doc {
   '@docType': number;
   '@drawingBackgroundColor': boolean;
   '@height': number;
-  '@lastDateUsed': Date;
+  '@lastDateUsed': string | Date;
   '@notes': string;
   '@os': number;
   '@resourcesDirectory': string;
@@ -26,7 +28,8 @@ export interface IXmlPro6Doc {
   '@versionNumber': number;
   '@width': number;
 
-  RVTimeline: IXmlPro6Timeline;
+  RVTimeline?: IXmlPro6Timeline;
+  RVTransition?: IXmlPro6Transition;
   array: (IXmlPro6DocArrayElementGroups | IXmlPro6DocArrayElementArrangements)[]; //multiple "<array>" elements could be various kinds of data
 }
 
@@ -41,6 +44,21 @@ export interface IXmlPro6Timeline extends IXmlPro6ElementWithVarName {
   '@selectedMediaTrackIndex': number;
   '@loop': boolean;
   array: IXmlPro6TimelineArray[];
+}
+
+export interface IXmlPro6Transition {
+  '@rvXMLIvarName': 'transitionObject';
+
+  '@transitionType': IProTransitionType;
+  '@transitionDirection': number;
+  '@transitionDuration': number;
+  '@motionEnabled': boolean;
+  '@motionDuration': number;
+  '@motionSpeed': number;
+  '@groupIndex': number;
+  '@orderIndex': number;
+  '@slideBuildAction': number;
+  '@slideBuildDelay': number;
 }
 
 export interface IXmlPro6TimelineArray extends IXmlPro6ElementWithVarName {
