@@ -14,10 +14,10 @@ describe('V6 - Builder', (): void => {
         CCLISongTitle: 'My Test Song',
       },
       slideGroups: [
-        // {
-        //   label: 'Verse 1',
-        //   slides: ['Hello World'],
-        // },
+        {
+          label: 'Verse 1',
+          slides: ['Hello World'],
+        },
       ],
     });
 
@@ -28,7 +28,29 @@ describe('V6 - Builder', (): void => {
     <array rvXMLIvarName="timeCues"/>
     <array rvXMLIvarName="mediaTracks"/>
   </RVTimeline>
-  <array rvXMLIvarName="groups"/>
+  <array rvXMLIvarName="groups">
+    <RVSlideGrouping name="Verse 1" uuid="D6E8ADBE-A8EE-1AA7-1700-21AFF600646E" color="0 0 0 0">
+      <array rvXMLIvarName="slides">
+        <RVDisplaySlide backgroundColor="0 0 0 0" highlightColor="0 0 0 0" drawingBackgroundColor enabled hotKey="" label="" notes="" UUID="9D17FB89-1159-D1EC-E3FD-0E2780FE70CA" chordChartPath="">
+          <array rvXMLIvarName="cues"/>
+          <array rvXMLIvarName="displayElements">
+            <RVTextElement displayName="Default" UUID="B3241B5B-4150-8F52-9725-53436C2F097D" typeID="1" displayDelay="0" locked="false" persistent="0" fromTemplate="false" opacity="1" source="" bezelRadius="0" rotation="0" drawingFill="false" drawingShadow="false" drawingStroke="false" fillColor="1 1 1 0" adjustsHeightToFit="false" verticalAlignment="1" revealType="0">
+              <RVRect3D rvXMLIvarName="position"></RVRect3D>
+              <shadow rvXMLIvarName="shadow"></shadow>
+              <dictionary rvXMLIvarName="stroke">
+                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey"></NSColor>
+                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="double">0</NSNumber>
+              </dictionary>
+              <NSString rvXMLIvarName="PlainText">SGVsbG8gV29ybGQ=</NSString>
+              <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMDM4XGNvY29hc3VicnRmMzIwJyx7XGZvbnR0YmxcZjBcZnN3aXNzXGZjaGFyc2V0MCBBcmlhbDt9e1xjb2xvcnRibDtccmVkMjU1XGdyZWVuMjU1XGJsdWUyNTU7fVxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccWNccGFyZGlybmF0dXJhbFxmMFxmczEyMCBcY2YxIEhlbGxvIFdvcmxkfQ==</NSString>
+              <NSString rvXMLIvarName="WinFlowData"></NSString>
+              <NSString rvXMLIvarName="WinFontData"></NSString>
+            </RVTextElement>
+          </array>
+        </RVDisplaySlide>
+      </array>
+    </RVSlideGrouping>
+  </array>
   <array rvXMLIvarName="arrangements"/>
 </RVPresentationDocument>`);
 

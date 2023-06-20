@@ -1,8 +1,9 @@
 import { XMLBuilder } from 'fast-xml-parser';
 import { IProBuilderTextFormattingDefinite, IProTransitionType } from '../shared.model';
 import * as Utils from '../utils';
-import { IPro6BuilderOptions, IPro6BuilderOptionsDefinite } from './builder.model';
-import { IXmlPro6DocRoot, IXmlPro6SlideGroup, IXmlPro6Transition } from './xml.model';
+import { IPro6BuilderOptions, IPro6BuilderOptionsDefinite, IPro6BuilderOptionsSlideGroup } from './builder.model';
+import { IXmlPro6DisplaySlide, IXmlPro6DocRoot, IXmlPro6SlideGroup, IXmlPro6TextElement, IXmlPro6Transition } from './xml.model';
+import { Base64 } from 'js-base64';
 
 export class v6Builder {
   private readonly xmlBuilder: XMLBuilder;
@@ -127,8 +128,108 @@ export class v6Builder {
   }
 
   private buildSlideGroups(): IXmlPro6SlideGroup[] {
-    const slideGroups: IXmlPro6SlideGroup[] = [];
+    const xmlSlideGroups: IXmlPro6SlideGroup[] = [];
 
-    return slideGroups;
+    for (const group of this.options.slideGroups) {
+      xmlSlideGroups.push({
+        '@name': group.label,
+        '@uuid': Utils.getUniqueID(),
+        '@color': Utils.normalizeColorToRgbaString(group.groupColor ?? '0 0 0 0'),
+        array: {
+          '@rvXMLIvarName': 'slides',
+          RVDisplaySlide: this.buildSlidesForGroup(group),
+        },
+      });
+    }
+
+    return xmlSlideGroups;
+  }
+
+  private buildSlidesForGroup(thisGroup: IPro6BuilderOptionsSlideGroup): IXmlPro6DisplaySlide[] {
+    const xmlSlides: IXmlPro6DisplaySlide[] = [];
+
+    for (const slide of thisGroup.slides) {
+      //Defaults
+      let highlightColor = '0 0 0 0'; //transparent/none
+      let label = '';
+      let text;
+
+      if (typeof slide === 'string') {
+        text = slide;
+      } else {
+        highlightColor = Utils.normalizeColorToRgbaString(slide.slideColor ?? highlightColor);
+        label = slide.label ?? '';
+        text = slide.text;
+      }
+
+      xmlSlides.push({
+        '@backgroundColor': '0 0 0 0', //transparent/none
+        '@highlightColor': highlightColor,
+        '@drawingBackgroundColor': true,
+        '@enabled': true,
+        '@hotKey': '',
+        '@label': label,
+        '@notes': '',
+        '@UUID': Utils.getUniqueID(),
+        '@chordChartPath': '',
+
+        array: [
+          { '@rvXMLIvarName': 'cues' },
+          {
+            '@rvXMLIvarName': 'displayElements',
+            RVTextElement: [this.buildTextElement(text)],
+          },
+        ],
+      });
+    }
+
+    return xmlSlides;
+  }
+
+  private buildTextElement(text: string): IXmlPro6TextElement {
+    const rtfText = Utils.formatRtf(
+      text,
+      this.options.slideTextFormatting.fontName,
+      this.options.slideTextFormatting.textSize,
+      Utils.normalizeColorToRgbObj(this.options.slideTextFormatting.textColor)
+    );
+
+    return {
+      '@displayName': 'Default',
+      '@UUID': Utils.getUniqueID(),
+      '@typeID': 1,
+      '@displayDelay': 0,
+      '@locked': false,
+      '@persistent': 0,
+      '@fromTemplate': false,
+      '@opacity': 1,
+      '@source': '',
+      '@bezelRadius': 0,
+      '@rotation': 0,
+      '@drawingFill': false,
+      '@drawingShadow': false,
+      '@drawingStroke': false,
+      '@fillColor': '1 1 1 0', //transparent
+      '@adjustsHeightToFit': false,
+      '@verticalAlignment': 1,
+      '@revealType': 0,
+
+      RVRect3D: {
+        '@rvXMLIvarName': 'position',
+        '#text': '',
+      },
+      shadow: { '@rvXMLIvarName': 'shadow', '#text': '' },
+      dictionary: {
+        '@rvXMLIvarName': 'stroke',
+        NSColor: { '@rvXMLDictionaryKey': 'RVShapeElementStrokeColorKey', '#text': '' },
+        NSNumber: { '@rvXMLDictionaryKey': 'RVShapeElementStrokeWidthKey', '@hint': 'double', '#text': 0 },
+      },
+      NSString: [
+        { '@rvXMLIvarName': 'PlainText', '#text': Base64.encode(text) },
+        { '@rvXMLIvarName': 'RTFData', '#text': Base64.encode(rtfText) },
+        { '@rvXMLIvarName': 'WinFlowData', '#text': '' },
+        { '@rvXMLIvarName': 'WinFontData', '#text': '' },
+      ],
+    };
   }
 }
