@@ -151,7 +151,6 @@ to bless Your name}`);
       });
     });
 
-    //TODO: 8bit num to float, test colors other than full values
     describe('normalizeColorToRgbaString()', () => {
       it('should pass RGBA float strings straight through', () => {
         expect(Utils.normalizeColorToRgbaString('0 0 0 1')).toEqual('0 0 0 1');
@@ -195,7 +194,7 @@ to bless Your name}`);
           //cause the test to fail is no error is thrown
           expect(true).toBe(false);
         } catch (err: unknown) {
-          expect(err).toEqual(Error(`Input color '000' could not be parsed!`));
+          expect(err).toEqual(Error(`Input color '000' could not be parsed to an RGBA color string!`));
         }
 
         try {
@@ -204,7 +203,7 @@ to bless Your name}`);
           //cause the test to fail is no error is thrown
           expect(true).toBe(false);
         } catch (err: unknown) {
-          expect(err).toEqual(Error(`Input color '0 0 0' could not be parsed!`));
+          expect(err).toEqual(Error(`Input color '0 0 0' could not be parsed to an RGBA color string!`));
         }
 
         try {
@@ -213,7 +212,7 @@ to bless Your name}`);
           //cause the test to fail is no error is thrown
           expect(true).toBe(false);
         } catch (err: unknown) {
-          expect(err).toEqual(Error(`Input color '9999 9999 9999 1' could not be parsed!`));
+          expect(err).toEqual(Error(`Input color '9999 9999 9999 1' could not be parsed to an RGBA color string!`));
         }
       });
     });
@@ -255,7 +254,7 @@ to bless Your name}`);
           //cause the test to fail is no error is thrown
           expect(true).toBe(false);
         } catch (err: unknown) {
-          expect(err).toEqual(Error(`Input color '000' could not be parsed!`));
+          expect(err).toEqual(Error(`Input color '000' could not be parsed to an RGB color object!`));
         }
 
         try {
@@ -264,7 +263,7 @@ to bless Your name}`);
           //cause the test to fail is no error is thrown
           expect(true).toBe(false);
         } catch (err: unknown) {
-          expect(err).toEqual(Error(`Input color '0 0 0' could not be parsed!`));
+          expect(err).toEqual(Error(`Input color '0 0 0' could not be parsed to an RGB color object!`));
         }
 
         try {
@@ -273,7 +272,65 @@ to bless Your name}`);
           //cause the test to fail is no error is thrown
           expect(true).toBe(false);
         } catch (err: unknown) {
-          expect(err).toEqual(Error(`Input color '9999 9999 9999 1' could not be parsed!`));
+          expect(err).toEqual(Error(`Input color '9999 9999 9999 1' could not be parsed to an RGB color object!`));
+        }
+      });
+    });
+
+    describe('normalizeColorToHex()', () => {
+      it('should parse RGBA float strings to HEX colors', () => {
+        expect(Utils.normalizeColorToHex('0 0 0 1')).toEqual('000000');
+        expect(Utils.normalizeColorToHex('1 1 1 1')).toEqual('FFFFFF');
+        expect(Utils.normalizeColorToHex('1 0 0 1')).toEqual('FF0000');
+        expect(Utils.normalizeColorToHex('0 1 0 1')).toEqual('00FF00');
+        expect(Utils.normalizeColorToHex('0 0 1 1')).toEqual('0000FF');
+        expect(Utils.normalizeColorToHex('0.5 0 0.5 1')).toEqual('800080');
+        expect(Utils.normalizeColorToHex('0.5019607843137255 0.5019607843137255 0.5019607843137255 1')).toEqual('808080');
+        expect(Utils.normalizeColorToHex('0.0784313725490196 0.7568627450980392 0.5137254901960784 1')).toEqual('14C183');
+        expect(Utils.normalizeColorToHex('0.24705882352941178 0.1607843137254902 0.2196078431372549 1')).toEqual('3F2938');
+      });
+      it('should pass hex colors straight through', () => {
+        expect(Utils.normalizeColorToHex('#000000')).toEqual('000000');
+        expect(Utils.normalizeColorToHex('#FFFFFF')).toEqual('FFFFFF');
+        expect(Utils.normalizeColorToHex('#FF0000')).toEqual('FF0000');
+        expect(Utils.normalizeColorToHex('#00FF00')).toEqual('00FF00');
+        expect(Utils.normalizeColorToHex('#0000FF')).toEqual('0000FF');
+        expect(Utils.normalizeColorToHex('#14c183')).toEqual('14c183');
+        expect(Utils.normalizeColorToHex('#3f2938')).toEqual('3f2938');
+      });
+      it('should parse RGB objects to hex colors', () => {
+        expect(Utils.normalizeColorToHex({ r: 0, g: 0, b: 0 })).toEqual('000000');
+        expect(Utils.normalizeColorToHex({ r: 255, g: 255, b: 255 })).toEqual('FFFFFF');
+        expect(Utils.normalizeColorToHex({ r: 255, g: 0, b: 0 })).toEqual('FF0000');
+        expect(Utils.normalizeColorToHex({ r: 0, g: 255, b: 0 })).toEqual('00FF00');
+        expect(Utils.normalizeColorToHex({ r: 0, g: 0, b: 255 })).toEqual('0000FF');
+      });
+      it('should throw an errors when something else is passed in', () => {
+        try {
+          Utils.normalizeColorToHex('000');
+
+          //cause the test to fail is no error is thrown
+          expect(true).toBe(false);
+        } catch (err: unknown) {
+          expect(err).toEqual(Error(`Input color '000' could not be parsed to a HEX color!`));
+        }
+
+        try {
+          Utils.normalizeColorToHex('0 0 0');
+
+          //cause the test to fail is no error is thrown
+          expect(true).toBe(false);
+        } catch (err: unknown) {
+          expect(err).toEqual(Error(`Input color '0 0 0' could not be parsed to a HEX color!`));
+        }
+
+        try {
+          Utils.normalizeColorToHex('9999 9999 9999 1');
+
+          //cause the test to fail is no error is thrown
+          expect(true).toBe(false);
+        } catch (err: unknown) {
+          expect(err).toEqual(Error(`Input color '9999 9999 9999 1' could not be parsed to a HEX color!`));
         }
       });
     });

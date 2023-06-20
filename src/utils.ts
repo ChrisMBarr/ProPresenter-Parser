@@ -103,7 +103,7 @@ export const normalizeColorToRgbaString = (color: string | IRgbColor): string =>
     return normalizeColorToRgbaString(hexToRgb(color));
   }
 
-  throw new Error(`Input color '${color}' could not be parsed!`);
+  throw new Error(`Input color '${color}' could not be parsed to an RGBA color string!`);
 };
 
 export const normalizeColorToRgbObj = (color: string | IRgbColor): IRgbColor => {
@@ -126,5 +126,30 @@ export const normalizeColorToRgbObj = (color: string | IRgbColor): IRgbColor => 
     return hexToRgb(color);
   }
 
-  throw new Error(`Input color '${color}' could not be parsed!`);
+  throw new Error(`Input color '${color}' could not be parsed to an RGB color object!`);
+};
+
+export const normalizeColorToHex = (color: string | IRgbColor): string => {
+  //RGB object, RGBA string, or HEX color all get returned as an HEX color
+
+  const to16Bit = (i: number): string => ('00' + i.toString(16)).slice(-2).toUpperCase();
+
+  if (typeof color !== 'string') {
+    return to16Bit(color.r) + to16Bit(color.g) + to16Bit(color.b);
+  }
+
+  if (patternRgbaStr.test(color)) {
+    const parts = color.split(' ');
+    return (
+      to16Bit(Math.round(parseFloat(parts[0]) * 255)) +
+      to16Bit(Math.round(parseFloat(parts[1]) * 255)) +
+      to16Bit(Math.round(parseFloat(parts[2]) * 255))
+    );
+  }
+
+  if (patternHexColor.test(color)) {
+    return color.replace('#', '');
+  }
+
+  throw new Error(`Input color '${color}' could not be parsed to a HEX color!`);
 };
