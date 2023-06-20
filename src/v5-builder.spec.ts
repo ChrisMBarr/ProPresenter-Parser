@@ -23,7 +23,7 @@ describe('v5Builder', (): void => {
     });
 
     const expectedOutput = normalizeDatesAndIdsForTesting(`
-<RVPresentationDocument CCLIArtistCredits="" CCLICopyrightInfo="" CCLIDisplay="0" CCLILicenseNumber="" CCLIPublisher="" CCLISongTitle="My Test Song" album="" artist="" author="" backgroundColor="0 0 0 1" category="Song" creatorCode="0" chordChartPath="" docType="0" drawingBackgroundColor="0" height="720" width="1280" lastDateUsed="2023-06-13T18:41:15" notes="" resourcesDirectory="" usedCount="0" versionNumber="500">
+<RVPresentationDocument CCLIArtistCredits="" CCLICopyrightInfo="" CCLIDisplay="0" CCLILicenseNumber="" CCLIPublisher="" CCLISongTitle="My Test Song" album="" artist="" author="" category="Song" notes="" lastDateUsed="2023-06-13T18:41:15" height="720" width="1280" backgroundColor="0 0 0 1" creatorCode="0" chordChartPath="" docType="0" drawingBackgroundColor="0" resourcesDirectory="" usedCount="0" versionNumber="500">
   <timeline timeOffSet="0" selectedMediaTrackIndex="0" unitOfMeasure="60" duration="0" loop="0">
     <timeCues containerClass="NSMutableArray"></timeCues>
     <mediaTracks containerClass="NSMutableArray"></mediaTracks>
@@ -140,7 +140,7 @@ describe('v5Builder', (): void => {
     });
 
     const expectedOutput = normalizeDatesAndIdsForTesting(`
-<RVPresentationDocument CCLIArtistCredits="Chris Tomlin" CCLICopyrightInfo="2006" CCLIDisplay="1" CCLILicenseNumber="12345678" CCLIPublisher="worshiptogether.com Songs/sixsteps Music, Vamos Publishing, admin. Capitol CMG Publishing" CCLISongTitle="Amazing Grace (My Chains Are Gone)" album="See The Morning" artist="Chris Tomlin" author="John Newton, Chris Tomlin" backgroundColor="0 0 0 1" category="Hymn" creatorCode="0" chordChartPath="" docType="0" drawingBackgroundColor="0" height="1080" width="1920" lastDateUsed="2023-06-14T21:56:24" notes="Pastor Bill loves this one" resourcesDirectory="" usedCount="0" versionNumber="500">
+<RVPresentationDocument CCLIArtistCredits="Chris Tomlin" CCLICopyrightInfo="2006" CCLIDisplay="1" CCLILicenseNumber="12345678" CCLIPublisher="worshiptogether.com Songs/sixsteps Music, Vamos Publishing, admin. Capitol CMG Publishing" CCLISongTitle="Amazing Grace (My Chains Are Gone)" album="See The Morning" artist="Chris Tomlin" author="John Newton, Chris Tomlin" category="Hymn" notes="Pastor Bill loves this one" lastDateUsed="2023-06-14T21:56:24" height="1080" width="1920" backgroundColor="0 0 0 1" creatorCode="0" chordChartPath="" docType="0" drawingBackgroundColor="0" resourcesDirectory="" usedCount="0" versionNumber="500">
   <timeline timeOffSet="0" selectedMediaTrackIndex="0" unitOfMeasure="60" duration="0" loop="0">
     <timeCues containerClass="NSMutableArray"></timeCues>
     <mediaTracks containerClass="NSMutableArray"></mediaTracks>

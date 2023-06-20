@@ -1,4 +1,4 @@
-import { IXmlProElementPosition } from './shared.model';
+import { IProTransitionType, IXmlProElementPosition } from './shared.model';
 
 export interface IXmlPro5DocRoot {
   RVPresentationDocument: IXmlPro5Doc;
@@ -21,7 +21,7 @@ export interface IXmlPro5Doc {
   '@docType'?: number;
   '@drawingBackgroundColor'?: number;
   '@height': number;
-  '@lastDateUsed': string;
+  '@lastDateUsed': string | Date;
   '@notes': string;
   '@resourcesDirectory': string;
   '@usedCount': number;
@@ -47,7 +47,7 @@ export interface IXmlPro5Doc {
 //------------------------------------------------------
 //General/Shared
 export interface IXmlPro5TransitionObj {
-  '@transitionType': number;
+  '@transitionType': IProTransitionType;
   '@transitionDuration': number;
   '@motionEnabled': number;
   '@motionDuration': number;

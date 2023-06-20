@@ -39,6 +39,7 @@ export interface IXmlProElementPosition {
 
 export enum IProTransitionType {
   /* eslint-disable no-unused-vars */
+  None = -1,
   Dissolve = 0,
   Cube = 1,
   Flip = 2,

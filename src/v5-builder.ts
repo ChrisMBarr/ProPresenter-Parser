@@ -1,6 +1,6 @@
 import { XMLBuilder } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
-import { IProBuilderTextFormattingDefinite, IXmlProElementPosition } from './shared.model';
+import { IProBuilderTextFormattingDefinite, IProTransitionType, IXmlProElementPosition } from './shared.model';
 import * as Utils from './utils';
 import { IPro5BuilderOptions, IPro5BuilderOptionsDefinite, IPro5BuilderOptionsSlideGroup } from './v5-builder.model';
 import {
@@ -16,7 +16,7 @@ export class v5Builder {
   private readonly options: IPro5BuilderOptionsDefinite;
 
   private readonly defaultTransitionObj: IXmlPro5TransitionObj = {
-    '@transitionType': -1,
+    '@transitionType': IProTransitionType.None,
     '@transitionDuration': 1,
     '@motionEnabled': 0,
     '@motionDuration': 20,
@@ -70,21 +70,26 @@ export class v5Builder {
         '@album': this.options.properties.album,
         '@artist': this.options.properties.artist,
         '@author': this.options.properties.author,
-        '@backgroundColor': '0 0 0 1',
         '@category': this.options.properties.category,
+        '@notes': this.options.properties.notes,
+        '@lastDateUsed': Utils.getIsoDateString(),
+
+        //Size
+        '@height': this.options.properties.height,
+        '@width': this.options.properties.width,
+
+        //Non-customizable stuff
+        '@backgroundColor': '0 0 0 1', //transparent
         '@creatorCode': 0, //not sure what this is
         '@chordChartPath': '',
         '@docType': 0,
         '@drawingBackgroundColor': 0,
-        '@height': this.options.properties.height,
-        '@width': this.options.properties.width,
-        '@lastDateUsed': Utils.getIsoDateString(),
-        '@notes': this.options.properties.notes,
         '@resourcesDirectory': '',
         '@usedCount': 0,
         '@versionNumber': 500,
 
         timeline: {
+          //Create an empty timeline element
           '@timeOffSet': 0,
           '@selectedMediaTrackIndex': 0,
           '@unitOfMeasure': 60,
@@ -106,6 +111,7 @@ export class v5Builder {
           RVSlideGrouping: this.buildSlideGroups(),
         },
         arrangements: {
+          //No default arrangement created, but add the empty XML node
           '@containerClass': 'NSMutableArray',
           RVSongArrangement: [],
         },
@@ -117,7 +123,7 @@ export class v5Builder {
 
   private getTransitions(): IXmlPro5TransitionObj {
     if (this.options.transitions) {
-      const transitionsCopy = { ...this.defaultTransitionObj };
+      const transitionsCopy: IXmlPro5TransitionObj = { ...this.defaultTransitionObj };
       transitionsCopy['@transitionDuration'] = this.options.transitions.duration;
       transitionsCopy['@transitionType'] = this.options.transitions.type;
       return transitionsCopy;
