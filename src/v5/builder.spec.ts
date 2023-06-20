@@ -72,6 +72,7 @@ describe('V5 - Builder', (): void => {
         ccliNumber: 12345678,
         copyrightYear: 2006,
         notes: 'Pastor Bill loves this one',
+        // cspell:disable-next-line
         publisher: 'worshiptogether.com Songs/sixsteps Music, Vamos Publishing, admin. Capitol CMG Publishing',
         height: 1080,
         width: 1920,

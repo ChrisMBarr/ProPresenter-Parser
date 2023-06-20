@@ -65,10 +65,12 @@ describe('V4 - Parser', (): void => {
             font: '',
             size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl}
 {\\colortbl;\\red255\\green255\\blue255;}
 }`,
+            // cspell:enable
             textContent: '',
           },
         ],
@@ -84,6 +86,7 @@ describe('V4 - Parser', (): void => {
             font: 'Helvetica',
             size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -96,6 +99,7 @@ Be near O God\\
 Be near O God of us\\
 Your nearness is to us our good\\
 Our good}`,
+            // cspell:enable
             textContent: `Be near O God
 Be near O God of us
 Your nearness is to us our good
@@ -117,6 +121,7 @@ Our good`,
             font: 'Helvetica',
             size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -127,6 +132,7 @@ Beautiful\\
 And wonderful\\
 To trust in grace through faith\\
 But I'm asking to taste}`,
+            // cspell:enable
             textContent: `You are all big and small
 Beautiful
 And wonderful
@@ -146,6 +152,7 @@ But I'm asking to taste`,
             font: 'Helvetica',
             size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -155,6 +162,7 @@ But I'm asking to taste`,
 Depths are height to You\\
 Far is near\\
 But Lord I need to hear from You}`,
+            // cspell:enable
             textContent: `For dark is light to You
 Depths are height to You
 Far is near
@@ -173,6 +181,7 @@ But Lord I need to hear from You`,
             font: 'Helvetica',
             size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -183,6 +192,7 @@ Revelation divine\\
 But oh to taste\\
 To know much more than a page\\
 To feel Your embrace}`,
+            // cspell:enable
             textContent: `Your fullness is mine
 Revelation divine
 But oh to taste
@@ -202,6 +212,7 @@ To feel Your embrace`,
             font: 'Helvetica',
             size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -211,6 +222,7 @@ To feel Your embrace`,
 Depths are height to You\\
 Far is near\\
 But Lord I need to hear from You}`,
+            // cspell:enable
             textContent: `For dark is light to You
 Depths are height to You
 Far is near
@@ -229,12 +241,14 @@ But Lord I need to hear from You`,
             font: 'Helvetica',
             size: 48,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
 
 \\f0\\fs96 \\cf1 My good}`,
+            // cspell:enable
             textContent: 'My good',
           },
         ],
@@ -250,10 +264,12 @@ But Lord I need to hear from You`,
             font: '',
             size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf350
 {\\fonttbl}
 {\\colortbl;\\red255\\green255\\blue255;}
 }`,
+            // cspell:enable
             textContent: '',
           },
         ],
@@ -271,6 +287,7 @@ But Lord I need to hear from You`,
       CCLIDisplay: false,
       CCLILicenseNumber: 2060208,
       CCLIPublisher:
+        // cspell:disable-next-line
         'worshiptogether.com songs | sixsteps Music (Admin. by EMI Christian Music Publishing) | (Admin. by EMI Christian Music Publishing)',
       CCLISongTitle: 'Give Us Clean Hands',
       album: '',
@@ -302,6 +319,7 @@ But Lord I need to hear from You`,
             font: 'Impact',
             size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -311,6 +329,7 @@ But Lord I need to hear from You`,
 Oh Spirit come make us humble\\
 We turn our eyes from evil things\\
 Oh Lord we cast down our idols}`,
+            // cspell:enable
             textContent: `We bow our hearts we bend our knees
 Oh Spirit come make us humble
 We turn our eyes from evil things
@@ -329,6 +348,7 @@ Oh Lord we cast down our idols`,
             font: 'Impact',
             size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -338,6 +358,7 @@ Oh Lord we cast down our idols`,
 Let us not lift our souls to another\\
 Give us clean hands give us pure hearts\\
 Let us not lift our souls to another}`,
+            // cspell:enable
             textContent: `Give us clean hands give us pure hearts
 Let us not lift our souls to another
 Give us clean hands give us pure hearts
@@ -356,6 +377,7 @@ Let us not lift our souls to another`,
             font: 'Impact',
             size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -366,6 +388,7 @@ Let us not lift our souls to another`,
 That seeks Your face oh God of Jacob\\
 Oh God let us be a generation                  That seeks\\
 That seeks Your face oh God of Jacob}`,
+            // cspell:enable
             textContent: `Oh God let us be a generation
  That seeks
 That seeks Your face oh God of Jacob
@@ -385,10 +408,12 @@ That seeks Your face oh God of Jacob`,
             font: '',
             size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl}
 {\\colortbl;\\red255\\green255\\blue255;}
 }`,
+            // cspell:enable
             textContent: '',
           },
         ],
@@ -404,6 +429,7 @@ That seeks Your face oh God of Jacob`,
             font: 'Impact',
             size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -413,6 +439,7 @@ That seeks Your face oh God of Jacob`,
 Oh Spirit come make us humble\\
 We turn our eyes from evil things\\
 Oh Lord we cast down our idols}`,
+            // cspell:enable
             textContent: `We bow our hearts we bend our knees
 Oh Spirit come make us humble
 We turn our eyes from evil things
@@ -431,6 +458,7 @@ Oh Lord we cast down our idols`,
             font: 'Impact',
             size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -440,6 +468,7 @@ Oh Lord we cast down our idols`,
 Let us not lift our souls to another\\
 Give us clean hands give us pure hearts\\
 Let us not lift our souls to another}`,
+            // cspell:enable
             textContent: `Give us clean hands give us pure hearts
 Let us not lift our souls to another
 Give us clean hands give us pure hearts
@@ -458,6 +487,7 @@ Let us not lift our souls to another`,
             font: 'Impact',
             size: 60,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fswiss\\fcharset0 Impact;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -468,6 +498,7 @@ Let us not lift our souls to another`,
 That seeks Your face oh God of Jacob\\
 Oh God let us be a generation                  That seeks\\
 That seeks Your face oh God of Jacob}`,
+            // cspell:enable
             textContent: `Oh God let us be a generation
  That seeks
 That seeks Your face oh God of Jacob
@@ -487,10 +518,12 @@ That seeks Your face oh God of Jacob`,
             font: '',
             size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl}
 {\\colortbl;\\red255\\green255\\blue255;}
 }`,
+            // cspell:enable
             textContent: '',
           },
         ],
@@ -538,10 +571,12 @@ That seeks Your face oh God of Jacob`,
             font: '',
             size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl}
 {\\colortbl;\\red255\\green255\\blue255;}
 }`,
+            // cspell:enable
             textContent: '',
           },
         ],
@@ -557,6 +592,7 @@ That seeks Your face oh God of Jacob`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -569,6 +605,7 @@ Jesus saves\\
 Mercy triumphs at the cross\\
 Love has come to rescue us\\
 Jesus saves}`,
+            // cspell:enable
             textContent: `Hope is here
 Shout the news to ev'ryone
 It's a new day peace has come
@@ -590,6 +627,7 @@ Jesus saves`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -597,6 +635,7 @@ Jesus saves`,
 
 \\f0\\b\\fs112 \\cf1 \\outl0\\strokewidth-60 \\strokec0 Hope is here\\
 What a joyful noise we'll make}`,
+            // cspell:enable
             textContent: `Hope is here
 What a joyful noise we'll make`,
           },
@@ -613,6 +652,7 @@ What a joyful noise we'll make`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -624,6 +664,7 @@ That Jesus saves\\
 Raise a shout to let \\
 All the world know\\
 That Jesus saves}`,
+            // cspell:enable
             textContent: `As we join with heaven's song
 To let all the world know \nThat Jesus saves
 Raise a shout to let \nAll the world know\nThat Jesus saves`,
@@ -641,6 +682,7 @@ Raise a shout to let \nAll the world know\nThat Jesus saves`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -653,6 +695,7 @@ Jesus saves\\
 Sing above the storms of life\\
 Sing it through the darkest night\\
 Jesus saves}`,
+            // cspell:enable
             textContent: `Free at last
 Every debt has been repaid
 Broken hearts can be remade
@@ -674,6 +717,7 @@ Jesus saves`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -681,6 +725,7 @@ Jesus saves`,
 
 \\f0\\b\\fs112 \\cf1 \\outl0\\strokewidth-60 \\strokec0 Free at last\\
 What a joyful noise we'll make}`,
+            // cspell:enable
             textContent: `Free at last
 What a joyful noise we'll make`,
           },
@@ -697,6 +742,7 @@ What a joyful noise we'll make`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -708,6 +754,7 @@ That Jesus saves\\
 Raise a shout to let \\
 All the world know\\
 That Jesus saves}`,
+            // cspell:enable
             textContent: `As we join with heaven's song
 To let all the world know \nThat Jesus saves
 Raise a shout to let \nAll the world know
@@ -726,6 +773,7 @@ That Jesus saves`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -737,6 +785,7 @@ That Jesus saves\\
 Raise a shout to let \\
 All the world know\\
 That Jesus saves}`,
+            // cspell:enable
             textContent: `We'll sing it out
 To let all the world know \nThat Jesus saves
 Raise a shout to let \nAll the world know
@@ -755,6 +804,7 @@ That Jesus saves`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -764,6 +814,7 @@ That Jesus saves`,
 The Father's heart to us\\
 You rose to raise us from the grave\\
 Your Spirit lives in us}`,
+            // cspell:enable
             textContent: `You save You heal restore reveal
 The Father's heart to us
 You rose to raise us from the grave
@@ -782,6 +833,7 @@ Your Spirit lives in us`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -793,6 +845,7 @@ That Jesus saves\\
 Raise a shout\\
 To let all the world know \\
 That Jesus saves}`,
+            // cspell:enable
             textContent: `Sing it out
 To let all the world know \nThat Jesus saves
 Raise a shout
@@ -811,6 +864,7 @@ To let all the world know \nThat Jesus saves`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -822,6 +876,7 @@ That Jesus saves\\
 Raise a shout\\
 To let all the world know \\
 That Jesus saves}`,
+            // cspell:enable
             textContent: `Shout it out
 To let all the world know \nThat Jesus saves
 Raise a shout
@@ -840,6 +895,7 @@ To let all the world know \nThat Jesus saves`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -851,6 +907,7 @@ That Jesus saves\\
 Raise a shout\\
 To let all the world know \\
 That Jesus saves}`,
+            // cspell:enable
             textContent: `Sing it out
 To let all the world know \nThat Jesus saves
 Raise a shout
@@ -869,6 +926,7 @@ To let all the world know \nThat Jesus saves`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -880,6 +938,7 @@ Knows His name Jesus\\
 Sing it out\\
 We shout for we \\
 Will know Your name}`,
+            // cspell:enable
             textContent: `Oh sing it out
 We shout 'til the whole world
 Knows His name Jesus
@@ -899,12 +958,14 @@ We shout for we \nWill know Your name`,
             font: 'Tahoma',
             size: 56,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl\\f0\\fnil\\fcharset0 Tahoma;}
 {\\colortbl;\\red255\\green255\\blue255;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
 
 \\f0\\b\\fs112 \\cf1 \\outl0\\strokewidth-60 \\strokec0 Jesus}`,
+            // cspell:enable
             textContent: 'Jesus',
           },
         ],
@@ -920,10 +981,12 @@ We shout for we \nWill know Your name`,
             font: '',
             size: 0,
             position: { height: 728, width: 984, x: 20, y: 20, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320
 {\\fonttbl}
 {\\colortbl;\\red255\\green255\\blue255;}
 }`,
+            // cspell:enable
             textContent: '',
           },
         ],
@@ -971,6 +1034,7 @@ We shout for we \nWill know Your name`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -978,6 +1042,7 @@ We shout for we \nWill know Your name`,
 
 \\f0\\fs120 \\cf1 every knee will bow\\
 to bless Your name}`,
+            // cspell:enable
             textContent: `every knee will bow
 to bless Your name`,
           },
@@ -994,6 +1059,7 @@ to bless Your name`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1001,6 +1067,7 @@ to bless Your name`,
 
 \\f0\\fs120 \\cf1 every tongue confess\\
 that You are King}`,
+            // cspell:enable
             textContent: `every tongue confess
 that You are King`,
           },
@@ -1017,6 +1084,7 @@ that You are King`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1024,6 +1092,7 @@ that You are King`,
 
 \\f0\\fs120 \\cf1 all for Your glory\\
 all for Your glory}`,
+            // cspell:enable
             textContent: `all for Your glory
 all for Your glory`,
           },
@@ -1040,6 +1109,7 @@ all for Your glory`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1047,6 +1117,7 @@ all for Your glory`,
 
 \\f0\\fs120 \\cf1 every tear will soon\\
 be wiped away}`,
+            // cspell:enable
             textContent: `every tear will soon
 be wiped away`,
           },
@@ -1063,6 +1134,7 @@ be wiped away`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1070,6 +1142,7 @@ be wiped away`,
 
 \\f0\\fs120 \\cf1 every longing heart\\
 will see Your face}`,
+            // cspell:enable
             textContent: `every longing heart
 will see Your face`,
           },
@@ -1086,6 +1159,7 @@ will see Your face`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1093,6 +1167,7 @@ will see Your face`,
 
 \\f0\\fs120 \\cf1 all for Your glory\\
 all for Your name}`,
+            // cspell:enable
             textContent: `all for Your glory
 all for Your name`,
           },
@@ -1109,6 +1184,7 @@ all for Your name`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1116,6 +1192,7 @@ all for Your name`,
 
 \\f0\\fs120 \\cf1 You are God Jesus\\
 Majesty}`,
+            // cspell:enable
             textContent: `You are God Jesus
 Majesty`,
           },
@@ -1132,6 +1209,7 @@ Majesty`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1139,6 +1217,7 @@ Majesty`,
 
 \\f0\\fs120 \\cf1 You are life Jesus\\
 saving Me}`,
+            // cspell:enable
             textContent: `You are life Jesus
 saving Me`,
           },
@@ -1155,12 +1234,14 @@ saving Me`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
 
 \\f0\\fs120 \\cf1 You are King Jesus}`,
+            // cspell:enable
             textContent: `You are King Jesus`,
           },
         ],
@@ -1176,6 +1257,7 @@ saving Me`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1183,6 +1265,7 @@ saving Me`,
 
 \\f0\\fs120 \\cf1 all will see that\\
 You are God}`,
+            // cspell:enable
             textContent: `all will see that
 You are God`,
           },
@@ -1199,6 +1282,7 @@ You are God`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1206,6 +1290,7 @@ You are God`,
 
 \\f0\\fs120 \\cf1 every knee will bow\\
 to bless Your name}`,
+            // cspell:enable
             textContent: `every knee will bow
 to bless Your name`,
           },
@@ -1222,6 +1307,7 @@ to bless Your name`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1229,6 +1315,7 @@ to bless Your name`,
 
 \\f0\\fs120 \\cf1 every tongue confess\\
 that You are King}`,
+            // cspell:enable
             textContent: `every tongue confess
 that You are King`,
           },
@@ -1245,6 +1332,7 @@ that You are King`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1252,6 +1340,7 @@ that You are King`,
 
 \\f0\\fs120 \\cf1 all for Your glory\\
 all for Your name}`,
+            // cspell:enable
             textContent: `all for Your glory
 all for Your name`,
           },
@@ -1268,6 +1357,7 @@ all for Your name`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1275,6 +1365,7 @@ all for Your name`,
 
 \\f0\\fs120 \\cf1 You are God Jesus\\
 Majesty}`,
+            // cspell:enable
             textContent: `You are God Jesus
 Majesty`,
           },
@@ -1291,6 +1382,7 @@ Majesty`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1298,6 +1390,7 @@ Majesty`,
 
 \\f0\\fs120 \\cf1 You are life Jesus\\
 saving Me}`,
+            // cspell:enable
             textContent: `You are life Jesus
 saving Me`,
           },
@@ -1314,12 +1407,14 @@ saving Me`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
 
 \\f0\\fs120 \\cf1 You are King, Jesus}`,
+            // cspell:enable
             textContent: `You are King, Jesus`,
           },
         ],
@@ -1335,6 +1430,7 @@ saving Me`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1342,6 +1438,7 @@ saving Me`,
 
 \\f0\\fs120 \\cf1 all will see that\\
 You are God}`,
+            // cspell:enable
             textContent: `all will see that
 You are God`,
           },
@@ -1358,12 +1455,14 @@ You are God`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
 
 \\f0\\fs120 \\cf1 death could not keep You}`,
+            // cspell:enable
             textContent: `death could not keep You`,
           },
         ],
@@ -1379,6 +1478,7 @@ You are God`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1386,6 +1486,7 @@ You are God`,
 
 \\f0\\fs120 \\cf1 the grave could not \\
 hold You}`,
+            // cspell:enable
             textContent: `the grave could not \nhold You`,
           },
         ],
@@ -1401,6 +1502,7 @@ hold You}`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1408,6 +1510,7 @@ hold You}`,
 
 \\f0\\fs120 \\cf1 You are alive\\
 You are alive}`,
+            // cspell:enable
             textContent: `You are alive
 You are alive`,
           },
@@ -1424,12 +1527,14 @@ You are alive`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
 
 \\f0\\fs120 \\cf1 death could not keep You}`,
+            // cspell:enable
             textContent: `death could not keep You`,
           },
         ],
@@ -1445,6 +1550,7 @@ You are alive`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1452,6 +1558,7 @@ You are alive`,
 
 \\f0\\fs120 \\cf1 the grave could not \\
 hold You}`,
+            // cspell:enable
             textContent: `the grave could not \nhold You`,
           },
         ],
@@ -1467,6 +1574,7 @@ hold You}`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1474,6 +1582,7 @@ hold You}`,
 
 \\f0\\fs120 \\cf1 You are alive\\
 You are alive}`,
+            // cspell:enable
             textContent: `You are alive
 You are alive`,
           },
@@ -1490,6 +1599,7 @@ You are alive`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1497,6 +1607,7 @@ You are alive`,
 
 \\f0\\fs120 \\cf1 You are God Jesus\\
 Majesty}`,
+            // cspell:enable
             textContent: `You are God Jesus
 Majesty`,
           },
@@ -1513,6 +1624,7 @@ Majesty`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1520,6 +1632,7 @@ Majesty`,
 
 \\f0\\fs120 \\cf1 You are life Jesus\\
 saving Me}`,
+            // cspell:enable
             textContent: `You are life Jesus
 saving Me`,
           },
@@ -1536,6 +1649,7 @@ saving Me`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1543,6 +1657,7 @@ saving Me`,
 
 \\f0\\fs120 \\cf1 You are King Jesus\\
 all will see that}`,
+            // cspell:enable
             textContent: `You are King Jesus
 all will see that`,
           },
@@ -1559,6 +1674,7 @@ all will see that`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1566,6 +1682,7 @@ all will see that`,
 
 \\f0\\fs120 \\cf1 You are God Jesus\\
 Majesty}`,
+            // cspell:enable
             textContent: `You are God Jesus
 Majesty`,
           },
@@ -1582,6 +1699,7 @@ Majesty`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1589,6 +1707,7 @@ Majesty`,
 
 \\f0\\fs120 \\cf1 You are life Jesus\\
 saving Me}`,
+            // cspell:enable
             textContent: `You are life Jesus
 saving Me`,
           },
@@ -1605,12 +1724,14 @@ saving Me`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\qc\\pardirnatural
 
 \\f0\\fs120 \\cf1 You are King Jesus}`,
+            // cspell:enable
             textContent: `You are King Jesus`,
           },
         ],
@@ -1626,6 +1747,7 @@ saving Me`,
             font: 'Helvetica',
             size: 60,
             position: { height: 748, width: 1004, x: 10, y: 10, z: 0 },
+            // cspell:disable
             rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf949\\cocoasubrtf540
 {\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -1633,6 +1755,7 @@ saving Me`,
 
 \\f0\\fs120 \\cf1 all will see that\\
 You are God}`,
+            // cspell:enable
             textContent: `all will see that
 You are God`,
           },

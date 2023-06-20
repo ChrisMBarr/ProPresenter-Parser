@@ -2,7 +2,15 @@
   "version": "0.2",
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
   "language": "en",
-  "words": ["CCLI", "propresenter", "rvXMLIvarName", "RVHTMLShapeElement"],
+  "words": [
+    "CCLI",
+    "ev'ryone",
+    "propresenter",
+    "RVHTMLShapeElement",
+    "rvXMLIvarName",
+    "Tahoma",
+    "typedefs"
+  ],
   "flagWords": [],
   "ignorePaths": [
     "coverage/**",

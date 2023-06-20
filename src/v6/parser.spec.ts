@@ -127,6 +127,7 @@ describe('V6 - Parser', (): void => {
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
+                // cspell:disable-next-line
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Amazing grace how sweet the sound}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch That saved a wretch like me}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
                 textShadow: {
                   angle: 135,
@@ -178,6 +179,7 @@ describe('V6 - Parser', (): void => {
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
+                // cspell:disable-next-line
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch I once was lost but now I'm found}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch Was blind but now I see}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
                 textShadow: {
                   angle: 135,
@@ -236,6 +238,7 @@ describe('V6 - Parser', (): void => {
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
+                // cspell:disable-next-line
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Twas grace that taught my heart to fear}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch And grace my fears relieved}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
                 textShadow: {
                   angle: 135,
@@ -287,6 +290,7 @@ describe('V6 - Parser', (): void => {
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
+                // cspell:disable-next-line
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch How precious did that grace appear}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch The hour I first believed}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
                 textShadow: {
                   angle: 135,
@@ -345,6 +349,7 @@ describe('V6 - Parser', (): void => {
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
+                // cspell:disable-next-line
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch Through many dangers, toils}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch And snares I have already come}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
                 textShadow: {
                   angle: 135,
@@ -396,6 +401,7 @@ describe('V6 - Parser', (): void => {
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
+                // cspell:disable-next-line
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch 'Tis grace that brought me safe thus far}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch And grace will lead me home}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
                 textShadow: {
                   angle: 135,
@@ -454,6 +460,7 @@ describe('V6 - Parser', (): void => {
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
+                // cspell:disable-next-line
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}{\\f4\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs120\\f3\\cf1 \\cf1\\qc{\\fs149\\f4 {\\cf2\\ltrch When we've been there ten thousand years}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f4 {\\cf2\\ltrch Bright shining as the sun}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
                 textShadow: {
                   angle: 135,
@@ -505,6 +512,7 @@ describe('V6 - Parser', (): void => {
                 position: { height: 1040, width: 1880, x: 20, y: 20, z: 0 },
                 revealType: 0,
                 rotation: 0,
+                // cspell:disable-next-line
                 rtfData: `{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Impact;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\qc{\\fs149\\f3 {\\cf2\\ltrch We've no less days to sing God's praise}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n{\\fs149\\f3 {\\cf2\\ltrch Than when we'd first begun!}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}`,
                 textShadow: {
                   angle: 135,
@@ -615,6 +623,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span></Paragraph></FlowDocument>',
@@ -667,6 +676,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',\r\nYou are all\r\nBig and small\r\nBeautiful",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Arial;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\loch\\f3\\fs120\\ltrch ',}{\\cf2\\ltrch {\\loch\\f3\\fs120 }\\line }{\\loch\\f3\\fs120\\cf2\\ltrch You are all}{\\cf2\\ltrch {\\loch\\f3\\fs120 }\\line }{\\loch\\f3\\fs120\\cf2\\ltrch Big and small}{\\cf2\\ltrch {\\loch\\f3\\fs120 }\\line }{\\loch\\f3\\fs120\\cf2\\ltrch Beautiful}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Run FontFamily="Arial" FontSize="60" Block.TextAlignment="Center">\',</Run><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><Run FontFamily="Arial" FontSize="60" Block.TextAlignment="Center" xml:space="preserve" /><LineBreak Block.TextAlignment="Center" /></Span><Run FontFamily="Arial" FontSize="60" Foreground="#FFFFFFFF" Block.TextAlignment="Center">You are all</Run><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><Run FontFamily="Arial" FontSize="60" Block.TextAlignment="Center" xml:space="preserve" /><LineBreak Block.TextAlignment="Center" /></Span><Run FontFamily="Arial" FontSize="60" Foreground="#FFFFFFFF" Block.TextAlignment="Center">Big and small</Run><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><Run FontFamily="Arial" FontSize="60" Block.TextAlignment="Center" xml:space="preserve" /><LineBreak Block.TextAlignment="Center" /></Span><Run FontFamily="Arial" FontSize="60" Foreground="#FFFFFFFF" Block.TextAlignment="Center">Beautiful</Run></Paragraph></FlowDocument>',
@@ -719,6 +729,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',\r\nAnd wonderful to \r\nTrust in grace\r\nThrough faith\r\nBut I'm asking to taste",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }{\\cf2\\ltrch And wonderful to }{\\cf2\\ltrch \\line }{\\cf2\\ltrch Trust in grace}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Through faith}{\\cf2\\ltrch \\line }{\\cf2\\ltrch But I'm asking to taste}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center" xml:space="preserve">And wonderful to </Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Trust in grace</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Through faith</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">But I\'m asking to taste</Run></Span></Paragraph></FlowDocument>',
@@ -772,6 +783,7 @@ describe('V6 - Parser', (): void => {
                 plainText:
                   "',\r\nFor dark is light to You\r\nDepths are Height to you\r\nFar is near\r\nBut Lord I need to hear from You",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }{\\cf2\\ltrch For dark is light to You}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Depths are Height to you}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Far is near}{\\cf2\\ltrch \\line }{\\cf2\\ltrch But Lord I need to hear from You}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">For dark is light to You</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Depths are Height to you</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Far is near</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">But Lord I need to hear from You</Run></Span></Paragraph></FlowDocument>',
@@ -824,6 +836,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',\r\nBe near O God\r\nBe near O God of us\r\nYour nearness is\r\nTo us our good",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Be near O God}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Be near O God of us}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Your nearness is}{\\cf2\\ltrch \\line }{\\cf2\\ltrch To us our good}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Be near O God</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Be near O God of us</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Your nearness is</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">To us our good</Run></Span></Paragraph></FlowDocument>',
@@ -876,6 +889,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',\r\nOur Good",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Our Good}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Our Good</Run></Span></Paragraph></FlowDocument>',
@@ -928,6 +942,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',\r\nYour fullness is mine\r\nRevelation Divine",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Your fullness is mine}{\\cf2\\ltrch \\line }{\\cf2\\ltrch Revelation Divine}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Your fullness is mine</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">Revelation Divine</Run></Span></Paragraph></FlowDocument>',
@@ -980,6 +995,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',\r\nBut oh to taste\r\nTo know much\r\nMore than a page\r\nTo feel Your embrace",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }{\\cf2\\ltrch But oh to taste}{\\cf2\\ltrch \\line }{\\cf2\\ltrch To know much}{\\cf2\\ltrch \\line }{\\cf2\\ltrch More than a page}{\\cf2\\ltrch \\line }{\\cf2\\ltrch To feel Your embrace}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">But oh to taste</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">To know much</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">More than a page</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">To feel Your embrace</Run></Span></Paragraph></FlowDocument>',
@@ -1032,6 +1048,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',\r\nMy Good",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }{\\cf2\\ltrch My Good}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span><Span Foreground="#FFFFFFFF"><Run Block.TextAlignment="Center">My Good</Run></Span></Paragraph></FlowDocument>',
@@ -1084,6 +1101,7 @@ describe('V6 - Parser', (): void => {
                 verticalAlignment: 0,
                 plainText: "',",
                 rtfData:
+                  // cspell:disable-next-line
                   "{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs96\\f0\\cf1 \\cf1\\ql{\\f0 {\\fs32\\ltrch ',}{\\cf2\\ltrch \\line }\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}",
                 winFlowData:
                   '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48"><Span FontSize="16"><Run Block.TextAlignment="Center">\',</Run></Span><Span FontFamily="Times New Roman" FontSize="48" Foreground="#FFFFFFFF"><LineBreak Block.TextAlignment="Center" /></Span></Paragraph></FlowDocument>',
@@ -1209,6 +1227,7 @@ describe('V6 - Parser', (): void => {
               textSize: 70.5,
               plainText: 'two',
               rtfData:
+                // cspell:disable-next-line
                 '{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Helvetica;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;\\red151\\green238\\blue21;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\outl0\\strokewidth-100\\strokec3\\f2\\cf1 \\cf1\\ql{\\fs141\\outl0\\strokewidth-100\\strokec3\\f3 {\\cf2\\ltrch two}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}',
               winFlowData:
                 '<FlowDocument TextAlignment="Left" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph TextAlignment="Center"><Run FontFamily="Helvetica" FontStyle="Normal" FontWeight="Normal" FontStretch="Normal" FontSize="71" Foreground="#FFFFFFFF" Block.TextAlignment="Center"><Run.TextDecorations><TextDecorationCollection /></Run.TextDecorations>two</Run></Paragraph></FlowDocument>',
@@ -1256,6 +1275,7 @@ describe('V6 - Parser', (): void => {
               textSize: 100,
               plainText: 'one',
               rtfData:
+                // cspell:disable-next-line
                 '{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Helvetica;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\outl0\\strokewidth-200\\strokec1\\f2\\cf1 \\cf1\\ql{\\fs200\\outl0\\strokewidth-200\\strokec1\\f3 {\\cf2\\ltrch one}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}',
               winFlowData:
                 '<FlowDocument TextAlignment="Left" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph TextAlignment="Center"><Run FontFamily="Helvetica" FontStyle="Normal" FontWeight="Normal" FontStretch="Normal" FontSize="100" Foreground="#FFFFFFFF" Block.TextAlignment="Center"><Run.TextDecorations><TextDecorationCollection /></Run.TextDecorations>one</Run></Paragraph></FlowDocument>',
@@ -1312,6 +1332,7 @@ describe('V6 - Parser', (): void => {
               textSize: 46.5,
               plainText: 'Lower 3rd text',
               rtfData:
+                // cspell:disable-next-line
                 '{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\ql{\\fs93\\f2 {\\i\\cf2\\ltrch Lower 3rd text}\\li0\\sa0\\sb0\\fi0\\ql}\r\n}\r\n}',
               winFlowData:
                 '<FlowDocument TextAlignment="Left" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph TextAlignment="Left"><Run FontFamily="Georgia" FontStyle="Italic" FontWeight="Normal" FontStretch="Normal" FontSize="46.6666666666667" Foreground="#FFFFFFFF" Block.TextAlignment="Left"><Run.TextDecorations><TextDecorationCollection /></Run.TextDecorations>Lower 3rd text</Run></Paragraph></FlowDocument>',
@@ -1351,6 +1372,7 @@ describe('V6 - Parser', (): void => {
               textSize: 34.5,
               plainText: 'Other text in lower 3rd',
               rtfData:
+                // cspell:disable-next-line
                 '{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\f2\\cf1 \\cf1\\ql{\\fs69\\f2 {\\cf2\\ltrch Other text in lower 3rd}\\li0\\sa0\\sb0\\fi0\\qr\\par}\r\n}\r\n}',
               winFlowData:
                 '<FlowDocument TextAlignment="Left" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph TextAlignment="Right"><Run FontFamily="Georgia" FontStyle="Normal" FontWeight="Normal" FontStretch="Normal" FontSize="34.6666666666667" Foreground="#FFFFFFFF" Block.TextAlignment="Right"><Run.TextDecorations><TextDecorationCollection /></Run.TextDecorations>Other text in lower 3rd</Run></Paragraph></FlowDocument>',
@@ -1403,6 +1425,7 @@ describe('V6 - Parser', (): void => {
               textSize: 71.5,
               plainText: 'Double-click to edit',
               rtfData:
+                // cspell:disable-next-line
                 '{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Helvetica;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\outl0\\strokewidth-20\\strokec1\\f2\\cf1 \\cf1\\ql{\\fs143\\outl0\\strokewidth-20\\strokec1\\f3 {\\cf2\\ltrch Double-click to edit}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}',
               winFlowData:
                 '<FlowDocument TextAlignment="Left" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph TextAlignment="Center"><Run FontFamily="Helvetica" FontStyle="Normal" FontWeight="Normal" FontStretch="Normal" FontSize="71.25" Foreground="#FFFFFFFF" Block.TextAlignment="Center"><Run.TextDecorations><TextDecorationCollection /></Run.TextDecorations>Double-click to edit</Run></Paragraph></FlowDocument>',
@@ -1463,6 +1486,7 @@ describe('V6 - Parser', (): void => {
               textSize: 70.5,
               plainText: 'Double-click to edit',
               rtfData:
+                // cspell:disable-next-line
                 '{\\rtf1\\prortf1\\ansi\\ansicpg1252\\uc1\\htmautsp\\deff2{\\fonttbl{\\f0\\fcharset0 Times New Roman;}{\\f2\\fcharset0 Georgia;}{\\f3\\fcharset0 Helvetica;}}{\\colortbl;\\red0\\green0\\blue0;\\red255\\green255\\blue255;}\\loch\\hich\\dbch\\pard\\slleading0\\plain\\ltrpar\\itap0{\\lang1033\\fs32\\outl0\\strokewidth-20\\strokec1\\f2\\cf1 \\cf1\\ql{\\fs141\\outl0\\strokewidth-20\\strokec1\\f3 {\\cf2\\ltrch Double-click to edit}\\li0\\sa0\\sb0\\fi0\\qc\\par}\r\n}\r\n}',
               winFlowData:
                 '<FlowDocument TextAlignment="Left" PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><Paragraph TextAlignment="Center"><Run FontFamily="Helvetica" FontStyle="Normal" FontWeight="Normal" FontStretch="Normal" FontSize="71" Foreground="#FFFFFFFF" Block.TextAlignment="Center"><Run.TextDecorations><TextDecorationCollection /></Run.TextDecorations>Double-click to edit</Run></Paragraph></FlowDocument>',

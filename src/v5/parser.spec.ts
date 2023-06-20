@@ -120,6 +120,7 @@ describe('V5 - Parser', (): void => {
                 color: { b: 255, g: 255, r: 255 },
                 font: 'Helvetica',
                 position: { height: 995.3125, width: 1614.375, x: 32.8125, y: 27.34375, z: 0 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -128,6 +129,7 @@ describe('V5 - Parser', (): void => {
 \\f0\\fs260 \\cf1 \\outl0\\strokewidth0 \\strokec1 You are all\\
 Big and small\\
 Beautiful}`,
+                // cspell:enable
                 size: 130,
                 textContent: `You are all
 Big and small
@@ -149,6 +151,7 @@ Beautiful`,
                 color: { b: 255, g: 255, r: 255 },
                 font: 'Helvetica',
                 position: { height: 995.3125, width: 1614.375, x: 32.8125, y: 27.34375, z: 0 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -159,6 +162,7 @@ Trust in grace\\
 Through faith\\
 \\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\pardirnatural\\qc
 \\cf1 \\outl0\\strokewidth0 \\strokec1 But I'm asking to taste}`,
+                // cspell:enable
                 size: 130,
                 textContent: `And wonderful to \nTrust in grace
 Through faith
@@ -187,6 +191,7 @@ But I'm asking to taste`,
                 color: { b: 255, g: 255, r: 255 },
                 font: 'Helvetica',
                 position: { height: 967.9688, width: 1581.562, x: 49.21875, y: 41.01562, z: 0 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -197,6 +202,7 @@ But I'm asking to taste`,
 Depths are Height to you\\
 Far is near\\
 But Lord I need to hear from You }`,
+                // cspell:enable
                 size: 130,
                 textContent: `For dark is light to You
 Depths are Height to you
@@ -226,6 +232,7 @@ But Lord I need to hear from You`,
                 color: { b: 255, g: 255, r: 255 },
                 font: 'Helvetica',
                 position: { height: 995.3125, width: 1614.375, x: 32.8125, y: 27.34375, z: 0 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -235,6 +242,7 @@ But Lord I need to hear from You`,
 Be near O God of us\\
 Your nearness is\\
 To us our good}`,
+                // cspell:enable
                 size: 130,
                 textContent: `Be near O God
 Be near O God of us
@@ -264,6 +272,7 @@ To us our good`,
                 color: { b: 255, g: 255, r: 255 },
                 font: 'Helvetica',
                 position: { height: 967.9688, width: 1581.562, x: 49.21875, y: 41.01562, z: 0 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -271,6 +280,7 @@ To us our good`,
 
 \\f0\\fs260 \\cf1 \\expnd0\\expndtw0\\kerning0
 \\outl0\\strokewidth0 \\strokec0 Our Good }`,
+                // cspell:enable
                 size: 130,
                 textContent: `Our Good`,
               },
@@ -297,6 +307,7 @@ To us our good`,
                 color: { b: 255, g: 255, r: 255 },
                 font: 'Helvetica',
                 position: { height: 995.3125, width: 1614.375, x: 32.8125, y: 27.34375, z: 0 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -304,6 +315,7 @@ To us our good`,
 
 \\f0\\fs260 \\cf1 \\outl0\\strokewidth0 \\strokec1 Your fullness is mine\\
 Revelation Divine}`,
+                // cspell:enable
                 size: 130,
                 textContent: `Your fullness is mine
 Revelation Divine`,
@@ -324,6 +336,7 @@ Revelation Divine`,
                 color: { b: 255, g: 255, r: 255 },
                 font: 'Helvetica',
                 position: { height: 995.3125, width: 1614.375, x: 32.8125, y: 27.34375, z: 0 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -333,6 +346,7 @@ Revelation Divine`,
 To know much\\
 More than a page\\
 To feel Your embrace}`,
+                // cspell:enable
                 size: 130,
                 textContent: `But oh to taste
 To know much
@@ -362,6 +376,7 @@ To feel Your embrace`,
                 color: { b: 255, g: 255, r: 255 },
                 font: 'Helvetica',
                 position: { height: 967.9688, width: 1581.562, x: 49.21875, y: 41.01562, z: 0 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -369,6 +384,7 @@ To feel Your embrace`,
 
 \\f0\\fs260 \\cf1 \\expnd0\\expndtw0\\kerning0
 \\outl0\\strokewidth0 \\strokec0 My Good }`,
+                // cspell:enable
                 size: 130,
                 textContent: `My Good`,
               },
@@ -491,6 +507,7 @@ To feel Your embrace`,
                   y: 27.34375,
                   z: 0,
                 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -500,6 +517,7 @@ To feel Your embrace`,
 We bend our knees\\
 Oh Spirit come\\
 Make us humble}`,
+                // cspell:enable
                 size: 130,
                 textContent: `We bow our hearts
 We bend our knees
@@ -528,6 +546,7 @@ Make us humble`,
                   y: 37.34375,
                   z: 0,
                 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -537,6 +556,7 @@ Make us humble`,
 From evil things\\
 Oh Lord we cast\\
 Down our idols}`,
+                // cspell:enable
                 size: 130,
                 textContent: `We turn our eyes
 From evil things
@@ -572,6 +592,7 @@ Down our idols`,
                   y: 27.34375,
                   z: 0,
                 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -581,6 +602,7 @@ Down our idols`,
 Give us pure hearts\\
 Let us not lift our\\
 Souls to another}`,
+                // cspell:enable
                 size: 130,
                 textContent: `Give us clean hands
 Give us pure hearts
@@ -616,6 +638,7 @@ Souls to another`,
                   y: 27.34375,
                   z: 0,
                 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}
 {\\colortbl;\\red255\\green255\\blue255;}
@@ -625,6 +648,7 @@ Souls to another`,
 A generation that seeks\\
 That seeks Your face\\
 Oh God of Jacob}`,
+                // cspell:enable
                 size: 130,
                 textContent: `Oh God let us be
 A generation that seeks
@@ -660,10 +684,12 @@ Oh God of Jacob`,
                   y: 27.34375,
                   z: 0,
                 },
+                // cspell:disable
                 rawRtfContent: `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1343\\cocoasubrtf140
 \\cocoascreenfonts1{\\fonttbl}
 {\\colortbl;\\red255\\green255\\blue255;}
 }`,
+                // cspell:enable
                 size: 0,
                 textContent: ``,
               },
