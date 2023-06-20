@@ -1,9 +1,16 @@
-import { IProBuilderTextFormatting, IProBuilderTextFormattingDefinite, IProTransitionType, IRgbColor } from '../shared.model';
+import {
+  IProBuilderTextFormatting,
+  IProBuilderTextFormattingDefinite,
+  IProElementOutline,
+  IProElementShadow,
+  IProTransitionType,
+  IRgbColor,
+} from '../shared.model';
 
 export interface IPro6BuilderOptions {
   properties: IPro6BuilderOptionsProperties;
   slideGroups: IPro6BuilderOptionsSlideGroup[];
-  slideTextFormatting?: IProBuilderTextFormatting;
+  slideTextFormatting?: IPro6BuilderTextFormatting;
   transitions?: {
     duration: number;
     type: IProTransitionType;
@@ -41,7 +48,7 @@ export interface IPro6BuilderOptionsSlide {
 
 export interface IPro6BuilderOptionsDefinite extends IPro6BuilderOptions {
   properties: IPro6BuilderOptionsPropertiesDefinite;
-  slideTextFormatting: IProBuilderTextFormattingDefinite;
+  slideTextFormatting: IPro6BuilderTextFormattingDefinite;
 }
 
 export interface IPro6BuilderOptionsPropertiesDefinite extends IPro6BuilderOptionsProperties {
@@ -53,4 +60,12 @@ export interface IPro6BuilderOptionsPropertiesDefinite extends IPro6BuilderOptio
   height: number;
   notes: string;
   width: number;
+}
+
+export interface IPro6BuilderTextFormatting extends IProBuilderTextFormatting {
+  textShadow?: IProElementShadow;
+}
+
+export interface IPro6BuilderTextFormattingDefinite extends IProBuilderTextFormattingDefinite {
+  textShadow: IProElementShadow;
 }
