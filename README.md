@@ -1,4 +1,4 @@
-<!-- [![GitHub - release](https://img.shields.io/github/v/release/FiniteLooper/ProPresenter-Parser?style=flat)](https://github.com/FiniteLooper/ProPresenter-Parser/releases/latest) -->
+[![GitHub - release](https://img.shields.io/github/v/release/FiniteLooper/ProPresenter-Parser?style=flat)](https://github.com/FiniteLooper/ProPresenter-Parser/releases/latest)
 
 # ProPresenter-Parser
 [ProPresenter](https://renewedvision.com/propresenter/) is a lyric presentation program used by many churches. This project can parses ProPresenter files to extract the basic data, and build ProPresenter files.
@@ -14,11 +14,13 @@ This is a work in progress! I will try to add support for different versions whe
 |**6**         | ✅   | ✅   |
 |**7**         | 🚫   | 🚫   |
 
-<!-- ## Installation
+_(Version 7 parsing/building coming soon!)_
+
+## Installation
 
 ```txt
 npm install propresenter-parser --save
-``` -->
+```
 
 ## Documentation
 * [ProPresenter 4 File Parser](docs/v4-parser.md)

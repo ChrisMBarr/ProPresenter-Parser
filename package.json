@@ -19,9 +19,10 @@
     "README.md",
     "dist/main",
     "dist/module",
+    "docs/**",
     "!**/*.json",
     "!**/*.spec.*",
-    "!**/*.xml.model.*",
+    "!**/xml.model.*",
     "!**/*.tsbuildinfo"
   ],
   "prettier": {
