@@ -64,6 +64,20 @@ This is a **required** array to pass in the options. Each slide group is somethi
 
 | Name         | Required | Type                                      | Description                                                                       |
 |:-------------|:---------|:------------------------------------------|-----------------------------------------------------------------------------------|
+| `label`      | **Yes**  | `string`                                  | The name of this slide group, eg: `'Verse 1'`, `'Chorus'`, `'Bridge'`, `'Ending'` |
+| `slides`     | **Yes**  | `string[]` or [`IPro6BuilderOptionsSlide[]`](#the-slidegroups--slides--ipro6builderoptionsslide-objects) | Each item in this array will become a slide. For simplicity just pass strings. Add line breaks with `\n`. If needed, [more options are available when an object is passed](#the-slidegroups--slides--ipro6builderoptionsslide-objects)     |
+| `groupColor` | No       | `string` or [`IRgbColor`](colors.md) object | An optional color of this slide group in the main UI. See the [colors docs](colors.md) for formatting details |
+
+
+
+### The `slideGroups` => `slides` => `IPro6BuilderOptionsSlide` objects
+If all you need for each slide in a group is the text, just pass strings instead of these objects.  However if you need more options you can pass these objects instead. Each object can have the following properties:
+
+| Name         | Required | Type                                        | Description                                                                    |
+|:-------------|:---------|:--------------------------------------------|--------------------------------------------------------------------------------|
+| `text`       | **Yes**  | `string`                                    | The text content of the slide, probably song lyrics. Add line breaks with `\n` |
+| `label`      | No       | `string`                                    | Any custom label to show on this slide in the main UI. This could be a quick note to the operator for example, eg: `'Hold during solo'` or `'long instrumental'` |
+| `slideColor` | No       | `string` or [`IRgbColor`](colors.md) object | An optional highlight color of this slide in the main UI. See the [colors docs](colors.md) for formatting details |
 
 
 
@@ -96,4 +110,87 @@ Providing this object will set a custom transition for this song, overriding wha
 # Larger Example
 Below is a larger example object for a song with lots of options provided:
 ```typescript
+{
+  properties: {
+    CCLIArtistCredits: 'Chris Tomlin',
+    CCLIAuthor: 'John Newton, Chris Tomlin',
+    CCLICopyrightYear: 2006,
+    CCLIDisplay: true,
+    CCLIPublisher: 'worshiptogether.com Songs/sixsteps Music, Vamos Publishing, admin. Capitol CMG Publishing',
+    CCLISongNumber: 12345678,
+    CCLISongTitle: 'My Test Song',
+    category: 'Hymn',
+    notes: 'Pastor Bill loves this one',
+    height: 1080,
+    width: 1920,
+  },
+  slideTextFormatting: {
+    fontName: 'Impact',
+    textColor: '#FAFAFA',
+    textSize: 80,
+    textPadding: 40,
+    textShadow: {
+      angle: 45,
+      color: { r: 128, g: 128, b: 128 },
+      enabled: true,
+      length: 4,
+      radius: 8,
+    },
+  },
+  transitions: {
+    duration: 0.4, //400ms
+    type: IProTransitionType.ZoomInLeft,
+  },
+  slideGroups: [
+    {
+      label: 'Blank',
+      slides: [''], //Add a blank slide group with 1 slide that has no text. Good for setting a BG image on
+    },
+    {
+      label: 'Verse 1',
+      groupColor: { r: 0, g: 0, b: 255 },
+      slides: [
+        'Amazing grace, How sweet the sound\nThat saved a wretch like me',
+        'I once was lost, but now I am found,\nWas blind, but now I see',
+      ],
+    },
+    {
+      label: 'Verse 2',
+      groupColor: { r: 0, g: 100, b: 255 },
+      slides: [
+        "'Twas Grace that taught my heart to fear\nAnd Grace, my fears relieved",
+        'How precious did that Grace appear\nThe hour I first believed',
+      ],
+    },
+    {
+      label: 'Verse 3',
+      groupColor: { r: 0, g: 200, b: 255 },
+      slides: [
+        'The Lord has promised good to me\nHis word my hope secures',
+        'He will my shield and portion be\nAs long as life endures',
+      ],
+    },
+    {
+      label: 'Verse 4',
+      groupColor: { r: 0, g: 255, b: 255 },
+      slides: [
+        'The earth shall soon dissolve like snow\nThe sun forbear to shine',
+        'But God, Who called me here below\nWill be forever mine\nWill be forever mine',
+        { text: 'You are forever mine', label: 'Might repeat 2-3x', slideColor: '#FFA500' },
+      ],
+    },
+    {
+      label: 'Chorus',
+      groupColor: { r: 255, g: 100, b: 100 },
+      slides: [
+        { text: "My chains are gone, I've been set free\nMy God, my Savior has ransomed me" },
+        { text: 'And like a flood His mercy reigns\nUnending love, amazing grace' },
+      ],
+    },
+    {
+      label: 'Ending',
+      slides: [{ text: 'Amazing grace', label: 'Leave on screen' }],
+    },
+  ],
+}
 ```

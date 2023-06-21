@@ -111,7 +111,7 @@ If all you need for each slide in a group is the text, just pass strings instead
 |:-------------|:---------|:--------------------------------------------|--------------------------------------------------------------------------------|
 | `text`       | **Yes**  | `string`                                    | The text content of the slide, probably song lyrics. Add line breaks with `\n` |
 | `label`      | No       | `string`                                    | Any custom label to show on this slide in the main UI. This could be a quick note to the operator for example, eg: `'Hold during solo'` or `'long instrumental'` |
-| `groupColor` | No       | `string` or [`IRgbColor`](colors.md) object | An optional highlight color of this slide in the main UI. See the [colors docs](colors.md) for formatting details |
+| `slideColor` | No       | `string` or [`IRgbColor`](colors.md) object | An optional highlight color of this slide in the main UI. See the [colors docs](colors.md) for formatting details |
 
 
 
