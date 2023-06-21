@@ -31,7 +31,7 @@ export interface IProElementPosition {
 
 export interface IProElementShadow {
   angle: number;
-  color: IRgbColor;
+  color: string | IRgbColor;
   enabled: boolean;
   length: number;
   radius: number;
