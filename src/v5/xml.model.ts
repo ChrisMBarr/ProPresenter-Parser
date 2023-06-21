@@ -18,8 +18,8 @@ export interface IXmlPro5Doc {
   '@category': string;
   '@creatorCode': number;
   '@chordChartPath': string;
-  '@docType'?: number;
-  '@drawingBackgroundColor'?: number;
+  '@docType': number;
+  '@drawingBackgroundColor': number;
   '@height': number;
   '@lastDateUsed': string | Date;
   '@notes': string;

@@ -33,7 +33,7 @@ export interface IPro4Slide {
   label: string;
   id: string;
   backgroundColor: IRgbColor;
-  highlightColor: IRgbColor | null;
+  highlightColor: IRgbColor;
   textElements: IPro4SlideTextElement[];
 }
 

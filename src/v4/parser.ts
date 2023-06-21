@@ -92,13 +92,11 @@ export class v4Parser {
         });
       }
 
-      const highlightColor = slide['@highlightColor'] === '' ? null : Utils.normalizeColorToRgbObj(slide['@highlightColor']);
-
       slidesList.push({
         label: slide['@label'],
         id: slide['@UUID'],
         backgroundColor: Utils.normalizeColorToRgbObj(slide['@backgroundColor']),
-        highlightColor,
+        highlightColor: Utils.normalizeColorToRgbObj(slide['@highlightColor']),
         textElements,
       });
     }
