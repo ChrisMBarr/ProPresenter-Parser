@@ -5,12 +5,12 @@ export interface IXmlPro5DocRoot {
 }
 
 export interface IXmlPro5Doc {
-  '@CCLIArtistCredits': string;
-  '@CCLICopyrightInfo': string | number;
-  '@CCLIDisplay': number;
-  '@CCLILicenseNumber': string | number;
-  '@CCLIPublisher': string;
-  '@CCLISongTitle': string;
+  '@CCLIArtistCredits'?: string;
+  '@CCLICopyrightInfo'?: string | number;
+  '@CCLIDisplay'?: number;
+  '@CCLILicenseNumber'?: string | number;
+  '@CCLIPublisher'?: string;
+  '@CCLISongTitle'?: string;
   '@album': string;
   '@artist': string;
   '@author': string;
@@ -28,9 +28,9 @@ export interface IXmlPro5Doc {
   '@versionNumber': number;
   '@width': number;
 
-  arrangements: {
+  arrangements?: {
     '@containerClass': 'NSMutableArray';
-    RVSongArrangement: IXmlPro5Arrangement[];
+    RVSongArrangement?: IXmlPro5Arrangement[];
   };
   groups: {
     '@containerClass': 'NSMutableArray';
@@ -98,7 +98,7 @@ export interface IXmlPro5ArrangementGroupId {
 //Slide Groups and Slides
 
 export interface IXmlPro5SlideGroup {
-  '@name': string;
+  '@name'?: string;
   '@uuid': string;
   '@color': string;
   '@serialization-array-index': number;
@@ -230,6 +230,7 @@ export interface IXmlPro5ElementPosition {
 }
 
 export interface IXmlPro5SlideElementStroke {
+  '@containerClass': 'NSMutableDictionary';
   NSColor: {
     '@serialization-native-value': string;
     '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey';
@@ -241,6 +242,7 @@ export interface IXmlPro5SlideElementStroke {
 }
 
 export interface IXmlPro5SlideElementShadow {
+  '@containerClass': 'NSMutableDictionary';
   NSMutableString: {
     '@serialization-native-value': string;
     '@serialization-dictionary-key': 'shadowOffset';

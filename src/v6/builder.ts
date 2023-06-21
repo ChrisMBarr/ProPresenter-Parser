@@ -39,7 +39,7 @@ export class v6Builder {
       processEntities: false,
       suppressUnpairedNode: false,
       suppressBooleanAttributes: false,
-      unpairedTags: ['array'],
+      unpairedTags: ['array', 'RVTransition'],
     });
 
     //Set the options, and force the type

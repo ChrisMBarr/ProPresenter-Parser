@@ -25,6 +25,53 @@ describe('V5 - Parser', (): void => {
     }
   });
 
+  it('should use empty strings for CCLI properties that do not exist', () => {
+    let testFile = readFileSync('./sample-files/v5 - Be Near.pro5').toString();
+    testFile = testFile.replace(/(CCLI(ArtistCredits)|(CopyrightInfo)|(LicenseNumber)|(Publisher)|(SongTitle))=".*?"/g, '');
+    const parsedSong = parser.parse(testFile);
+
+    expect(parsedSong.properties).toEqual({
+      CCLIArtistCredits: '',
+      CCLICopyrightInfo: '',
+      CCLIDisplay: false,
+      CCLILicenseNumber: '',
+      CCLIPublisher: '',
+      CCLISongTitle: '',
+      album: '',
+      artist: 'Shane Bernard',
+      author: '',
+      backgroundColor: { r: 0, g: 0, b: 0 },
+      category: 'Song',
+      creatorCode: 1349676880,
+      chordChartPath: '',
+      docType: 0,
+      drawingBackgroundColor: false,
+      height: 1050,
+      lastDateUsed: new Date('2014-10-12T20:44:32'),
+      notes: '',
+      resourcesDirectory: '',
+      usedCount: 0,
+      versionNumber: 500,
+      width: 1680,
+    } as IPro5Properties);
+  });
+
+  it('should not return arrangements for a song with no arrangements specified', () => {
+    let testFile = readFileSync('./sample-files/v5 - Be Near.pro5').toString();
+    testFile = testFile.replace(/<arrangements[\s\S]+?<\/arrangements>/g, '');
+    const parsedSong = parser.parse(testFile);
+
+    expect(parsedSong.arrangements).toEqual([]);
+  });
+
+  it('use an empty string when a group label is missing', () => {
+    let testFile = readFileSync('./sample-files/v5 - Be Near.pro5').toString();
+    testFile = testFile.replace('name="Background" ', '');
+    const parsedSong = parser.parse(testFile);
+
+    expect(parsedSong.slideGroups[0].groupLabel).toEqual('');
+  });
+
   it('should get the data from "Be Near.pro5"', () => {
     const testFile = readFileSync('./sample-files/v5 - Be Near.pro5').toString();
     const parsedSong = parser.parse(testFile);

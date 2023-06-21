@@ -15,7 +15,7 @@ export interface IXmlPro6Doc {
   '@CCLIDisplay': boolean;
   '@CCLIPublisher'?: string;
   '@CCLISongNumber'?: string | number;
-  '@CCLISongTitle': string;
+  '@CCLISongTitle'?: string;
   '@backgroundColor': string;
   '@buildNumber': number;
   '@category': string;

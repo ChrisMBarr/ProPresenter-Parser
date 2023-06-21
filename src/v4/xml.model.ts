@@ -4,12 +4,12 @@ export interface IXmlPro4DocRoot {
 }
 
 export interface IXmlPro4Doc {
-  '@CCLIArtistCredits': string;
-  '@CCLICopyrightInfo': number;
+  '@CCLIArtistCredits'?: string;
+  '@CCLICopyrightInfo'?: number;
   '@CCLIDisplay': number;
-  '@CCLILicenseNumber': string | number;
-  '@CCLIPublisher': string;
-  '@CCLISongTitle': string;
+  '@CCLILicenseNumber'?: string | number;
+  '@CCLIPublisher'?: string;
+  '@CCLISongTitle'?: string;
   '@album': string;
   '@artist': string;
   '@author': string;

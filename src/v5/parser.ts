@@ -10,7 +10,7 @@ import {
   IPro5SlideTextElement,
   IPro5Song,
 } from './parser.model';
-import { IXmlPro5Arrangement, IXmlPro5Doc, IXmlPro5DocRoot, IXmlPro5Slide, IXmlPro5SlideGroup } from './xml.model';
+import { IXmlPro5Doc, IXmlPro5DocRoot, IXmlPro5Slide, IXmlPro5SlideGroup } from './xml.model';
 
 export class v5Parser {
   parse(fileContent: string): IPro5Song {
@@ -45,19 +45,19 @@ export class v5Parser {
 
     const properties = this.getProperties(parsedDoc.RVPresentationDocument);
     const slideGroups = this.getSlideGroups(parsedDoc.RVPresentationDocument.groups.RVSlideGrouping);
-    const arrangements = this.getArrangements(parsedDoc.RVPresentationDocument.arrangements.RVSongArrangement, slideGroups);
+    const arrangements = this.getArrangements(parsedDoc.RVPresentationDocument, slideGroups);
 
     return { properties, slideGroups, arrangements };
   }
 
   private getProperties(xmlDoc: IXmlPro5Doc): IPro5Properties {
     return {
-      CCLIArtistCredits: xmlDoc['@CCLIArtistCredits'],
-      CCLICopyrightInfo: xmlDoc['@CCLICopyrightInfo'],
+      CCLIArtistCredits: xmlDoc['@CCLIArtistCredits'] ?? '',
+      CCLICopyrightInfo: xmlDoc['@CCLICopyrightInfo'] ?? '',
       CCLIDisplay: Boolean(xmlDoc['@CCLIDisplay']),
-      CCLILicenseNumber: xmlDoc['@CCLILicenseNumber'],
-      CCLIPublisher: xmlDoc['@CCLIPublisher'],
-      CCLISongTitle: xmlDoc['@CCLISongTitle'],
+      CCLILicenseNumber: xmlDoc['@CCLILicenseNumber'] ?? '',
+      CCLIPublisher: xmlDoc['@CCLIPublisher'] ?? '',
+      CCLISongTitle: xmlDoc['@CCLISongTitle'] ?? '',
       album: xmlDoc['@album'],
       artist: xmlDoc['@artist'],
       author: xmlDoc['@author'],
@@ -82,7 +82,7 @@ export class v5Parser {
       const groupColor = sg['@color'] === '' ? null : Utils.normalizeColorToRgbObj(sg['@color']);
       return {
         groupColor,
-        groupLabel: sg['@name'],
+        groupLabel: sg['@name'] ?? '',
         groupId: sg['@uuid'],
         slides: this.getSlidesForGroup(sg.slides.RVDisplaySlide),
       };
@@ -139,28 +139,30 @@ export class v5Parser {
     });
   }
 
-  private getArrangements(xmlArrangements: IXmlPro5Arrangement[], slideGroups: IPro5SlideGroup[]): IPro5Arrangement[] {
+  private getArrangements(xmlDoc: IXmlPro5Doc, slideGroups: IPro5SlideGroup[]): IPro5Arrangement[] {
     const arrangementsArr: IPro5Arrangement[] = [];
 
-    for (const a of xmlArrangements) {
-      arrangementsArr.push({
-        color: Utils.normalizeColorToRgbObj(a['@color']),
-        label: a['@name'],
-        groupOrder: a.groupIDs.NSMutableString.map((group) => {
-          //This should always find a match since you can't put something in an arrangement that doesn't already exist
-          //So because of that it's OK to have a non-null assertion here
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          const slideGroupMatch = slideGroups.find(
-            //Look up the actual slide group by ID so we can get its name
-            (sg) => sg.groupId === group['@serialization-native-value']
-          )!;
+    if (xmlDoc.arrangements?.RVSongArrangement) {
+      for (const a of xmlDoc.arrangements.RVSongArrangement) {
+        arrangementsArr.push({
+          color: Utils.normalizeColorToRgbObj(a['@color']),
+          label: a['@name'],
+          groupOrder: a.groupIDs.NSMutableString.map((group) => {
+            //This should always find a match since you can't put something in an arrangement that doesn't already exist
+            //So because of that it's OK to have a non-null assertion here
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            const slideGroupMatch = slideGroups.find(
+              //Look up the actual slide group by ID so we can get its name
+              (sg) => sg.groupId === group['@serialization-native-value']
+            )!;
 
-          return {
-            groupId: group['@serialization-native-value'],
-            groupLabel: slideGroupMatch.groupLabel,
-          };
-        }),
-      });
+            return {
+              groupId: group['@serialization-native-value'],
+              groupLabel: slideGroupMatch.groupLabel,
+            };
+          }),
+        });
+      }
     }
 
     return arrangementsArr;

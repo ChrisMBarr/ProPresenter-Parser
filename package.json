@@ -1,7 +1,11 @@
 {
   "name": "propresenter-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parses ProPresenter 4, 5, and 6 files to extract the data, and can build ProPresenter 5 and 6 files",
+  "author": {
+    "name": "Chris Barr",
+    "url": "http://chrisbarr.me"
+  },
   "main": "dist/main/index.js",
   "typings": "dist/main/index.d.ts",
   "module": "dist/module/index.js",
@@ -13,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/FiniteLooper/ProPresenter-Parser/issues"
   },
-  "keywords": ["ProPresenter", "church", "lyrics", "song"],
+  "keywords": ["ProPresenter", "church", "lyrics", "song", "pro4", "pro5", "pro6"],
   "files": [
     "LICENSE",
     "README.md",

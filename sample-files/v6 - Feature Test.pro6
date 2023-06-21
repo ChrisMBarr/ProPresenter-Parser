@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RVPresentationDocument height="1080" width="1920" docType="0" versionNumber="600" usedCount="0" backgroundColor="0.196078431372549 0.643137254901961 0.611764705882353 1" drawingBackgroundColor="true" CCLIDisplay="false" lastDateUsed="2023-06-19T19:11:43+00:00" selectedArrangementID="" category="Song" resourcesDirectory="" notes="" CCLISongTitle="" chordChartPath="" os="1" buildNumber="6016">
+<RVPresentationDocument height="1080" width="1920" docType="0" versionNumber="600" usedCount="0" backgroundColor="0.196078431372549 0.643137254901961 0.611764705882353 1" drawingBackgroundColor="true" CCLIDisplay="false" lastDateUsed="2023-06-19T19:11:43+00:00" selectedArrangementID="" category="Song" resourcesDirectory="" notes="" chordChartPath="" os="1" buildNumber="6016">
   <RVTimeline timeOffset="0" duration="0" selectedMediaTrackIndex="-1" loop="false" rvXMLIvarName="timeline">
     <array rvXMLIvarName="timeCues" />
     <array rvXMLIvarName="mediaTracks" />

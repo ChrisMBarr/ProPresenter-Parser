@@ -25,6 +25,36 @@ describe('V4 - Parser', (): void => {
     }
   });
 
+  it('should use empty strings for CCLI properties that do not exist', () => {
+    let testFile = readFileSync('./sample-files/v4 - Be Near.pro4').toString();
+    testFile = testFile.replace(/(CCLI(ArtistCredits)|(CopyrightInfo)|(LicenseNumber)|(Publisher)|(SongTitle))=".*?"/g, '');
+    const parsedSong = parser.parse(testFile);
+
+    expect(parsedSong.properties).toEqual({
+      CCLIArtistCredits: '',
+      CCLICopyrightInfo: '',
+      CCLIDisplay: false,
+      CCLILicenseNumber: '',
+      CCLIPublisher: '',
+      CCLISongTitle: '',
+      album: '',
+      artist: '',
+      author: '',
+      backgroundColor: { r: 0, g: 0, b: 0 },
+      category: 'Song',
+      creatorCode: 1349676880,
+      docType: 0,
+      drawingBackgroundColor: false,
+      height: 768,
+      lastDateUsed: new Date('2010-11-07T00:37:36'),
+      notes: '',
+      resourcesDirectory: '',
+      usedCount: 0,
+      versionNumber: 400,
+      width: 1024,
+    } as IPro4Properties);
+  });
+
   it('should get the data from "Be Near.pro4"', () => {
     const testFile = readFileSync('./sample-files/v4 - Be Near.pro4').toString();
     const parsedSong = parser.parse(testFile);

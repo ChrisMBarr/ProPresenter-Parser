@@ -30,6 +30,19 @@ export class v5Builder {
       format: true,
       ignoreAttributes: false,
       processEntities: false,
+      suppressUnpairedNode: false,
+      unpairedTags: [
+        'arrangements',
+        'timeCues',
+        'mediaTracks',
+        'bibleReference',
+        'cues',
+        '_-RVProTransitionObject-_transitionObject',
+        '_-RVRect3D-_position',
+        'NSColor',
+        'NSNumber',
+        'NSMutableString',
+      ],
     });
 
     //Set the options, and force the type
@@ -226,6 +239,7 @@ export class v5Builder {
       '@revealType': 0,
       '@serialization-array-index': 0,
       stroke: {
+        '@containerClass': 'NSMutableDictionary',
         NSColor: {
           '@serialization-native-value': '0 0 0 1',
           '@serialization-dictionary-key': 'RVShapeElementStrokeColorKey',
@@ -236,6 +250,7 @@ export class v5Builder {
         },
       },
       '_-D-_serializedShadow': {
+        '@containerClass': 'NSMutableDictionary',
         NSMutableString: {
           '@serialization-native-value': `{3.4641016, -2}`,
           '@serialization-dictionary-key': 'shadowOffset',

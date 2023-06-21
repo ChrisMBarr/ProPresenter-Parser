@@ -89,7 +89,7 @@ export class v6Parser {
       CCLIDisplay: xmlDoc['@CCLIDisplay'],
       CCLIPublisher: xmlDoc['@CCLIPublisher'] ?? '',
       CCLISongNumber: xmlDoc['@CCLISongNumber'] ?? '',
-      CCLISongTitle: xmlDoc['@CCLISongTitle'],
+      CCLISongTitle: xmlDoc['@CCLISongTitle'] ?? '',
       backgroundColor: Utils.normalizeColorToRgbObj(xmlDoc['@backgroundColor']),
       buildNumber: xmlDoc['@buildNumber'],
       category: xmlDoc['@category'],

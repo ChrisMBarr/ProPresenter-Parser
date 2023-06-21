@@ -42,12 +42,12 @@ export class v4Parser {
 
   private getProperties(doc: IXmlPro4Doc): IPro4Properties {
     return {
-      CCLIArtistCredits: doc['@CCLIArtistCredits'],
-      CCLICopyrightInfo: doc['@CCLICopyrightInfo'],
+      CCLIArtistCredits: doc['@CCLIArtistCredits'] ?? '',
+      CCLICopyrightInfo: doc['@CCLICopyrightInfo'] ?? '',
       CCLIDisplay: Boolean(doc['@CCLIDisplay']),
-      CCLILicenseNumber: doc['@CCLILicenseNumber'],
-      CCLIPublisher: doc['@CCLIPublisher'],
-      CCLISongTitle: doc['@CCLISongTitle'],
+      CCLILicenseNumber: doc['@CCLILicenseNumber'] ?? '',
+      CCLIPublisher: doc['@CCLIPublisher'] ?? '',
+      CCLISongTitle: doc['@CCLISongTitle'] ?? '',
       album: doc['@album'],
       artist: doc['@artist'],
       author: doc['@author'],

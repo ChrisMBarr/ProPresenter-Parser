@@ -25,7 +25,7 @@ describe('V6 - Builder', (): void => {
     const expectedOutput = normalizeDatesAndIdsForTesting(`
 <?xml version="1.0" encoding="utf-8"?>
 <RVPresentationDocument CCLIArtistCredits="" CCLIAuthor="" CCLICopyrightYear="" CCLIDisplay="false" CCLIPublisher="" CCLISongNumber="" CCLISongTitle="My Test Song" category="Song" notes="" lastDateUsed="2023-06-20T15:29:44" height="720" width="1280" backgroundColor="0 0 0 1" buildNumber="6016" chordChartPath="" docType="0" drawingBackgroundColor="false" resourcesDirectory="" selectedArrangementID="" os="1" usedCount="0" versionNumber="600">
-  <RVTransition rvXMLIvarName="transitionObject" transitionType="-1" transitionDirection="0" transitionDuration="1" motionEnabled="false" motionDuration="0" motionSpeed="0" groupIndex="0" orderIndex="0" slideBuildAction="0" slideBuildDelay="0"></RVTransition>
+  <RVTransition rvXMLIvarName="transitionObject" transitionType="-1" transitionDirection="0" transitionDuration="1" motionEnabled="false" motionDuration="0" motionSpeed="0" groupIndex="0" orderIndex="0" slideBuildAction="0" slideBuildDelay="0"/>
   <RVTimeline rvXMLIvarName="timeline" timeOffset="0" duration="0" selectedMediaTrackIndex="0" loop="false">
     <array rvXMLIvarName="timeCues"/>
     <array rvXMLIvarName="mediaTracks"/>
@@ -148,7 +148,7 @@ describe('V6 - Builder', (): void => {
     const expectedOutput = normalizeDatesAndIdsForTesting(`
 <?xml version="1.0" encoding="utf-8"?>
 <RVPresentationDocument CCLIArtistCredits="Chris Tomlin" CCLIAuthor="John Newton, Chris Tomlin" CCLICopyrightYear="2006" CCLIDisplay="true" CCLIPublisher="worshiptogether.com Songs/sixsteps Music, Vamos Publishing, admin. Capitol CMG Publishing" CCLISongNumber="12345678" CCLISongTitle="My Test Song" category="Hymn" notes="Pastor Bill loves this one" lastDateUsed="2023-06-21T01:33:21" height="1080" width="1920" backgroundColor="0 0 0 1" buildNumber="6016" chordChartPath="" docType="0" drawingBackgroundColor="false" resourcesDirectory="" selectedArrangementID="" os="1" usedCount="0" versionNumber="600">
-  <RVTransition rvXMLIvarName="transitionObject" transitionType="106" transitionDirection="0" transitionDuration="0.4" motionEnabled="false" motionDuration="0" motionSpeed="0" groupIndex="0" orderIndex="0" slideBuildAction="0" slideBuildDelay="0"></RVTransition>
+  <RVTransition rvXMLIvarName="transitionObject" transitionType="106" transitionDirection="0" transitionDuration="0.4" motionEnabled="false" motionDuration="0" motionSpeed="0" groupIndex="0" orderIndex="0" slideBuildAction="0" slideBuildDelay="0"/>
   <RVTimeline rvXMLIvarName="timeline" timeOffset="0" duration="0" selectedMediaTrackIndex="0" loop="false">
     <array rvXMLIvarName="timeCues"/>
     <array rvXMLIvarName="mediaTracks"/>
