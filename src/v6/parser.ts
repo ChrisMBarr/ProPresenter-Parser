@@ -29,6 +29,7 @@ export class v6Parser {
     //Here we maintain a list of node paths to always keep as arrays
     //This keeps our code structure and typedefs more sane and normalized
     const alwaysArray = [
+      'RVPresentationDocument.array',
       'RVPresentationDocument.array.RVSlideGrouping',
       'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide',
       'RVPresentationDocument.array.RVSlideGrouping.array.RVDisplaySlide.array.RVTextElement',
@@ -126,10 +127,13 @@ export class v6Parser {
 
     for (const slide of slidesXmlArr) {
       let textElements: IPro6SlideTextElement[] = [];
+      //We know the document will always have displayElements, otherwise why would we parse it?
+      //Because of this it's safe to disable this rule here
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const xmlDisplayElements = slide.array.find(
         (s): s is IXmlPro6DisplaySlideDisplayElement => s['@rvXMLIvarName'] === 'displayElements'
-      );
-      if (xmlDisplayElements?.RVTextElement) {
+      )!;
+      if (xmlDisplayElements.RVTextElement) {
         textElements = this.getTextElementsForSlide(xmlDisplayElements.RVTextElement);
       }
 

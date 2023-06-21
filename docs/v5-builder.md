@@ -74,20 +74,20 @@ const opts = {
 ## The `properties` object
 This is a **required** object to pass in the options. You may pass any property to override the default value.
 
-| Name            | Required | Type      | Default Value | Description                                               |
-|:----------------|:---------|:----------|:--------------|:----------------------------------------------------------|
-| `title`         | **Yes**  | `string`  | None          | The title of the song                                     |
-| `album`         | No       | `string`  | None          | The name of the album this song belongs to                |
-| `artist`        | No       | `string`  | None          | The name of the artist who originally performed this song |
-| `author`        | No       | `string`  | None          | The author of the song                                    |
+| Name            | Required | Type      | Default Value | Description                                                                                              |
+|:----------------|:---------|:----------|:--------------|:---------------------------------------------------------------------------------------------------------|
+| `title`         | **Yes**  | `string`  | None          | The title of the song                                                                                    |
+| `album`         | No       | `string`  | None          | The name of the album this song belongs to                                                               |
+| `artist`        | No       | `string`  | None          | The name of the artist who originally performed this song                                                |
+| `author`        | No       | `string`  | None          | The author of the song                                                                                   |
 | `category`      | No       | `string`  | `'Song'`      | Any name can be used here to categorize this. Common ones are `'Song'`, `'Hymn'`, `'Presentation'`, etc. |
-| `ccliDisplay`   | No       | `boolean` | `false`       | Enables Copyright/CCLI display for this song              |
-| `ccliNumber`    | No       | `number`  | None          | The CCLI license number for this song                     |
-| `copyrightYear` | No       | `number`  | None          | The year this song was copywritten                        |
-| `notes`         | No       | `string`  | None          | Any other custom information about this song              |
-| `publisher`     | No       | `string`  | None          | The publisher of this song                                |
-| `height`        | No       | `number`  | `720`         | The document height. This should match the resolution of your presentation screen |
-| `width`         | No       | `number`  | `1280`        | The document width. This should match the resolution of your presentation screen  |
+| `ccliDisplay`   | No       | `boolean` | `false`       | Enables Copyright/CCLI display for this song, if ProPresenter is configured to do this                   |
+| `ccliNumber`    | No       | `number`  | None          | The CCLI license number for this song                                                                    |
+| `copyrightYear` | No       | `number`  | None          | The year this song was copywritten                                                                       |
+| `notes`         | No       | `string`  | None          | Any other custom information about this song                                                             |
+| `publisher`     | No       | `string`  | None          | The publisher of this song                                                                               |
+| `height`        | No       | `number`  | `720`         | The document height. This should match the resolution of your presentation screen                        |
+| `width`         | No       | `number`  | `1280`        | The document width. This should match the resolution of your presentation screen                         |
 
 For all options related to artist, author, CCLI, and copyright, please refer to [the ProPresenter Docs for displaying copyright information](https://support.renewedvision.com/hc/en-us/articles/360011789933-Displaying-copyright-information-for-a-song-).
 

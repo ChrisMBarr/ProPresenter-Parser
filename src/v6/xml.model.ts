@@ -1,6 +1,10 @@
 import { IProTransitionType } from '../shared.model';
 
 export interface IXmlPro6DocRoot {
+  '?xml': {
+    '@version': '1.0';
+    '@encoding': 'utf-8';
+  };
   RVPresentationDocument: IXmlPro6Doc;
 }
 
@@ -207,7 +211,7 @@ export interface IXmlPro6TextStroke extends IXmlPro6ElementWithVarName {
 //Arrangements
 export interface IXmlPro6DocArrayElementArrangements extends IXmlPro6ElementWithVarName {
   '@rvXMLIvarName': 'arrangements';
-  RVSongArrangement?: IXmlPro6Arrangement[];
+  RVSongArrangement: IXmlPro6Arrangement[];
 }
 
 export interface IXmlPro6Arrangement {

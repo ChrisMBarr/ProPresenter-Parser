@@ -79,6 +79,10 @@ export class v6Builder {
 
   build(): string {
     const documentObj: IXmlPro6DocRoot = {
+      '?xml': {
+        '@version': '1.0',
+        '@encoding': 'utf-8',
+      },
       RVPresentationDocument: {
         '@CCLIArtistCredits': this.options.properties.CCLIArtistCredits,
         '@CCLIAuthor': this.options.properties.CCLIAuthor,
@@ -127,6 +131,7 @@ export class v6Builder {
           {
             //No default arrangement created, but add the empty XML node
             '@rvXMLIvarName': 'arrangements',
+            RVSongArrangement: [],
           },
         ],
       },

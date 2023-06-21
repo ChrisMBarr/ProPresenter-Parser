@@ -43,8 +43,19 @@ The options passed to the `ProPresenter6Builder` object are grouped into categor
 ## The `properties` object
 This is a **required** object to pass in the options. You may pass any property to override the default value.
 
-| Name            | Required | Type      | Default Value | Description                                               |
-|:----------------|:---------|:----------|:--------------|:----------------------------------------------------------|
+| Name                | Required | Type      | Default Value | Description                                                                                              |
+|:--------------------|:---------|:----------|:--------------|:---------------------------------------------------------------------------------------------------------|
+| `CCLISongTitle`     | **Yes**  | `string`  | None          | The title of the song                                                                                    |
+| `CCLIArtistCredits` | No       | `string`  | None          | The name of the artist who originally performed this song                                                | 
+| `CCLIAuthor`        | No       | `string`  | None          | The author of the song                                                                                   |
+| `CCLICopyrightYear` | No       | `number`  | None          | The year this song was copywritten                                                                       |
+| `CCLIDisplay`       | No       | `boolean` | `false`       | Enables Copyright/CCLI display for this song, if ProPresenter is configured to do this                   |
+| `CCLIPublisher`     | No       | `string`  | None          | The publisher of this song                                                                               |
+| `CCLISongNumber`    | No       | `number`  | None          | The CCLI license number for this song                                                                    |
+| `category`          | No       | `string`  | `'Song'`      | Any name can be used here to categorize this. Common ones are `'Song'`, `'Hymn'`, `'Presentation'`, etc. |
+| `notes`             | No       | `string`  | None          | Any other custom information about this song                                                             |
+| `height`            | No       | `number`  | `720`         | The document height. This should match the resolution of your presentation screen                        |
+| `width`             | No       | `number`  | `1280`        | The document width. This should match the resolution of your presentation screen                         |
 
 
 
@@ -59,13 +70,13 @@ This is a **required** array to pass in the options. Each slide group is somethi
 ## The `slideTextFormatting` object
 This is an **optional** object to pass in the options. You may pass any property to override the default value.
 
-| Name          | Required | Type                                        | Default Value                                                                      | Description                                             |
-|:------------- |:---------|:--------------------------------------------|------------------------------------------------------------------------------------|:--------------------------------------------------------|
-| `fontName`    | No       | `string`                                    | `'Arial'`                                                                          | The name of the font for the text in all created slides |
-| `textColor`   | No       | `string` or [`IRgbColor`](colors.md) object | `{r:255, g:255, b:255}`                                                            | The color of the text in all created slides. The default is white text. See the [colors docs](colors.md) for formatting details |
-| `textSize`    | No       | `number`                                    | `60` (in points)                                                                   | The size of the text, in points, for all created slides |
-| `textPadding` | No       | `number`                                    | `20` (in pixels)                                                                   | The padding around the text element within the slide    |
-| `textShadow`  | No       | `IProElementShadow`                         | `{enabled: false, angle: 135, length: 7, radius: 10, color: { r: 0, g: 0, b: 0 }}` | Shadows are disabled by default. See the [shadows docs](shadows.md) for formatting details |
+| Name          | Required | Type                                        | Default Value                                            | Description                                             |
+|:------------- |:---------|:--------------------------------------------|----------------------------------------------------------|:--------------------------------------------------------|
+| `fontName`    | No       | `string`                                    | `'Arial'`                                                | The name of the font for the text in all created slides |
+| `textColor`   | No       | `string` or [`IRgbColor`](colors.md) object | `{r:255, g:255, b:255}`                                  | The color of the text in all created slides. The default is white text. See the [colors docs](colors.md) for formatting details |
+| `textSize`    | No       | `number`                                    | `60` (in points)                                         | The size of the text, in points, for all created slides |
+| `textPadding` | No       | `number`                                    | `20` (in pixels)                                         | The padding around the text element within the slide    |
+| `textShadow`  | No       | `IProElementShadow`                         | Disabled. See the [shadows docs](shadows.md) for details | Shadows are disabled by default. See the [shadows docs](shadows.md) for formatting details |
 
 **Note about the `textPadding` property:** In the `properties` you can set the `height` and `width` of all slides in the document. If the document is set to be 1920x1080 and `textPadding` is set to `20`px then the text element will be 1880x1040 (subtracting 20*2 for each dimension) and will have `20`px spacing on all sides.
 

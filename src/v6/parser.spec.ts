@@ -1142,9 +1142,29 @@ describe('V6 - Parser', (): void => {
 
     expect(parsedSong.arrangements).toEqual([] as IPro6Arrangement[]);
 
-    expect(parsedSong.slideGroups.length).toEqual(2);
+    expect(parsedSong.slideGroups.length).toEqual(3);
 
     expect(parsedSong.slideGroups[0]).toEqual({
+      groupColor: { b: 0, g: 0, r: 0 },
+      groupId: '146F03EB-5E64-62CF-A511-AB1E38EE8A44',
+      groupLabel: 'Blank',
+      slides: [
+        {
+          backgroundColor: { b: 0, g: 0, r: 0 },
+          chordChartPath: '',
+          drawingBackgroundColor: false,
+          enabled: true,
+          highlightColor: { b: 0, g: 0, r: 0 },
+          hotKey: '',
+          id: 'C8F69785-1146-1020-B79B-2B3FB564B20E',
+          label: '',
+          notes: '',
+          textElements: [],
+        },
+      ],
+    });
+
+    expect(parsedSong.slideGroups[1]).toEqual({
       groupColor: { r: 255, g: 255, b: 255 },
       groupId: 'ACFD5281-A303-4E73-8B54-63BEAB7D85C9',
       groupLabel: '',
@@ -1393,7 +1413,7 @@ describe('V6 - Parser', (): void => {
       ],
     } as IPro6SlideGroup);
 
-    expect(parsedSong.slideGroups[1]).toEqual({
+    expect(parsedSong.slideGroups[2]).toEqual({
       groupColor: { r: 0, g: 0, b: 0 },
       groupId: 'A5DD037E-58A4-4629-984D-8186A43AC684',
       groupLabel: 'Tag',
