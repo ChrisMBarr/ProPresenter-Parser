@@ -11,7 +11,7 @@ This is a work in progress! I will try to add support for different versions whe
 |:-------------|:-----|:------|
 |**4**         | ✅   | 🚫   |
 |**5**         | ✅   | ✅   |
-|**6**         | ✅   | 🚫   |
+|**6**         | ✅   | ✅   |
 |**7**         | 🚫   | 🚫   |
 
 <!-- ## Installation
