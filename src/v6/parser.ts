@@ -193,7 +193,7 @@ export class v6Parser {
           winFlowData = Base64.decode(str['#text']);
 
           //There could be other types, so we ignore this rule here
-          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+           
         } else if (str['@rvXMLIvarName'] === 'WinFontData') {
           winFontData = Base64.decode(str['#text']);
         }

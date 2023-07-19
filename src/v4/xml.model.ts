@@ -65,7 +65,7 @@ export interface IXmlPro4DisplaySlide {
   '@sort_index': number;
   '@UUID': string;
   '@serialization-array-index': number;
-  cues: {};
+  cues: Record<string, never>;
   displayElements: {
     RVTextElement?: IXmlPro4SlideTextElement[];
   };
