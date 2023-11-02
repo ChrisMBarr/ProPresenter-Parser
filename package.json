@@ -83,7 +83,7 @@
     "js-base64": "^3.7.5"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.5",
+    "@types/jest": "^29.5.7",
     "@types/node": "^20.8.10",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.9.1",
