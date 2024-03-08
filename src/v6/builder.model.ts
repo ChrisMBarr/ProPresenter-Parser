@@ -25,7 +25,7 @@ export interface IPro6BuilderOptionsProperties {
   CCLICopyrightYear?: number;
   CCLIDisplay?: boolean;
   CCLIPublisher?: string;
-  CCLISongNumber?: number;
+  CCLISongNumber?: string | number;
   category?: string;
   height?: number;
   notes?: string;
