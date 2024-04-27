@@ -141,7 +141,7 @@ describe('V5 - Parser', (): void => {
             mediaCues: [
               {
                 displayName: 'VideoSample.mov',
-                source: 'file://localhost/Users/FiniteLooper/Renewed%20Vision%20Media/Video/VideoSample.mov',
+                source: 'file://localhost/Users/example/Renewed%20Vision%20Media/Video/VideoSample.mov',
               },
             ],
             textElements: [],

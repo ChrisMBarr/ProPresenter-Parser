@@ -9,13 +9,13 @@
   "main": "dist/main/index.js",
   "typings": "dist/main/index.d.ts",
   "module": "dist/module/index.js",
-  "homepage": "https://github.com/FiniteLooper/ProPresenter-Parser#readme",
+  "homepage": "https://github.com/ChrisMBarr/ProPresenter-Parser#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FiniteLooper/ProPresenter-Parser.git"
+    "url": "git+https://github.com/ChrisMBarr/ProPresenter-Parser.git"
   },
   "bugs": {
-    "url": "https://github.com/FiniteLooper/ProPresenter-Parser/issues"
+    "url": "https://github.com/ChrisMBarr/ProPresenter-Parser/issues"
   },
   "keywords": ["ProPresenter", "church", "lyrics", "song", "pro4", "pro5", "pro6"],
   "files": [
