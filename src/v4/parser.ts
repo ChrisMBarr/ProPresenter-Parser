@@ -21,7 +21,7 @@ export class v4Parser {
       ignoreAttributes: false,
       attributeNamePrefix: '@',
       parseAttributeValue: true,
-      isArray: (_name, jPath: string) => alwaysArray.includes(jPath),
+      isArray: (_name, jPath: string): boolean => alwaysArray.includes(jPath),
     });
     const parsedDoc: IXmlPro4DocRoot = xmlParser.parse(fileContent);
 

@@ -46,7 +46,7 @@ export class v6Parser {
       ignoreAttributes: false,
       attributeNamePrefix: '@',
       parseAttributeValue: true,
-      isArray: (_name, jPath: string) => alwaysArray.includes(jPath),
+      isArray: (_name, jPath: string): boolean => alwaysArray.includes(jPath),
     });
     const parsedDoc: IXmlPro6DocRoot = xmlParser.parse(fileContent);
 
@@ -193,7 +193,6 @@ export class v6Parser {
           winFlowData = Base64.decode(str['#text']);
 
           //There could be other types, so we ignore this rule here
-           
         } else if (str['@rvXMLIvarName'] === 'WinFontData') {
           winFontData = Base64.decode(str['#text']);
         }

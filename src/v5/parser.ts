@@ -33,7 +33,7 @@ export class v5Parser {
       ignoreAttributes: false,
       attributeNamePrefix: '@',
       parseAttributeValue: true,
-      isArray: (_name, jPath: string) => alwaysArray.includes(jPath),
+      isArray: (_name, jPath: string): boolean => alwaysArray.includes(jPath),
     });
     const parsedDoc: IXmlPro5DocRoot = xmlParser.parse(fileContent);
 
