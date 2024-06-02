@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+
 import { v6Parser } from './parser';
 import { IPro6Arrangement, IPro6Properties, IPro6SlideGroup } from './parser.model';
 

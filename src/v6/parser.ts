@@ -1,5 +1,6 @@
 import { XMLParser } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
+
 import { IProElementPosition, IProElementShadow } from '../shared.model';
 import * as Utils from '../utils';
 import {

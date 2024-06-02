@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+
 import { v5Parser } from './parser';
 import { IPro5Arrangement, IPro5Properties, IPro5SlideGroup } from './parser.model';
 

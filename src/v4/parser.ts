@@ -1,5 +1,6 @@
 import { XMLParser } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
+
 import * as Utils from '../utils';
 import { IPro4Properties, IPro4Slide, IPro4SlideTextElement, IPro4Song } from './parser.model';
 import { IXmlPro4DisplaySlide, IXmlPro4Doc, IXmlPro4DocRoot } from './xml.model';

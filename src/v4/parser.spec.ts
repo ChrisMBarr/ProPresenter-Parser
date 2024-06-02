@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+
 import { v4Parser } from './parser';
 import { IPro4Properties, IPro4Slide } from './parser.model';
 
