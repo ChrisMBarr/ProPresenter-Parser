@@ -111,7 +111,7 @@ export interface IXmlPro6DisplaySlideDisplayElement extends IXmlPro6ElementWithV
   '@rvXMLIvarName': 'displayElements';
   RVTextElement?: IXmlPro6TextElement[];
   RVImageElement?: IXmlPro6ImageElement[];
-  RVShapeElement?: IXmlPro6ShapeElement[];
+  RVShapeElement?: IXmlPro6DisplayElementBase[];
   RVHTMLShapeElement?: IXmlPro6HtmlElement[];
   RVBezierPathElement?: IXmlPro6BezierPathElement[];
 }
@@ -150,10 +150,6 @@ export interface IXmlPro6ImageElement extends IXmlPro6DisplayElementBase {
   '@manufactureURL': string;
   '@manufactureName': string;
   '@format': string;
-}
-
-export interface IXmlPro6ShapeElement extends IXmlPro6DisplayElementBase {
-  //Same as base
 }
 
 export interface IXmlPro6BezierPathElement extends IXmlPro6DisplayElementBase {

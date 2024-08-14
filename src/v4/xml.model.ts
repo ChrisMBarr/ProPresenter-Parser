@@ -31,7 +31,7 @@ export interface IXmlPro4Doc {
 
   //timeline and bibleReferences are not implemented yet
   timeline: IXmlV4Timeline;
-  bibleReference: IXmlPro4BibleReferences;
+  bibleReference: unknown; //IXmlPro4BibleReferences;
 }
 
 //------------------------------------------------------
@@ -49,7 +49,7 @@ export interface IXmlV4Timeline {
 
 //------------------------------------------------------
 //Bible References
-export interface IXmlPro4BibleReferences {}
+// export interface IXmlPro4BibleReferences {}
 
 //------------------------------------------------------
 //Slides
