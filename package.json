@@ -88,16 +88,16 @@
     "watch:test:html": "jest --watch --reporters=jest-html-reporter --verbose=false"
   },
   "dependencies": {
-    "fast-xml-parser": "^4.4.1",
+    "fast-xml-parser": "^4.5.0",
     "js-base64": "^3.7.7"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
+    "@eslint/js": "^9.10.0",
     "@types/eslint__js": "^8.42.3",
     "@types/jest": "^29.5.12",
-    "@types/node": "^22.5.2",
+    "@types/node": "^22.5.4",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint": "^9.9.1",
+    "eslint": "^9.10.0",
     "jest-html-reporter": "^3.10.2",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
