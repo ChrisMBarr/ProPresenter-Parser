@@ -16,7 +16,7 @@ export const stripRtf = (str: string): string => {
 export const formatRtf = (text: string, font = 'Arial', size = 60, color: IRgbColor = { r: 255, g: 255, b: 255 }): string => {
   //Text will be centered.
   //RTF font size is in half-points. Multiply input size by 2 to get size in half points
-  return `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320',{\\fonttbl\\f0\\fswiss\\fcharset0 ${font};}{\\colortbl;\\red${
+  return `{\\rtf1\\ansi\\ansicpg1252\\cocoartf1038\\cocoasubrtf320{\\fonttbl\\f0\\fswiss\\fcharset0 ${font};}{\\colortbl;\\red${
     color.r
   }\\green${color.g}\\blue${
     color.b
