@@ -1,6 +1,6 @@
 {
   "name": "propresenter-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parses ProPresenter 4, 5, and 6 files to extract the data, and can build ProPresenter 5 and 6 files",
   "author": {
     "name": "Chris Barr",
