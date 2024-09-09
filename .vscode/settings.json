@@ -3,6 +3,7 @@
   "cSpell.enabled": true,
   "editor.formatOnSave": true,
   "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).spec.ts, $(capture).model.ts",
     "tsconfig.json": "tsconfig.*.json",
     "package.json": "package-lock.json"
   },
