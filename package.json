@@ -82,27 +82,27 @@
     "test": "jest --reporters=default",
     "test:html": "jest --reporters=jest-html-reporter --verbose=false",
     "test:coverage": "jest --coverage --coverageDirectory=../coverage",
-    "update": "ncu -u && npm i",
+    "update": "npx npm-check-updates -u",
     "watch:build": "tsc -p tsconfig.json -w",
     "watch:test": "jest --watch --reporters=default",
     "watch:test:html": "jest --watch --reporters=jest-html-reporter --verbose=false"
   },
   "dependencies": {
-    "fast-xml-parser": "^5.0.9",
+    "fast-xml-parser": "^5.2.3",
     "js-base64": "^3.7.7"
   },
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
-    "@types/eslint__js": "^8.42.3",
+    "@eslint/js": "^9.28.0",
+    "@types/eslint__js": "^9.14.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.15.3",
+    "@types/node": "^22.15.29",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint": "^9.25.1",
+    "eslint": "^9.28.0",
     "jest-html-reporter": "^4.1.0",
     "jest": "^29.7.0",
-    "ts-jest": "^29.3.2",
+    "ts-jest": "^29.3.4",
     "ts-node": "^10.9.2",
-    "typescript-eslint": "^8.31.1",
+    "typescript-eslint": "^8.33.0",
     "typescript": "^5.8.3"
   }
 }
