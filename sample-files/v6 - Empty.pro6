@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RVPresentationDocument height="1080" width="1920" docType="0" versionNumber="600" usedCount="0"
+  backgroundColor="0 0 0 1" drawingBackgroundColor="false" CCLIDisplay="false"
+  lastDateUsed="2023-05-18T00:03:20+00:00" selectedArrangementID="" category="Song"
+  resourcesDirectory="" notes="" CCLIAuthor="" CCLIArtistCredits="Shane Bernard"
+  CCLISongTitle="Be Near" CCLIPublisher="Waiting Room Music" CCLICopyrightYear="2003"
+  CCLISongNumber="" chordChartPath="" os="1" buildNumber="6016">
+  <RVTimeline timeOffset="0" duration="0" selectedMediaTrackIndex="-1" loop="false"
+    rvXMLIvarName="timeline">
+    <array rvXMLIvarName="timeCues" />
+    <array rvXMLIvarName="mediaTracks" />
+  </RVTimeline>
+  <array rvXMLIvarName="arrangements" />
+</RVPresentationDocument>

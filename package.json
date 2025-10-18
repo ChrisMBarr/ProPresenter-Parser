@@ -66,6 +66,14 @@
           "tsconfig": "tsconfig.json"
         }
       ]
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
     }
   },
   "jest-html-reporter": {
@@ -78,7 +86,7 @@
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
     "clean": "rimraf dist coverage test-report.html",
-    "lint": "eslint --fix .",
+    "lint": "eslint --fix --max-warnings=0 .",
     "test": "jest --reporters=default",
     "test:html": "jest --reporters=jest-html-reporter --verbose=false",
     "test:coverage": "jest --coverage --coverageDirectory=../coverage",

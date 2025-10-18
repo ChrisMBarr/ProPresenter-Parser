@@ -26,6 +26,40 @@ describe('V6 - Parser', (): void => {
     }
   });
 
+  it('should get the data from the empty file "Empty.pro6', () => {
+    const testFile = readFileSync('./sample-files/v6 - Empty.pro6').toString();
+    const parsedSong = parser.parse(testFile);
+
+    expect(parsedSong.properties).toEqual({
+      CCLIArtistCredits: 'Shane Bernard',
+      CCLIAuthor: '',
+      CCLICopyrightYear: 2003,
+      CCLIDisplay: false,
+      CCLIPublisher: 'Waiting Room Music',
+      CCLISongNumber: '',
+      CCLISongTitle: 'Be Near',
+      backgroundColor: { r: 0, g: 0, b: 0 },
+      buildNumber: 6016,
+      category: 'Song',
+      chordChartPath: '',
+      docType: 0,
+      drawingBackgroundColor: false,
+      height: 1080,
+      lastDateUsed: new Date('2023-05-18T00:03:20+00:00'),
+      notes: '',
+      os: 1,
+      resourcesDirectory: '',
+      selectedArrangementID: '',
+      usedCount: 0,
+      versionNumber: 600,
+      width: 1920,
+    } as IPro6Properties);
+
+    expect(parsedSong.arrangements).toEqual([] as IPro6Arrangement[]);
+
+    expect(parsedSong.slideGroups).toEqual([] as IPro6SlideGroup[]);
+  });
+
   it('should get the data from "Amazing Grace.pro6', () => {
     const testFile = readFileSync('./sample-files/v6 - Amazing Grace.pro6').toString();
     const parsedSong = parser.parse(testFile);

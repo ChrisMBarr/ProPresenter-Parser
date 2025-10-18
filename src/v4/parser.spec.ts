@@ -56,6 +56,52 @@ describe('V4 - Parser', (): void => {
     } as IPro4Properties);
   });
 
+  it('should get the data from "Empty Slides.pro4" that has nothing in the slides', () => {
+    const testFile = readFileSync('./sample-files/v4 - Empty Slides.pro4').toString();
+    const parsedSong = parser.parse(testFile);
+
+    expect(parsedSong.properties).toEqual({
+      CCLIArtistCredits: '',
+      CCLICopyrightInfo: 2003,
+      CCLIDisplay: false,
+      CCLILicenseNumber: '',
+      CCLIPublisher: 'Waiting Room Music',
+      CCLISongTitle: 'Be Near',
+      album: '',
+      artist: '',
+      author: '',
+      backgroundColor: { r: 0, g: 0, b: 0 },
+      category: 'Song',
+      creatorCode: 1349676880,
+      docType: 0,
+      drawingBackgroundColor: false,
+      height: 768,
+      lastDateUsed: new Date('2010-11-07T00:37:36'),
+      notes: '',
+      resourcesDirectory: '',
+      usedCount: 0,
+      versionNumber: 400,
+      width: 1024,
+    } as IPro4Properties);
+
+    expect(parsedSong.slides).toEqual([
+      {
+        backgroundColor: { r: 0, g: 0, b: 0 },
+        highlightColor: { r: 0, g: 0, b: 0 },
+        label: '',
+        id: '26AAF905-8F45-4252-BFAB-4C10CCFE1476',
+        textElements: [],
+      },
+      {
+        backgroundColor: { r: 0, g: 0, b: 0 },
+        highlightColor: { r: 0, g: 0, b: 0 },
+        label: 'Chorus 1',
+        id: '9734D050-A3BD-4BD2-A8FE-0C15CC0DF0D3',
+        textElements: [],
+      },
+    ] as IPro4Slide[]);
+  });
+
   it('should get the data from "Be Near.pro4"', () => {
     const testFile = readFileSync('./sample-files/v4 - Be Near.pro4').toString();
     const parsedSong = parser.parse(testFile);

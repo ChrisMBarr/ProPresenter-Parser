@@ -1,0 +1,28 @@
+<RVPresentationDocument height="768" width="1024" versionNumber="400" docType="0"
+  creatorCode="1349676880" lastDateUsed="2010-11-07T00:37:36" usedCount="0" category="Song"
+  resourcesDirectory="" backgroundColor="0 0 0 1" drawingBackgroundColor="0" notes="" artist=""
+  author="" album="" CCLIDisplay="0" CCLIArtistCredits="" CCLISongTitle="Be Near"
+  CCLIPublisher="Waiting Room Music" CCLICopyrightInfo="2003" CCLILicenseNumber="">
+  <slides containerClass="NSMutableArray">
+    <RVDisplaySlide backgroundColor="0 0 0 0" enabled="1" highlightColor="0 0 0 0" hotKey=""
+      label="" notes="" slideType="1" sort_index="0" UUID="26AAF905-8F45-4252-BFAB-4C10CCFE1476"
+      drawingBackgroundColor="0" serialization-array-index="0">
+      <cues containerClass="NSMutableArray"></cues>
+      <displayElements containerClass="NSMutableArray">
+      </displayElements>
+    </RVDisplaySlide>
+    <RVDisplaySlide backgroundColor="0 0 0 0" enabled="1" highlightColor="0 0 0 0" hotKey=""
+      label="Chorus 1" notes="" slideType="1" sort_index="1"
+      UUID="9734D050-A3BD-4BD2-A8FE-0C15CC0DF0D3" drawingBackgroundColor="0"
+      serialization-array-index="1">
+      <cues containerClass="NSMutableArray"></cues>
+      <displayElements containerClass="NSMutableArray">
+      </displayElements>
+    </RVDisplaySlide>
+  </slides>
+  <timeline timeOffSet="0" selectedMediaTrackIndex="0" unitOfMeasure="60" duration="0" loop="0">
+    <timeCues containerClass="NSMutableArray"></timeCues>
+    <mediaTracks containerClass="NSMutableArray"></mediaTracks>
+  </timeline>
+  <bibleReference containerClass="NSMutableDictionary"></bibleReference>
+</RVPresentationDocument>
