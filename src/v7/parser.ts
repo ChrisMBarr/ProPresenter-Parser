@@ -27,6 +27,9 @@ import {
   IPro7Song,
 } from './parser.model';
 
+/* eslint-disable complexity -- We're hitting a high number of complexity due to the number of null coalesce used throughout this file.
+ * Disabling this rule because the proto files are filled with nullable properties. There aren't many ways around it other than what we currently do.
+ */
 export class v7Parser {
   parse(fileContent: string | Uint8Array): IPro7Song {
     // Convert string to Uint8Array if needed (for binary protobuf data)
