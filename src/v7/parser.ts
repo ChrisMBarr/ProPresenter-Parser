@@ -32,7 +32,7 @@ export class v7Parser {
     // Convert string to Uint8Array if needed (for binary protobuf data)
     let binaryData: Uint8Array;
     if (typeof fileContent === 'string') {
-      binaryData = new Uint8Array(Buffer.from(fileContent, 'utf8'));
+      binaryData = new TextEncoder().encode(fileContent);
     } else {
       binaryData = fileContent;
     }
