@@ -8,6 +8,8 @@ import { v6Builder } from './v6/builder';
 import { IPro6BuilderOptions } from './v6/builder.model';
 import { v6Parser } from './v6/parser';
 import { IPro6Song } from './v6/parser.model';
+import { v7Parser } from './v7/parser';
+import { IPro7Song } from './v7/parser.model';
 
 //------------------------
 //Version 4
@@ -43,4 +45,12 @@ export * from './v6/builder.model';
 export const ProPresenter6Builder = (options: IPro6BuilderOptions): string => {
   const builder = new v6Builder(options);
   return builder.build();
+};
+
+//------------------------
+//Version 7
+export * from './v7/parser.model';
+export const ProPresenter7Parser = (fileContent: string): IPro7Song => {
+  const parser = new v7Parser();
+  return parser.parse(fileContent);
 };
