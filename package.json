@@ -96,20 +96,20 @@
     "watch:test:html": "jest --watch --reporters=jest-html-reporter --verbose=false"
   },
   "dependencies": {
-    "fast-xml-parser": "^5.3.0",
+    "fast-xml-parser": "^5.3.1",
     "js-base64": "^3.7.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.9.2",
+    "@types/node": "^24.10.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint": "^9.39.1",
     "jest-html-reporter": "^4.3.0",
     "jest": "^30.2.0",
     "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
-    "typescript-eslint": "^8.46.2",
+    "typescript-eslint": "^8.46.3",
     "typescript": "^5.9.3"
   }
 }
