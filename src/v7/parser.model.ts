@@ -19,7 +19,7 @@ export interface IPro7Properties {
   category: string;
   chordChartPath: string;
   drawingBackgroundColor: boolean;
-  lastDateUsed: Date;
+  lastDateUsed: Date | undefined;
   notes: string;
   os: number;
   selectedArrangementID: string;

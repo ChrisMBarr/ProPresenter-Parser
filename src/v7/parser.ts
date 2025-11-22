@@ -326,9 +326,9 @@ export class v7Parser {
     };
   }
 
-  private convertTimestamp(timestamp: Timestamp | undefined): Date {
+  private convertTimestamp(timestamp: Timestamp | undefined): Date | undefined {
     if (!timestamp) {
-      return new Date();
+      return undefined;
     }
 
     const seconds = Number(timestamp.seconds ?? 0);
