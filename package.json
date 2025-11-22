@@ -82,6 +82,7 @@
     "includeStackTrace": false
   },
   "scripts": {
+    "postinstall": "npx buf generate",
     "build": "npm run clean && npm run lint && npm run test:coverage && npm run build:main && npm run build:module",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
@@ -96,10 +97,13 @@
     "watch:test:html": "jest --watch --reporters=jest-html-reporter --verbose=false"
   },
   "dependencies": {
+    "@bufbuild/protobuf": "^2.9.0",
     "fast-xml-parser": "^5.3.1",
     "js-base64": "^3.7.8"
   },
   "devDependencies": {
+    "@bufbuild/buf": "^1.57.2",
+    "@bufbuild/protoc-gen-es": "^2.9.0",
     "@eslint/js": "^9.39.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.10.0",
