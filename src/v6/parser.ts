@@ -1,4 +1,4 @@
-import { XMLParser } from 'fast-xml-parser';
+import { JPathOrMatcher, XMLParser } from 'fast-xml-parser';
 import { Base64 } from 'js-base64';
 
 import { IProElementPosition, IProElementShadow } from '../shared.model';
@@ -47,7 +47,7 @@ export class v6Parser {
       ignoreAttributes: false,
       attributeNamePrefix: '@',
       parseAttributeValue: true,
-      isArray: (_name, jPath: string): boolean => alwaysArray.includes(jPath),
+      isArray: (_name, jPath: JPathOrMatcher): boolean => typeof jPath === 'string' && alwaysArray.includes(jPath),
     });
     const parsedDoc: IXmlPro6DocRoot = xmlParser.parse(fileContent);
 

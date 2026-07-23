@@ -11,7 +11,7 @@
 |**4**         | ✅        | 🚫          |
 |**5**         | ✅        | ✅          |
 |**6**         | ✅        | ✅          |
-|**7**         | 🚫        | 🚫          |
+|**7**         | ✅        | 🚫          |
 
 ### About Version 7
 ProPresenter 7 has drastically changed the file format. Previously the files were formatted in XML, which is super easy to parse and understand. Version 7 is now in a binary format, which is a bit more difficult to parse in the traditional way. Currently I am unfamiliar with parsing or building files in a binary format, so I am most certainly open to suggestions and PRs! There are some very good blog posts about the ProPresenter 7 file format by [GreyShirtGuy](https://greyshirtguy.com/) and his efforts to extract data using C#: [Part 1](https://greyshirtguy.com/blog/pro7fileformat1/) and [Part 2](https://greyshirtguy.com/blog/propresenter-7-file-format-part-2/) | [Part 3](https://greyshirtguy.com/blog/propresenter-7-file-format-part-3/)
