@@ -28,3 +28,6 @@ node_modules/
 
 # Output of 'npm pack'
 *.tgz
+
+# Generated file from protobuf for v7
+src/v7/gen

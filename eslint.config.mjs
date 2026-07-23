@@ -39,7 +39,7 @@ export default tseslint.config(
       'array-callback-return': 'warn',
       complexity: ['warn', { max: 8 }],
       eqeqeq: ['warn', 'always', { null: 'ignore' }],
-      'no-unused-vars': 'warn',
+      'no-unused-vars': ['warn', { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
       'object-shorthand': ['warn', 'always'],
 
       'simple-import-sort/imports': 'warn',
