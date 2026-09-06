@@ -97,23 +97,23 @@
     "watch:test:html": "jest --watch --reporters=jest-html-reporter --verbose=false"
   },
   "dependencies": {
-    "@bufbuild/protobuf": "^2.13.0",
-    "fast-xml-parser": "^5.10.1",
-    "js-base64": "^3.9.1"
+    "@bufbuild/protobuf": "^2.14.1",
+    "fast-xml-parser": "^5.11.1",
+    "js-base64": "^3.9.3"
   },
   "devDependencies": {
     "@bufbuild/buf": "^1.72.0",
-    "@bufbuild/protoc-gen-es": "^2.13.0",
+    "@bufbuild/protoc-gen-es": "^2.14.1",
     "@eslint/js": "^9.39.2",
     "@types/jest": "^30.0.0",
-    "@types/node": "^26.1.1",
+    "@types/node": "^26.4.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint": "^9.39.2",
-    "jest-html-reporter": "^4.4.0",
-    "jest": "^30.4.2",
+    "jest-html-reporter": "^4.4.2",
+    "jest": "^30.5.1",
     "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",
-    "typescript-eslint": "^8.65.0",
+    "typescript-eslint": "^8.69.0",
     "typescript": "^5.9.3"
   },
   "allowScripts": {
